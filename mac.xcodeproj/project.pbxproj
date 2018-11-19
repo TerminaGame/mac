@@ -14,7 +14,7 @@
 		BF7096DA21A2454400AA7D37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7096D921A2454400AA7D37 /* ViewController.swift */; };
 		BF7096DC21A2454500AA7D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7096DB21A2454500AA7D37 /* Assets.xcassets */; };
 		BF7096DF21A2454500AA7D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7096DD21A2454500AA7D37 /* Main.storyboard */; };
-		BF70970E21A2485800AA7D37 /* Environment.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF70970D21A2485700AA7D37 /* Environment.sks */; };
+		BF9C7E5F21A25645002CB1EA /* Environment.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF9C7E5E21A25645002CB1EA /* Environment.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		BF7096DE21A2454500AA7D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF7096E021A2454500AA7D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF7096E121A2454500AA7D37 /* mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mac.entitlements; sourceTree = "<group>"; };
-		BF70970D21A2485700AA7D37 /* Environment.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Environment.sks; sourceTree = "<group>"; };
+		BF9C7E5E21A25645002CB1EA /* Environment.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Environment.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,6 @@
 			children = (
 				BF7096D121A2454400AA7D37 /* AppDelegate.swift */,
 				BF7096D321A2454400AA7D37 /* GameScene.sks */,
-				BF70970D21A2485700AA7D37 /* Environment.sks */,
 				BF7096D521A2454400AA7D37 /* Actions.sks */,
 				BF7096D721A2454400AA7D37 /* GameScene.swift */,
 				BF7096D921A2454400AA7D37 /* ViewController.swift */,
@@ -71,6 +70,7 @@
 				BF7096DD21A2454500AA7D37 /* Main.storyboard */,
 				BF7096E021A2454500AA7D37 /* Info.plist */,
 				BF7096E121A2454500AA7D37 /* mac.entitlements */,
+				BF9C7E5E21A25645002CB1EA /* Environment.sks */,
 			);
 			path = mac;
 			sourceTree = "<group>";
@@ -133,7 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF70970E21A2485800AA7D37 /* Environment.sks in Resources */,
+				BF9C7E5F21A25645002CB1EA /* Environment.sks in Resources */,
 				BF7096D421A2454400AA7D37 /* GameScene.sks in Resources */,
 				BF7096DC21A2454500AA7D37 /* Assets.xcassets in Resources */,
 				BF7096D621A2454400AA7D37 /* Actions.sks in Resources */,

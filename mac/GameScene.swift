@@ -31,30 +31,33 @@ class GameScene: SKScene {
         }
         
         healthHUDNumber?.text = String(currentHealth)
-        
+        let fadeOut = SKAction.fadeOut(withDuration: 1)
+        let fadeIn = SKAction.fadeIn(withDuration: 1)
+        healthHUD?.run(fadeOut)
         if number > 90 {
-            healthHUD?.texture = SKTexture(imageNamed: "100")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "100")))
         } else if number > 80 {
-            healthHUD?.texture = SKTexture(imageNamed: "90")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "90")))
         } else if number > 70 {
-            healthHUD?.texture = SKTexture(imageNamed: "80")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "80")))
         } else if number > 60 {
-            healthHUD?.texture = SKTexture(imageNamed: "70")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "70")))
         } else if number > 50 {
-            healthHUD?.texture = SKTexture(imageNamed: "60")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "60")))
         } else if number > 40 {
-            healthHUD?.texture = SKTexture(imageNamed: "50")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "50")))
         } else if number > 30 {
-            healthHUD?.texture = SKTexture(imageNamed: "40")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "40")))
         } else if number > 20 {
-            healthHUD?.texture = SKTexture(imageNamed: "30")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "30")))
         } else if number > 10 {
-            healthHUD?.texture = SKTexture(imageNamed: "20")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "20")))
         } else if number > 0 {
-            healthHUD?.texture = SKTexture(imageNamed: "10")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "10")))
         } else {
-            healthHUD?.texture = SKTexture(imageNamed: "0")
+            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "0")))
         }
+        healthHUD?.run(fadeIn)
         
     }
     

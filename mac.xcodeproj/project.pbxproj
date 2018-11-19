@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BF7096CE21A2454400AA7D37 /* mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF7096CE21A2454400AA7D37 /* Termina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7096D121A2454400AA7D37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF7096D321A2454400AA7D37 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BF7096D521A2454400AA7D37 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		BF7096CF21A2454400AA7D37 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF7096CE21A2454400AA7D37 /* mac.app */,
+				BF7096CE21A2454400AA7D37 /* Termina.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,9 +78,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF7096CD21A2454400AA7D37 /* mac */ = {
+		BF7096CD21A2454400AA7D37 /* Termina */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF7096E421A2454500AA7D37 /* Build configuration list for PBXNativeTarget "mac" */;
+			buildConfigurationList = BF7096E421A2454500AA7D37 /* Build configuration list for PBXNativeTarget "Termina" */;
 			buildPhases = (
 				BF7096CA21A2454400AA7D37 /* Sources */,
 				BF7096CB21A2454400AA7D37 /* Frameworks */,
@@ -90,9 +90,9 @@
 			);
 			dependencies = (
 			);
-			name = mac;
+			name = Termina;
 			productName = mac;
-			productReference = BF7096CE21A2454400AA7D37 /* mac.app */;
+			productReference = BF7096CE21A2454400AA7D37 /* Termina.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -123,7 +123,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF7096CD21A2454400AA7D37 /* mac */,
+				BF7096CD21A2454400AA7D37 /* Termina */,
 			);
 		};
 /* End PBXProject section */
@@ -333,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF7096E421A2454500AA7D37 /* Build configuration list for PBXNativeTarget "mac" */ = {
+		BF7096E421A2454500AA7D37 /* Build configuration list for PBXNativeTarget "Termina" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF7096E521A2454500AA7D37 /* Debug */,

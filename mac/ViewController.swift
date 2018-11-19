@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
-//  mac
+//  GameViewController.swift
+//  TerminaSK macOS
 //
-//  Created by Marquis Kurt on 11/18/18.
+//  Created by Marquis Kurt on 11/17/18.
 //  Copyright © 2018 Marquis Kurt. All rights reserved.
 //
 
@@ -11,37 +11,28 @@ import SpriteKit
 import GameplayKit
 
 class ViewController: NSViewController {
-
+    
     @IBOutlet var skView: SKView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
-        // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GameScene") {
-            
-            // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! GameScene? {
-                
-                // Copy gameplay related content over to the scene
-                sceneNode.entities = scene.entities
-                sceneNode.graphs = scene.graphs
-                
+        if let view = self.skView {
+            // Load the SKScene from 'GameScene.sks'
+            if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
-                sceneNode.scaleMode = .aspectFill
+                scene.scaleMode = .aspectFit
                 
                 // Present the scene
-                if let view = self.skView {
-                    view.presentScene(sceneNode)
-                    
-                    view.ignoresSiblingOrder = true
-                    
-                    view.showsFPS = true
-                    view.showsNodeCount = true
-                }
+                view.presentScene(scene)
             }
+            
+            view.ignoresSiblingOrder = true
+            
+            view.showsFPS = true
+            view.showsNodeCount = true
         }
     }
+    
 }
 

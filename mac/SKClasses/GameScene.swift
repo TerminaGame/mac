@@ -11,14 +11,13 @@ import Foundation
 
 class GameScene: SKScene {
     
-    // SKNodes
-    var roomBackground : SKSpriteNode?
-    var healthHUD : SKSpriteNode?
-    var healthHUDNumber: SKLabelNode?
-    var levelBadgeNumber: SKLabelNode?
-    var playerNameLabel: SKLabelNode?
-    var player: SKSpriteNode?
+    var hasEntity = false
+    var roomEntity: Entity?
     var gamePlayer: Player?
+    //var items: [Item]()
+    var leaveFlag = false
+    
+    var roomBackground: SKSpriteNode?
     
     /**
      Configure the tilemap and then destroy the parent tilemap.
@@ -87,6 +86,34 @@ class GameScene: SKScene {
         
         configureTileMap(map: childNode(withName: "baseTilemap") as! SKTileMapNode, movable: false)
         configureTileMap(map: childNode(withName: "movableTiles") as! SKTileMapNode, movable: true)
+        
+        let randomSeed = Int.random(in: 0...9)
+        if randomSeed > 4 {
+            hasEntity = true
+            
+            if gamePlayer?.level ?? 1 < 8 {
+                let monsterLevel = Int.random(in: 1 ... 7)
+                if gamePlayer?.level ?? 1 > monsterLevel {
+                    roomEntity = Monster(myName: "Error", myLevel: monsterLevel, myNode: childNode(withName: "enemyNode") as! SKSpriteNode, myHealth: 100, pacifiable: "yes", thisHud: childNode(withName: "otherHud") as! HUD)
+                } else {
+                    roomEntity = Monster(myName: "Error", myLevel: monsterLevel, myNode: childNode(withName: "enemyNode") as! SKSpriteNode, myHealth: 100, pacifiable: "no", thisHud: (childNode(withName: "otherHud") as! HUD))
+                }
+                
+            } else {
+                let monsterLevel = Int.random(in: ((gamePlayer?.level ?? 1) - 15)...((gamePlayer?.level ?? 1) + 15))
+                if gamePlayer?.level ?? 1 > monsterLevel {
+                    roomEntity = Monster(myName: "Error", myLevel: monsterLevel, myNode: childNode(withName: "enemyNode") as! SKSpriteNode, myHealth: 100, pacifiable: "yes", thisHud: childNode(withName: "otherHud") as! HUD)
+                } else {
+                    roomEntity = Monster(myName: "Error", myLevel: monsterLevel, myNode: childNode(withName: "enemyNode") as! SKSpriteNode, myHealth: 100, pacifiable: "no", thisHud: childNode(withName: "otherHud") as! HUD)
+                }
+            }
+            
+            roomEntity?.associatedNode.run(SKAction.moveTo(x: (gamePlayer?.associatedNode.position.x ?? 0) + 200, duration: 3))
+            
+        } else {
+            childNode(withName: "otherHud")?.removeFromParent()
+            childNode(withName: "enemyNode")?.removeFromParent()
+        }
     }
     
     override func didMove(to view: SKView) {
@@ -108,33 +135,37 @@ class GameScene: SKScene {
             gamePlayer?.move("left")
         }
     }
-}
-
-extension GameScene {
     
-    override func mouseDown(with event: NSEvent) {
-        
+    func attackHere() {
+        if roomEntity != nil {
+            if roomEntity is Monster {
+//                if gamePlayer?.associatedNode.position.x ?? 0 >= 50 + (roomEntity?.associatedNode.position.x ?? 0) {
+                    let damageFromPlayer = (gamePlayer?.level ?? 1) + (gamePlayer?.temporaryLevel ?? Int.random(in: 1 ... 3))
+                    let error = roomEntity as? Monster
+                    print(damageFromPlayer)
+                    
+                    if error?.health == 0 {
+                        roomEntity?.associatedNode.removeFromParent()
+                        roomEntity = nil
+                        gamePlayer?.patchUp(5)
+                    } else {
+                        gamePlayer?.takeDamage(error?.attack ?? 6)
+                        
+                        if gamePlayer?.health == 0 {
+                            gamePlayer?.associatedNode.removeFromParent()
+                            gamePlayer = nil
+                            // Exit code
+                        }
+                    }
+//                }
+                
+            } else {
+                roomEntity?.takeDamage(100)
+                roomEntity?.associatedNode.removeFromParent()
+                gamePlayer?.takeDamage(50)
+            }
+        } else {
+            // play sound
+        }
     }
-
-    override func mouseDragged(with event: NSEvent) {
-        
-    }
-    
-    override func mouseUp(with event: NSEvent) {
-        gamePlayer?.levelUp(1)
-        gamePlayer?.takeDamage(10)
-    }
-    
-    override func didFinishUpdate() {
-        Keyboard.sharedKeyboard.update()
-    }
-    
-    override func keyDown(with event: NSEvent) {
-        Keyboard.sharedKeyboard.handleKey(event: event, isDown: true)
-    }
-    
-    override func keyUp(with event: NSEvent) {
-        Keyboard.sharedKeyboard.handleKey(event: event, isDown: false)
-    }
-    
 }

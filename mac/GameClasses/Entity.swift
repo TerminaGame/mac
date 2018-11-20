@@ -52,6 +52,8 @@ class Entity {
     
     func parseDialogue(monologue: [String]) {}
     
+    func saySomething(what: String) {}
+    
     func jump() {
         associatedNode.run(SKJumpAction)
     }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF21BA7321A4A06D00DF0CF3 /* GameSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21BA7221A4A06D00DF0CF3 /* GameSceneExtension.swift */; };
+		BF21BA7521A4AE1C00DF0CF3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21BA7421A4AE1C00DF0CF3 /* Item.swift */; };
+		BF21BA7721A4B03F00DF0CF3 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21BA7621A4B03F00DF0CF3 /* Weapon.swift */; };
+		BF21BA7921A4B4D400DF0CF3 /* Bottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21BA7821A4B4D400DF0CF3 /* Bottle.swift */; };
+		BF21BA7B21A4B71900DF0CF3 /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21BA7A21A4B71900DF0CF3 /* Potion.swift */; };
 		BF27A5A621A3209100914CF9 /* Keycodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27A5A521A3209100914CF9 /* Keycodes.swift */; };
 		BF7096D221A2454400AA7D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7096D121A2454400AA7D37 /* AppDelegate.swift */; };
 		BF7096D421A2454400AA7D37 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF7096D321A2454400AA7D37 /* GameScene.sks */; };
@@ -23,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF21BA7221A4A06D00DF0CF3 /* GameSceneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneExtension.swift; sourceTree = "<group>"; };
+		BF21BA7421A4AE1C00DF0CF3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		BF21BA7621A4B03F00DF0CF3 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		BF21BA7821A4B4D400DF0CF3 /* Bottle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottle.swift; sourceTree = "<group>"; };
+		BF21BA7A21A4B71900DF0CF3 /* Potion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
 		BF27A5A521A3209100914CF9 /* Keycodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keycodes.swift; sourceTree = "<group>"; };
 		BF7096CE21A2454400AA7D37 /* Termina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7096D121A2454400AA7D37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +62,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF21BA6D21A464F000DF0CF3 /* SKClasses */ = {
+			isa = PBXGroup;
+			children = (
+				BF76484921A45B7700129DFA /* HUD.swift */,
+				BF7096D721A2454400AA7D37 /* GameScene.swift */,
+				BF21BA7221A4A06D00DF0CF3 /* GameSceneExtension.swift */,
+			);
+			path = SKClasses;
+			sourceTree = "<group>";
+		};
 		BF27A5A721A3260B00914CF9 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +99,11 @@
 		BF7096D021A2454400AA7D37 /* mac */ = {
 			isa = PBXGroup;
 			children = (
-				BF76483E21A36D9F00129DFA /* Classes */,
+				BF21BA6D21A464F000DF0CF3 /* SKClasses */,
+				BF76483E21A36D9F00129DFA /* GameClasses */,
 				BF27A5A721A3260B00914CF9 /* Libraries */,
 				BF7096D121A2454400AA7D37 /* AppDelegate.swift */,
 				BF7096D321A2454400AA7D37 /* GameScene.sks */,
-				BF7096D721A2454400AA7D37 /* GameScene.swift */,
 				BF7096D921A2454400AA7D37 /* ViewController.swift */,
 				BF7096DB21A2454500AA7D37 /* Assets.xcassets */,
 				BF7096DD21A2454500AA7D37 /* Main.storyboard */,
@@ -94,16 +114,19 @@
 			path = mac;
 			sourceTree = "<group>";
 		};
-		BF76483E21A36D9F00129DFA /* Classes */ = {
+		BF76483E21A36D9F00129DFA /* GameClasses */ = {
 			isa = PBXGroup;
 			children = (
 				BF76483F21A36DAF00129DFA /* Entity.swift */,
 				BF76484121A36E6200129DFA /* Player.swift */,
 				BF76484321A44CD800129DFA /* Monster.swift */,
 				BF76484521A44EBC00129DFA /* Termina.swift */,
-				BF76484921A45B7700129DFA /* HUD.swift */,
+				BF21BA7421A4AE1C00DF0CF3 /* Item.swift */,
+				BF21BA7621A4B03F00DF0CF3 /* Weapon.swift */,
+				BF21BA7821A4B4D400DF0CF3 /* Bottle.swift */,
+				BF21BA7A21A4B71900DF0CF3 /* Potion.swift */,
 			);
-			path = Classes;
+			path = GameClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +205,14 @@
 				BF27A5A621A3209100914CF9 /* Keycodes.swift in Sources */,
 				BF76484021A36DAF00129DFA /* Entity.swift in Sources */,
 				BF7096DA21A2454400AA7D37 /* ViewController.swift in Sources */,
+				BF21BA7321A4A06D00DF0CF3 /* GameSceneExtension.swift in Sources */,
+				BF21BA7721A4B03F00DF0CF3 /* Weapon.swift in Sources */,
+				BF21BA7B21A4B71900DF0CF3 /* Potion.swift in Sources */,
 				BF7096D821A2454400AA7D37 /* GameScene.swift in Sources */,
+				BF21BA7521A4AE1C00DF0CF3 /* Item.swift in Sources */,
 				BF76484221A36E6200129DFA /* Player.swift in Sources */,
 				BF76484A21A45B7700129DFA /* HUD.swift in Sources */,
+				BF21BA7921A4B4D400DF0CF3 /* Bottle.swift in Sources */,
 				BF7096D221A2454400AA7D37 /* AppDelegate.swift in Sources */,
 				BF76484421A44CD800129DFA /* Monster.swift in Sources */,
 			);

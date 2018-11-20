@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class Player: Entity {
-    //var currentInventory: [Item]()
+    var currentInventory = [Item]()
     
     var patchNumber: Int
     var temporaryLevel: Int
@@ -20,6 +20,10 @@ class Player: Entity {
     override func takeDamage(_ amount: Int) {
         super.takeDamage(amount)
         associatedHud.updateHealth(health)
+        
+        if health == 0 {
+            associatedHud.removeFromParent()
+        }
     }
     
     override func levelUp(_ amount: Int) {
@@ -41,7 +45,7 @@ class Player: Entity {
         temporaryLevel = 0
         associatedHud = playerHud
         
-        super.init(thisName: name, thisLevel: 1, defaultHealth: 100, thisNode: playerNode)
+        super.init(thisName: name, thisLevel: 10, defaultHealth: 100, thisNode: playerNode)
         
         //Post super-init
         associatedHud.update(newHealth: health, newLevel: level, newName: name)

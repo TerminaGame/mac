@@ -18,61 +18,7 @@ class GameScene: SKScene {
     var levelBadgeNumber: SKLabelNode?
     var playerNameLabel: SKLabelNode?
     var player: SKSpriteNode?
-    
-    // Important vars
-    var currentHealth: Int = 0
-    var currentLevel: Int = 1
-    var playerName: String = "Henry"
-    
-    
-    func updateHealthStatus(number: Int) {
-        
-        if number <= 0 {
-            currentHealth = 0
-        } else if number >= 100 {
-            currentHealth = 100
-        }
-        
-        healthHUDNumber?.text = String(currentHealth)
-        let fadeOut = SKAction.fadeOut(withDuration: 1)
-        let fadeIn = SKAction.fadeIn(withDuration: 1)
-        healthHUD?.run(fadeOut)
-        if number > 90 {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "100")))
-        } else if number > 80 {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "90")))
-        } else if number > 70 {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "80")))
-        } else if number > 60 {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "70")))
-        } else if number > 50 {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "60")))
-        } else if number > 40 {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "50")))
-        } else if number > 30 {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "40")))
-        } else if number > 20 {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "30")))
-        } else if number > 10 {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "20")))
-        } else if number > 0 {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "10")))
-        } else {
-            healthHUD?.run(SKAction.setTexture(SKTexture(imageNamed: "0")))
-        }
-        healthHUD?.run(fadeIn)
-        
-    }
-    
-    func updateLevelBadge(number: Int) {
-        currentLevel = number
-        levelBadgeNumber?.text = String(currentLevel)
-    }
-    
-    func updatePlayerHUD(health: Int, level: Int) {
-        updateHealthStatus(number: health)
-        updateLevelBadge(number: level)
-    }
+    var gamePlayer: Player?
     
     /**
      Configure the tilemap and then destroy the parent tilemap.
@@ -136,21 +82,8 @@ class GameScene: SKScene {
         roomBackground = childNode(withName: "roomBackground") as? SKSpriteNode
         roomBackground?.texture = SKTexture(imageNamed: "bg29")
         
-        healthHUD = childNode(withName: "healthHudDisplay") as? SKSpriteNode
-        healthHUDNumber = childNode(withName: "healthHudNumber") as? SKLabelNode
-        healthHUDNumber?.fontName = NSFont.boldSystemFont(ofSize: 48).fontName
+        gamePlayer = Player(name: "Frisk", playerNode: (childNode(withName: "playerSprite") as? SKSpriteNode)!, playerHud: (childNode(withName: "playerHud") as? HUD)!)
         
-        currentHealth = 100
-        updateHealthStatus(number: currentHealth)
-        
-        levelBadgeNumber = childNode(withName: "levelBadgeCount") as? SKLabelNode
-        levelBadgeNumber?.fontName = NSFont.systemFont(ofSize: 18).fontName
-        
-        playerNameLabel = childNode(withName: "playerNameLabel") as? SKLabelNode
-        playerNameLabel?.fontName = NSFont.boldSystemFont(ofSize: 18).fontName
-        playerNameLabel?.text = playerName
-        
-        player = childNode(withName: "playerSprite") as? SKSpriteNode
         
         configureTileMap(map: childNode(withName: "baseTilemap") as! SKTileMapNode, movable: false)
         configureTileMap(map: childNode(withName: "movableTiles") as! SKTileMapNode, movable: true)
@@ -161,21 +94,18 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        updateHealthStatus(number: currentHealth)
-        updateLevelBadge(number: currentLevel)
-        
         super.update(currentTime)
         
         if (Keyboard.sharedKeyboard.justPressed(keys: Key.space)) {
-            player?.run(SKAction.moveBy(x: 0, y: 150, duration: 0.25))
+            gamePlayer?.jump()
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.D)) {
-            player?.run(SKAction.moveBy(x: 10, y: 0, duration: 0.25))
+            gamePlayer?.move("right")
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.A)) {
-            player?.run(SKAction.moveBy(x: -10, y: 0, duration: 0.25))
+            gamePlayer?.move("left")
         } else if (Keyboard.sharedKeyboard.pressed(keys: Key.D, Key.W)) {
-            player?.run(SKAction.moveBy(x: 10, y: 0, duration: 0.25))
+            gamePlayer?.move("right")
         } else if (Keyboard.sharedKeyboard.pressed(keys: Key.W, Key.A)) {
-            player?.run(SKAction.moveBy(x: -10, y: 0, duration: 0.25))
+            gamePlayer?.move("left")
         }
     }
 }
@@ -191,8 +121,8 @@ extension GameScene {
     }
     
     override func mouseUp(with event: NSEvent) {
-        currentHealth = currentHealth - 10
-        currentLevel += 1
+        gamePlayer?.levelUp(1)
+        gamePlayer?.takeDamage(10)
     }
     
     override func didFinishUpdate() {
@@ -208,4 +138,3 @@ extension GameScene {
     }
     
 }
-

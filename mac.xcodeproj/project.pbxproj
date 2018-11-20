@@ -14,6 +14,11 @@
 		BF7096DA21A2454400AA7D37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7096D921A2454400AA7D37 /* ViewController.swift */; };
 		BF7096DC21A2454500AA7D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7096DB21A2454500AA7D37 /* Assets.xcassets */; };
 		BF7096DF21A2454500AA7D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7096DD21A2454500AA7D37 /* Main.storyboard */; };
+		BF76484021A36DAF00129DFA /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76483F21A36DAF00129DFA /* Entity.swift */; };
+		BF76484221A36E6200129DFA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76484121A36E6200129DFA /* Player.swift */; };
+		BF76484421A44CD800129DFA /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76484321A44CD800129DFA /* Monster.swift */; };
+		BF76484621A44EBC00129DFA /* Termina.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76484521A44EBC00129DFA /* Termina.swift */; };
+		BF76484A21A45B7700129DFA /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF76484921A45B7700129DFA /* HUD.swift */; };
 		BF9C7E5F21A25645002CB1EA /* Environment.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF9C7E5E21A25645002CB1EA /* Environment.sks */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +33,11 @@
 		BF7096DE21A2454500AA7D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF7096E021A2454500AA7D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF7096E121A2454500AA7D37 /* mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mac.entitlements; sourceTree = "<group>"; };
+		BF76483F21A36DAF00129DFA /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		BF76484121A36E6200129DFA /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BF76484321A44CD800129DFA /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		BF76484521A44EBC00129DFA /* Termina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Termina.swift; sourceTree = "<group>"; };
+		BF76484921A45B7700129DFA /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		BF9C7E5E21A25645002CB1EA /* Environment.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Environment.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +79,7 @@
 		BF7096D021A2454400AA7D37 /* mac */ = {
 			isa = PBXGroup;
 			children = (
+				BF76483E21A36D9F00129DFA /* Classes */,
 				BF27A5A721A3260B00914CF9 /* Libraries */,
 				BF7096D121A2454400AA7D37 /* AppDelegate.swift */,
 				BF7096D321A2454400AA7D37 /* GameScene.sks */,
@@ -81,6 +92,18 @@
 				BF9C7E5E21A25645002CB1EA /* Environment.sks */,
 			);
 			path = mac;
+			sourceTree = "<group>";
+		};
+		BF76483E21A36D9F00129DFA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF76483F21A36DAF00129DFA /* Entity.swift */,
+				BF76484121A36E6200129DFA /* Player.swift */,
+				BF76484321A44CD800129DFA /* Monster.swift */,
+				BF76484521A44EBC00129DFA /* Termina.swift */,
+				BF76484921A45B7700129DFA /* HUD.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,10 +178,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF76484621A44EBC00129DFA /* Termina.swift in Sources */,
 				BF27A5A621A3209100914CF9 /* Keycodes.swift in Sources */,
+				BF76484021A36DAF00129DFA /* Entity.swift in Sources */,
 				BF7096DA21A2454400AA7D37 /* ViewController.swift in Sources */,
 				BF7096D821A2454400AA7D37 /* GameScene.swift in Sources */,
+				BF76484221A36E6200129DFA /* Player.swift in Sources */,
+				BF76484A21A45B7700129DFA /* HUD.swift in Sources */,
 				BF7096D221A2454400AA7D37 /* AppDelegate.swift in Sources */,
+				BF76484421A44CD800129DFA /* Monster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

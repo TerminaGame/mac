@@ -51,4 +51,15 @@ class Player: Entity {
         associatedHud.update(newHealth: health, newLevel: level, newName: name)
     }
     
+    init(name: String) {
+        patchNumber = 0
+        temporaryLevel = 0
+        associatedHud = HUD()
+        
+        super.init(thisName: name, thisLevel: 1, defaultHealth: 100)
+        
+        
+        
+    }
+    
 }

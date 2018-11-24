@@ -73,4 +73,13 @@ class Entity {
         maximumHealth = defaultHealth
         associatedNode = thisNode
     }
+    
+    init(thisName: String, thisLevel: Int, defaultHealth: Int) {
+        name = thisName
+        level = thisLevel
+        health = defaultHealth
+        maximumHealth = defaultHealth
+        
+        associatedNode = SKSpriteNode()
+    }
 }

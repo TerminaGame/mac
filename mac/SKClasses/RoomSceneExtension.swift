@@ -1,5 +1,5 @@
 //
-//  GameSceneExtension.swift
+//  RoomSceneExtension.swift
 //  Termina
 //
 //  Created by Marquis Kurt on 11/20/18.
@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-extension GameScene {
+extension RoomScene {
     
     override func mouseDown(with event: NSEvent) {
         

@@ -17,14 +17,11 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         if let view = self.skView {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
+            
+            if let scene = SKScene(fileNamed: "MainMenu") {
+                scene.name = "mainMenu"
                 scene.scaleMode = .aspectFit
-                
-                // Present the scene
                 view.presentScene(scene)
             }
             

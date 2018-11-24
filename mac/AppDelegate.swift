@@ -8,18 +8,22 @@
 
 
 import Cocoa
+import UserNotifications
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    static var dataModel = DataModel(whichPlayer: Player(name: "Frisk"))
+    static var gotLoadedData = false
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        AppDelegate.gotLoadedData = AppDelegate.dataModel.loadFromFile()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        AppDelegate.dataModel.saveToFile(false)
     }
+    
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true

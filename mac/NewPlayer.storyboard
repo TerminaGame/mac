@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Player-->
+        <scene sceneID="HfO-lV-8PN">
+            <objects>
+                <viewController storyboardIdentifier="NewPlayer" id="zte-wa-ut0" customClass="NewPlayer" customModule="Termina" sceneMemberID="viewController">
+                    <view key="view" id="ArC-32-GX8">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="156"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z7Y-1C-fKK">
+                                <rect key="frame" x="18" y="119" width="198" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Enter the name of your player." id="pD0-az-GiG">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v6a-Zv-Au8">
+                                <rect key="frame" x="20" y="64" width="410" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Name" drawsBackground="YES" id="QJC-8m-Q30">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hc3-SB-nly">
+                                <rect key="frame" x="314" y="13" width="122" height="32"/>
+                                <buttonCell key="cell" type="push" title="Create Player" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4hr-RM-N9G">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="submitAndDismiss:" target="zte-wa-ut0" id="yqU-8y-bGW"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W0L-Qr-C8x">
+                                <rect key="frame" x="18" y="94" width="294" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="This name will be used to save your player data." id="8OD-Uu-EVW">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lmu-VY-xJM">
+                                <rect key="frame" x="236" y="13" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="geb-Ml-6T4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancelAndDismiss:" target="zte-wa-ut0" id="JkE-jq-9vF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Z7Y-1C-fKK" firstAttribute="top" secondItem="ArC-32-GX8" secondAttribute="top" constant="20" id="4De-dg-ZxA"/>
+                            <constraint firstItem="v6a-Zv-Au8" firstAttribute="top" secondItem="Z7Y-1C-fKK" secondAttribute="bottom" constant="33" id="6ad-DT-U0S"/>
+                            <constraint firstItem="W0L-Qr-C8x" firstAttribute="top" secondItem="Z7Y-1C-fKK" secondAttribute="bottom" constant="8" symbolic="YES" id="DP9-ZM-4Il"/>
+                            <constraint firstItem="Hc3-SB-nly" firstAttribute="leading" secondItem="lmu-VY-xJM" secondAttribute="trailing" constant="8" id="WBm-TN-P9c"/>
+                            <constraint firstAttribute="trailing" secondItem="v6a-Zv-Au8" secondAttribute="trailing" constant="20" id="eIp-Zb-ruJ"/>
+                            <constraint firstItem="Z7Y-1C-fKK" firstAttribute="leading" secondItem="ArC-32-GX8" secondAttribute="leading" constant="20" id="juc-8c-vaf"/>
+                            <constraint firstItem="lmu-VY-xJM" firstAttribute="baseline" secondItem="Hc3-SB-nly" secondAttribute="baseline" id="kaJ-P8-n4P"/>
+                            <constraint firstItem="W0L-Qr-C8x" firstAttribute="leading" secondItem="Z7Y-1C-fKK" secondAttribute="leading" id="mRb-GK-Xql"/>
+                            <constraint firstAttribute="trailing" secondItem="Hc3-SB-nly" secondAttribute="trailing" constant="20" id="qNm-sB-IOr"/>
+                            <constraint firstAttribute="bottom" secondItem="Hc3-SB-nly" secondAttribute="bottom" constant="20" id="ugV-Ng-pWE"/>
+                            <constraint firstItem="v6a-Zv-Au8" firstAttribute="leading" secondItem="ArC-32-GX8" secondAttribute="leading" constant="20" id="zmh-3n-30U"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="playerName" destination="QJC-8m-Q30" id="VHO-su-XWJ"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="playerNameField" destination="v6a-Zv-Au8" id="B8D-5E-RLW"/>
+                    </connections>
+                </viewController>
+                <customObject id="zFu-uL-gEX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="172"/>
+        </scene>
+    </scenes>
+</document>

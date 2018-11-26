@@ -15,6 +15,11 @@ class NewPlayer: NSViewController {
     @IBAction func cancelAndDismiss(_ sender: Any) {
         dismiss(sender)
     }
+    @IBAction func importAndDismiss(_ sender: Any) {
+        dismiss(sender)
+        AppDelegate.dataModel.importSettings()
+    }
+    
     @IBAction func submitAndDismiss(_ sender: Any) {
         AppDelegate.dataModel.player = Player(name: playerNameField.stringValue)
         AppDelegate.dataModel.saveToFile(true)

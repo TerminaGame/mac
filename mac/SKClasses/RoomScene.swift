@@ -8,6 +8,7 @@
 
 import SpriteKit
 import Foundation
+import UserNotifications
 
 class RoomScene: SKScene {
     
@@ -284,6 +285,32 @@ class RoomScene: SKScene {
             }
         } else {
             // play sound
+        }
+    }
+    
+    func pacifyHere() {
+        if roomEntity != nil && roomEntity is Monster {
+            let ralsei = roomEntity as? Monster
+            ralsei?.associatedHud.removeFromParent()
+            ralsei?.associatedNode.removeFromParent()
+            gamePlayer?.patchUp(7)
+            
+            let content = UNMutableNotificationContent()
+            content.title = "\(ralsei?.name ?? "The error") has been pacified!"
+            content.subtitle = "It thanks you for your saving grace."
+            content.body = "You've been patched up by 7 iterations."
+            let uuid = UUID().uuidString
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+            let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+            let center = UNUserNotificationCenter.current()
+            center.add(newNotificationRequest, withCompletionHandler: nil)
+            
+            roomEntity = nil
+            
+            if Int.random(in: 0...10) > 7 {
+                Termina(terminaNode: SKSpriteNode(), terminaHud: HUD()).pacifyComment()
+            }
+            
         }
     }
 }

@@ -23,6 +23,13 @@ extension RoomScene {
         attackHere()
     }
     
+    override func rightMouseUp(with event: NSEvent) {
+        if (roomEntity?.level ?? 1) > (gamePlayer?.level ?? 1) {
+            pacifyHere()
+        }
+        
+    }
+    
     override func didFinishUpdate() {
         Keyboard.sharedKeyboard.update()
     }

@@ -127,6 +127,53 @@ class DataModel {
         }
     }
     
+    func importSettings() {
+        let importFilePathDialog = NSOpenPanel()
+        importFilePathDialog.title = "Import Data"
+        importFilePathDialog.prompt = "Choose"
+        importFilePathDialog.message = "Choose the player data to import. If you have started a game already, this will overwrite your settings."
+        importFilePathDialog.showsResizeIndicator = true
+        importFilePathDialog.canChooseFiles = true
+        importFilePathDialog.canCreateDirectories = true
+        importFilePathDialog.canChooseDirectories = false
+        importFilePathDialog.showsHiddenFiles = false
+        importFilePathDialog.allowsMultipleSelection = false
+        importFilePathDialog.allowedFileTypes = ["json"]
+        
+        importFilePathDialog.beginSheetModal(for: NSApplication.shared.mainWindow!) {
+            (completionHandler: NSApplication.ModalResponse) -> Void in
+            
+            if completionHandler == NSApplication.ModalResponse.OK {
+                let importFilePath = importFilePathDialog.url
+                
+                if importFilePath != nil {
+                    let path = importFilePath!.path.replacingOccurrences(of: "/settings.json", with: "")
+                    let importPathDirectory = try! Folder(path: path)
+                    
+                    if self.appDataPath.containsFile(named: "settings.json") {
+                        do {
+                            try self.appDataPath.file(named: "settings.json").delete()
+                        } catch {
+                            
+                        }
+                    }
+                    try! importPathDirectory.file(named: "settings.json").copy(to: self.appDataPath)
+                    let _ = self.loadFromFile()
+                    
+                    let content = UNMutableNotificationContent()
+                    content.title = "Data Import Successful"
+                    content.body = "Your player data has been imported."
+                    let uuid = UUID().uuidString
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+                    let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                    let center = UNUserNotificationCenter.current()
+                    center.add(newNotificationRequest, withCompletionHandler: nil)
+                }
+                
+            }
+        }
+    }
+    
     init(whichPlayer: Player) {
         player = whichPlayer
     }

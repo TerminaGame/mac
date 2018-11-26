@@ -71,6 +71,7 @@ class MainMenu: SKScene {
             (returnCode: NSApplication.ModalResponse) -> Void in
             if returnCode.rawValue == 1000 {
                 AppDelegate.dataModel.deleteSettings()
+                AppDelegate.gotLoadedData = false
             }
         }
     }

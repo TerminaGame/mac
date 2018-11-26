@@ -10,22 +10,14 @@
             <objects>
                 <viewController storyboardIdentifier="NewPlayer" id="zte-wa-ut0" customClass="NewPlayer" customModule="Termina" sceneMemberID="viewController">
                     <view key="view" id="ArC-32-GX8">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="156"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z7Y-1C-fKK">
-                                <rect key="frame" x="18" y="119" width="198" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Enter the name of your player." id="pD0-az-GiG">
-                                    <font key="font" metaFont="systemBold"/>
+                                <rect key="frame" x="18" y="141" width="176" height="39"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Get Started" id="pD0-az-GiG">
+                                    <font key="font" metaFont="systemBold" size="32"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v6a-Zv-Au8">
-                                <rect key="frame" x="20" y="64" width="410" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Name" drawsBackground="YES" id="QJC-8m-Q30">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -42,14 +34,6 @@ DQ
                                     <action selector="submitAndDismiss:" target="zte-wa-ut0" id="yqU-8y-bGW"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W0L-Qr-C8x">
-                                <rect key="frame" x="18" y="94" width="294" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="This name will be used to save your player data." id="8OD-Uu-EVW">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lmu-VY-xJM">
                                 <rect key="frame" x="236" y="13" width="82" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="geb-Ml-6T4">
@@ -63,19 +47,38 @@ Gw
                                     <action selector="cancelAndDismiss:" target="zte-wa-ut0" id="JkE-jq-9vF"/>
                                 </connections>
                             </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="TSq-bd-afP">
+                                <rect key="frame" x="18" y="99" width="414" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="410" id="T7k-LS-ojp"/>
+                                </constraints>
+                                <textFieldCell key="cell" selectable="YES" title="Enter the name of your player. This will be used to create your player and save your data." id="Ptg-Mc-kfe">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v6a-Zv-Au8">
+                                <rect key="frame" x="20" y="69" width="410" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Name" drawsBackground="YES" id="QJC-8m-Q30">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Z7Y-1C-fKK" firstAttribute="top" secondItem="ArC-32-GX8" secondAttribute="top" constant="20" id="4De-dg-ZxA"/>
-                            <constraint firstItem="v6a-Zv-Au8" firstAttribute="top" secondItem="Z7Y-1C-fKK" secondAttribute="bottom" constant="33" id="6ad-DT-U0S"/>
-                            <constraint firstItem="W0L-Qr-C8x" firstAttribute="top" secondItem="Z7Y-1C-fKK" secondAttribute="bottom" constant="8" symbolic="YES" id="DP9-ZM-4Il"/>
+                            <constraint firstAttribute="trailing" secondItem="v6a-Zv-Au8" secondAttribute="trailing" constant="20" id="Ccb-OD-dca"/>
+                            <constraint firstItem="TSq-bd-afP" firstAttribute="leading" secondItem="ArC-32-GX8" secondAttribute="leading" constant="20" id="KIO-dR-dQS"/>
                             <constraint firstItem="Hc3-SB-nly" firstAttribute="leading" secondItem="lmu-VY-xJM" secondAttribute="trailing" constant="8" id="WBm-TN-P9c"/>
-                            <constraint firstAttribute="trailing" secondItem="v6a-Zv-Au8" secondAttribute="trailing" constant="20" id="eIp-Zb-ruJ"/>
+                            <constraint firstItem="v6a-Zv-Au8" firstAttribute="top" secondItem="TSq-bd-afP" secondAttribute="bottom" constant="8" id="g8d-4t-Fyp"/>
                             <constraint firstItem="Z7Y-1C-fKK" firstAttribute="leading" secondItem="ArC-32-GX8" secondAttribute="leading" constant="20" id="juc-8c-vaf"/>
                             <constraint firstItem="lmu-VY-xJM" firstAttribute="baseline" secondItem="Hc3-SB-nly" secondAttribute="baseline" id="kaJ-P8-n4P"/>
-                            <constraint firstItem="W0L-Qr-C8x" firstAttribute="leading" secondItem="Z7Y-1C-fKK" secondAttribute="leading" id="mRb-GK-Xql"/>
+                            <constraint firstItem="TSq-bd-afP" firstAttribute="top" secondItem="Z7Y-1C-fKK" secondAttribute="bottom" constant="8" id="oqk-Vk-FdP"/>
                             <constraint firstAttribute="trailing" secondItem="Hc3-SB-nly" secondAttribute="trailing" constant="20" id="qNm-sB-IOr"/>
                             <constraint firstAttribute="bottom" secondItem="Hc3-SB-nly" secondAttribute="bottom" constant="20" id="ugV-Ng-pWE"/>
-                            <constraint firstItem="v6a-Zv-Au8" firstAttribute="leading" secondItem="ArC-32-GX8" secondAttribute="leading" constant="20" id="zmh-3n-30U"/>
+                            <constraint firstItem="v6a-Zv-Au8" firstAttribute="leading" secondItem="ArC-32-GX8" secondAttribute="leading" constant="20" id="w7s-js-S31"/>
                         </constraints>
                         <connections>
                             <outlet property="playerName" destination="QJC-8m-Q30" id="VHO-su-XWJ"/>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="6E3-Td-xTH">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hardcore-->
+        <scene sceneID="gRU-ZF-1Ml">
+            <objects>
+                <viewController title="Hardcore" storyboardIdentifier="Hardcore" id="6E3-Td-xTH" customClass="HardcoreViewController" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" identifier="Hardcore" id="Wez-Qj-7EY">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="250"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V2Q-7K-bzt">
+                                <rect key="frame" x="18" y="196" width="164" height="34"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Go Hardcore" id="hXc-Jg-V5P">
+                                    <font key="font" metaFont="systemSemibold" size="28"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="65r-6e-SIA">
+                                <rect key="frame" x="18" y="103" width="414" height="85"/>
+                                <textFieldCell key="cell" selectable="YES" id="xiB-a6-2OW">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">Hardcore Mode is similar to the traditional game, but much more difficult. Once you die, the game will exit and your player settings will not be saved.
+
+If you wish to continue, enter your player name.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c6W-bh-LyP">
+                                <rect key="frame" x="20" y="73" width="410" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Name" drawsBackground="YES" id="Xwr-cC-wm1">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IMa-mn-jUT">
+                                <rect key="frame" x="257" y="13" width="179" height="32"/>
+                                <buttonCell key="cell" type="push" title="Enable Hardcore Mode" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="poS-ox-sbB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="submitAndDismiss:" target="6E3-Td-xTH" id="Nwr-6p-1XW"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A7j-Nh-PDi">
+                                <rect key="frame" x="179" y="13" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2jS-T7-yVF">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancelAndDismiss:" target="6E3-Td-xTH" id="cH1-XW-Hob"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="65r-6e-SIA" firstAttribute="leading" secondItem="Wez-Qj-7EY" secondAttribute="leading" constant="20" id="3YA-AH-FjO"/>
+                            <constraint firstAttribute="trailing" secondItem="c6W-bh-LyP" secondAttribute="trailing" constant="20" id="4KM-xQ-pf2"/>
+                            <constraint firstItem="V2Q-7K-bzt" firstAttribute="leading" secondItem="Wez-Qj-7EY" secondAttribute="leading" constant="20" id="Mg6-ZE-pA3"/>
+                            <constraint firstAttribute="bottom" secondItem="IMa-mn-jUT" secondAttribute="bottom" constant="20" id="RB7-l9-4OM"/>
+                            <constraint firstAttribute="trailing" secondItem="65r-6e-SIA" secondAttribute="trailing" constant="20" id="TZo-Kc-g9u"/>
+                            <constraint firstItem="c6W-bh-LyP" firstAttribute="top" secondItem="65r-6e-SIA" secondAttribute="bottom" constant="8" id="VIa-fu-Soh"/>
+                            <constraint firstAttribute="bottom" secondItem="A7j-Nh-PDi" secondAttribute="bottom" constant="20" id="X28-IG-kIb"/>
+                            <constraint firstItem="65r-6e-SIA" firstAttribute="top" secondItem="V2Q-7K-bzt" secondAttribute="bottom" constant="8" id="Xs6-lp-557"/>
+                            <constraint firstItem="c6W-bh-LyP" firstAttribute="top" secondItem="65r-6e-SIA" secondAttribute="bottom" constant="8" id="jTV-Up-SP7"/>
+                            <constraint firstItem="IMa-mn-jUT" firstAttribute="leading" secondItem="A7j-Nh-PDi" secondAttribute="trailing" constant="8" id="oLo-3s-pb7"/>
+                            <constraint firstItem="c6W-bh-LyP" firstAttribute="leading" secondItem="Wez-Qj-7EY" secondAttribute="leading" constant="20" id="png-8V-VNV"/>
+                            <constraint firstAttribute="trailing" secondItem="IMa-mn-jUT" secondAttribute="trailing" constant="20" id="q0W-Jn-ZFD"/>
+                            <constraint firstItem="V2Q-7K-bzt" firstAttribute="top" secondItem="Wez-Qj-7EY" secondAttribute="top" constant="20" id="r9f-iP-Ovz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerNameField" destination="c6W-bh-LyP" id="bjf-H0-XaJ"/>
+                    </connections>
+                </viewController>
+                <customObject id="hJK-tX-hBq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184" y="-25"/>
+        </scene>
+    </scenes>
+</document>

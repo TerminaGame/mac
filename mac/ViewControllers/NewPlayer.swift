@@ -16,7 +16,6 @@ class NewPlayer: NSViewController {
         dismiss(sender)
     }
     @IBAction func submitAndDismiss(_ sender: Any) {
-        print(playerNameField.stringValue)
         AppDelegate.dataModel.player = Player(name: playerNameField.stringValue)
         AppDelegate.dataModel.saveToFile(true)
         if AppDelegate.dataModel.loadFromFile() {

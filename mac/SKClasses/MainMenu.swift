@@ -47,28 +47,36 @@ class MainMenu: SKScene {
         alert.informativeText = "You cannot reverse this action."
         
         alert.addButton(withTitle: "Reset")
+        alert.addButton(withTitle: "Delete")
         alert.addButton(withTitle: "Cancel")
         alert.beginSheetModal(for: (self.view?.window!)!) {
             (returnCode: NSApplication.ModalResponse) -> Void in
             if returnCode.rawValue == 1000 {
                 AppDelegate.dataModel.resetSettings()
+            } else if returnCode.rawValue == 1001 {
+                self.deleteSettings()
+            }
+        }
+    }
+    
+    func deleteSettings() {
+        let alert = NSAlert()
+        alert.alertStyle = NSAlert.Style.critical
+        alert.messageText = "Are you sure you want to delete your settings?"
+        alert.informativeText = "You cannot reverse this action."
+        
+        alert.addButton(withTitle: "Delete")
+        alert.addButton(withTitle: "Cancel")
+        alert.beginSheetModal(for: (self.view?.window!)!) {
+            (returnCode: NSApplication.ModalResponse) -> Void in
+            if returnCode.rawValue == 1000 {
+                AppDelegate.dataModel.deleteSettings()
             }
         }
     }
     
     func quitGame() {
-        let alert = NSAlert()
-        alert.messageText = "Are you sure you want to quit the game?"
-        alert.informativeText = "Any unsaved progress will be lost."
-        
-        alert.addButton(withTitle: "Quit")
-        alert.addButton(withTitle: "Cancel")
-        alert.beginSheetModal(for: (self.view?.window!)!) {
-            (returnCode: NSApplication.ModalResponse) -> Void in
-            if returnCode.rawValue == 1000 {
-                exit(0)
-            }
-        }
+        exit(0)
     }
     
     func setUpMenu() {
@@ -88,7 +96,7 @@ class MainMenu: SKScene {
         }
         
         getSystemFont()
-        background?.texture = SKTexture(imageNamed: "bg29")
+        background?.texture = SKTexture(imageNamed: "mainMenu")
         
     }
     
@@ -122,6 +130,19 @@ extension MainMenu {
                 case "startButton":
                     if !AppDelegate.gotLoadedData {
                         self.view?.window?.contentViewController?.presentAsSheet(NSStoryboard(name: "NewPlayer", bundle: Bundle.main).instantiateController(withIdentifier: "NewPlayer") as! NSViewController)
+                    } else {
+                        self.size = CGSize(width: 1280, height: 720)
+                        self.scaleMode = .aspectFit
+                        presentNewScene(28)
+                    }
+                    break
+                case "hardcoreButton":
+                    if !AppDelegate.isHardcore {
+                        self.view?.window?.contentViewController?.presentAsSheet(NSStoryboard(name: "Hardcore", bundle: Bundle.main).instantiateController(withIdentifier: "Hardcore") as! NSViewController)
+                        if AppDelegate.dataModel.appDataPath.containsFile(named: "settings.json") {
+                            startGameButton?.isHidden = true
+                            hardcoreButton?.text = "Start Game"
+                        }
                     } else {
                         self.size = CGSize(width: 1280, height: 720)
                         self.scaleMode = .aspectFit

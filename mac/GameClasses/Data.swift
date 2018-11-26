@@ -35,11 +35,14 @@ class DataModel {
                 player.health = Int(Double(json["health"].string!)!)
             }
             
+            AppDelegate.gotLoadedData = true
+            
             return true
         } else {
             let content = UNMutableNotificationContent()
             content.title = "Player Data Missing"
-            content.body = "Termina couldn't locate your player data."
+            content.subtitle = "Termina couldn't locate your player data."
+            content.body = "If you are starting a new game, you can ignore this message."
             let uuid = UUID().uuidString
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
             let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
@@ -58,9 +61,11 @@ class DataModel {
             "health": "\(Double(player.health))"
             }
 """)
+        
         if !silent {
             let content = UNMutableNotificationContent()
-            content.title = "\(player.name)'s Data Saved"
+            content.title = "Player Data Saved"
+            content.subtitle = player.name
             content.body = "Your player data has been saved."
             let uuid = UUID().uuidString
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
@@ -84,6 +89,42 @@ class DataModel {
         let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
         let center = UNUserNotificationCenter.current()
         center.add(newNotificationRequest, withCompletionHandler: nil)
+    }
+    
+    func deleteSettings() {
+        if (appDataPath.containsFile(named: "settings.json")) {
+            do {
+                try appDataPath.file(named: "settings.json").delete()
+                let content = UNMutableNotificationContent()
+                if appDataPath.containsFile(named: "settings_backup.json") {
+                    content.title = "Hardcore Mode Data Deleted"
+                    content.body = "Hardcore Mode data has been deleted."
+                } else {
+                    content.title = "Player Data Deleted"
+                    content.body = "Your player data has been deleted."
+                }
+                let uuid = UUID().uuidString
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+                let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                let center = UNUserNotificationCenter.current()
+                center.add(newNotificationRequest, withCompletionHandler: nil)
+                
+                do {
+                    try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
+                } catch {
+                    
+                }
+            } catch {
+                let content = UNMutableNotificationContent()
+                content.title = "Couldn't Delete Settings"
+                content.body = "We couldn't delete your settings."
+                let uuid = UUID().uuidString
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+                let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                let center = UNUserNotificationCenter.current()
+                center.add(newNotificationRequest, withCompletionHandler: nil)
+            }
+        }
     }
     
     init(whichPlayer: Player) {

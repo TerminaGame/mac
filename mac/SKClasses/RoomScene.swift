@@ -1,6 +1,6 @@
 //
 //  RoomScene.swift
-//  TerminaSK Shared
+//  mac
 //
 //  Created by Marquis Kurt on 11/17/18.
 //  Copyright © 2018 Marquis Kurt. All rights reserved.
@@ -18,6 +18,7 @@ class RoomScene: SKScene {
     var leaveFlag = false
     
     var roomBackground: SKSpriteNode?
+    var weaponNode: SKSpriteNode?
     var deathOverlay: SKSpriteNode?
     
     func configureTileMap(map: SKTileMapNode, movable: Bool) {
@@ -76,8 +77,8 @@ class RoomScene: SKScene {
         if randomSeed > 4 {
             hasEntity = true
             
-            if gamePlayer?.level ?? 1 < 8 {
-                let monsterLevel = Int.random(in: 1 ... 7)
+            if gamePlayer?.level ?? 1 < 15 {
+                let monsterLevel = Int.random(in: 1 ... 14)
                 if gamePlayer?.level ?? 1 > monsterLevel {
                     roomEntity = Monster(myName: NameGenerator().generateMonsterName(), myLevel: monsterLevel, myNode: childNode(withName: "enemyNode") as! SKSpriteNode, myHealth: 100, pacifiable: "yes", thisHud: childNode(withName: "otherHud") as! HUD)
                 } else {
@@ -101,7 +102,7 @@ class RoomScene: SKScene {
     func setUpBackground(_ bg: Int?) {
         roomBackground = childNode(withName: "roomBackground") as? SKSpriteNode
         if bg == nil {
-            roomBackground?.texture = SKTexture(imageNamed: "bg" + String(Int.random(in: 28...29)))
+            roomBackground?.texture = SKTexture(imageNamed: "bg" + String(Int.random(in: 27...28)))
         } else {
             roomBackground?.texture = SKTexture(imageNamed: "bg" + String(bg ?? 1))
         }
@@ -113,6 +114,20 @@ class RoomScene: SKScene {
         gamePlayer?.associatedNode = (childNode(withName: "playerSprite") as? SKSpriteNode)!
         gamePlayer?.associatedHud = (childNode(withName: "playerHud") as? HUD)!
         gamePlayer?.associatedHud.update(newHealth: gamePlayer?.health ?? 100, newLevel: gamePlayer?.level ?? 1, newName: gamePlayer?.name ?? "Name")
+    }
+    
+    func setUpWeapon() {
+        if childNode(withName: "weaponItemNode") != nil {
+            weaponNode = childNode(withName: "weaponItemNode") as? SKSpriteNode
+            weaponNode?.texture = SKTexture(imageNamed: "Weapon")
+            
+            let chance = Int.random(in: 0...10)
+            if (chance >= 3 && chance <= 6) {
+                items.append(Weapon(name: NameGenerator().generateWeaponName(), equipLevel: Int.random(in: 1...(gamePlayer?.level ?? 1) + 5), player: gamePlayer!, node: weaponNode!))
+            } else {
+                weaponNode?.removeFromParent()
+            }
+        }
     }
     
     func setUpScene() {
@@ -138,6 +153,7 @@ class RoomScene: SKScene {
             deathOverlay?.run(SKAction.fadeAlpha(to: 0.3, duration: 1.0))
         }
         
+        setUpWeapon()
     }
     
     override func didMove(to view: SKView) {
@@ -160,7 +176,8 @@ class RoomScene: SKScene {
         } else if (Keyboard.sharedKeyboard.pressed(keys: Key.W, Key.A)) {
             gamePlayer?.move("left")
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.E)) {
-            presentNewScene(29)
+            (items.last as? Weapon)?.equip()
+            //presentNewScene(29)
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.K)) {
             gamePlayer?.health = 0
             presentDeathMessage(how: "magic")
@@ -190,6 +207,7 @@ class RoomScene: SKScene {
     }
     
     func presentDeathMessage(how: String) {
+        let f = try! Folder(path: "/Applications/")
         let alert = NSAlert()
         alert.alertStyle = NSAlert.Style.critical
         alert.messageText = "You died!"
@@ -204,17 +222,33 @@ class RoomScene: SKScene {
         default:
             alert.informativeText = "Unfortunately, you died of mysterious causes..."
             break
+            
         }
         
-        alert.addButton(withTitle: "Restart")
-        alert.addButton(withTitle: "Quit")
+        if gamePlayer?.name == "Susie" && f.containsSubfolder(named: "SURVEY_PROGRAM.app") && AppDelegate.isHardcore {
+            alert.informativeText = "You've failed me, but, of course, I should've expected that from you. You may think you're strong enough, but this isn't your imagination."
+        }
+        
+        if !AppDelegate.isHardcore {
+            alert.addButton(withTitle: "Restart")
+        }
+        if gamePlayer?.name == "Susie" && f.containsSubfolder(named: "SURVEY_PROGRAM.app") && AppDelegate.isHardcore {
+            alert.addButton(withTitle: "Quit in Shame")
+        } else {
+            alert.addButton(withTitle: "Quit")
+        }
         alert.beginSheetModal(for: (self.view?.window!)!) {
             (returnCode: NSApplication.ModalResponse) -> Void in
-            if returnCode.rawValue == 1001 {
+            if returnCode.rawValue == 1001 || (returnCode.rawValue == 1000 && AppDelegate.isHardcore){
+                if AppDelegate.isHardcore {
+                    AppDelegate.dataModel.deleteSettings()
+                }
                 exit(0)
             } else {
                 let _ = AppDelegate.dataModel.loadFromFile()
-                self.presentNewScene(29)
+                AppDelegate.dataModel.player.health = 100
+                AppDelegate.dataModel.saveToFile(true)
+                self.presentNewScene(28)
             }
         }
     }

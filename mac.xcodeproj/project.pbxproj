@@ -37,7 +37,6 @@
 		BFA8EE0821A8A25C00356F8A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA8EE0721A8A25C00356F8A /* UserNotifications.framework */; };
 		BFA8EE0A21A8AA8700356F8A /* NewPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA8EE0921A8AA8700356F8A /* NewPlayer.storyboard */; };
 		BFA8EE0C21A8B40900356F8A /* NewPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8EE0B21A8B40900356F8A /* NewPlayer.swift */; };
-		BFA8EE2A21A8CF5700356F8A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA8EE2921A8CF5700356F8A /* GameKit.framework */; };
 		BFA8EE2C21A9937100356F8A /* Hardcore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA8EE2B21A9937100356F8A /* Hardcore.storyboard */; };
 		BFA8EE2E21A9939F00356F8A /* Hardcore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8EE2D21A9939F00356F8A /* Hardcore.swift */; };
 		BFA8EE3221A9A01400356F8A /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8EE3121A9A01400356F8A /* AppMenu.swift */; };
@@ -82,7 +81,6 @@
 		BFA8EE0721A8A25C00356F8A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		BFA8EE0921A8AA8700356F8A /* NewPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPlayer.storyboard; sourceTree = "<group>"; };
 		BFA8EE0B21A8B40900356F8A /* NewPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayer.swift; sourceTree = "<group>"; };
-		BFA8EE2921A8CF5700356F8A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BFA8EE2B21A9937100356F8A /* Hardcore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hardcore.storyboard; sourceTree = "<group>"; };
 		BFA8EE2D21A9939F00356F8A /* Hardcore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hardcore.swift; sourceTree = "<group>"; };
 		BFA8EE3121A9A01400356F8A /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFA8EE0821A8A25C00356F8A /* UserNotifications.framework in Frameworks */,
-				BFA8EE2A21A8CF5700356F8A /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +191,6 @@
 		BFA8EE0621A8A25C00356F8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BFA8EE2921A8CF5700356F8A /* GameKit.framework */,
 				BFA8EE0721A8A25C00356F8A /* UserNotifications.framework */,
 			);
 			name = Frameworks;
@@ -260,10 +256,10 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.GameCenter.Mac = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -479,7 +475,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mac/mac.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				INFOPLIST_FILE = mac/Info.plist;
@@ -489,6 +486,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "XC io github terminagame mac";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -498,7 +496,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mac/mac.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				INFOPLIST_FILE = mac/Info.plist;
@@ -508,6 +507,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "XC OSX: io.github.terminagame.mac";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;

@@ -68,7 +68,7 @@ If you would like to import data from another Termina game, click ‘Import’.<
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lmu-VY-xJM">
-                                <rect key="frame" x="160" y="13" width="82" height="32"/>
+                                <rect key="frame" x="14" y="13" width="82" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="geb-Ml-6T4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -83,18 +83,18 @@ Gw
                         </subviews>
                         <constraints>
                             <constraint firstItem="Z7Y-1C-fKK" firstAttribute="top" secondItem="ArC-32-GX8" secondAttribute="top" constant="20" id="4De-dg-ZxA"/>
+                            <constraint firstAttribute="bottom" secondItem="lmu-VY-xJM" secondAttribute="bottom" constant="20" id="CYs-i7-1ap"/>
                             <constraint firstAttribute="trailing" secondItem="v6a-Zv-Au8" secondAttribute="trailing" constant="20" id="Ccb-OD-dca"/>
                             <constraint firstAttribute="bottom" secondItem="fRJ-j8-qYA" secondAttribute="bottom" constant="20" id="D4M-4g-Fgj"/>
                             <constraint firstItem="TSq-bd-afP" firstAttribute="leading" secondItem="ArC-32-GX8" secondAttribute="leading" constant="20" id="KIO-dR-dQS"/>
+                            <constraint firstItem="lmu-VY-xJM" firstAttribute="leading" secondItem="ArC-32-GX8" secondAttribute="leading" constant="20" id="Xtv-hv-D8L"/>
                             <constraint firstItem="v6a-Zv-Au8" firstAttribute="top" secondItem="TSq-bd-afP" secondAttribute="bottom" constant="8" id="g8d-4t-Fyp"/>
                             <constraint firstItem="Hc3-SB-nly" firstAttribute="leading" secondItem="fRJ-j8-qYA" secondAttribute="trailing" constant="8" id="jEs-8r-KAC"/>
                             <constraint firstItem="Z7Y-1C-fKK" firstAttribute="leading" secondItem="ArC-32-GX8" secondAttribute="leading" constant="20" id="juc-8c-vaf"/>
                             <constraint firstItem="TSq-bd-afP" firstAttribute="top" secondItem="Z7Y-1C-fKK" secondAttribute="bottom" constant="8" id="oqk-Vk-FdP"/>
                             <constraint firstAttribute="trailing" secondItem="Hc3-SB-nly" secondAttribute="trailing" constant="20" id="qNm-sB-IOr"/>
-                            <constraint firstAttribute="bottom" secondItem="lmu-VY-xJM" secondAttribute="bottom" constant="20" id="rI9-FV-gBI"/>
                             <constraint firstAttribute="bottom" secondItem="Hc3-SB-nly" secondAttribute="bottom" constant="20" id="ugV-Ng-pWE"/>
                             <constraint firstItem="v6a-Zv-Au8" firstAttribute="leading" secondItem="ArC-32-GX8" secondAttribute="leading" constant="20" id="w7s-js-S31"/>
-                            <constraint firstItem="fRJ-j8-qYA" firstAttribute="leading" secondItem="lmu-VY-xJM" secondAttribute="trailing" constant="8" id="xHB-cS-p2y"/>
                         </constraints>
                         <connections>
                             <outlet property="playerName" destination="QJC-8m-Q30" id="VHO-su-XWJ"/>

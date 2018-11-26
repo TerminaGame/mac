@@ -140,10 +140,6 @@ extension MainMenu {
                 case "hardcoreButton":
                     if !AppDelegate.isHardcore {
                         self.view?.window?.contentViewController?.presentAsSheet(NSStoryboard(name: "Hardcore", bundle: Bundle.main).instantiateController(withIdentifier: "Hardcore") as! NSViewController)
-                        if AppDelegate.dataModel.appDataPath.containsFile(named: "settings.json") {
-                            startGameButton?.isHidden = true
-                            hardcoreButton?.text = "Start Game"
-                        }
                     } else {
                         self.size = CGSize(width: 1280, height: 720)
                         self.scaleMode = .aspectFit

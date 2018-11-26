@@ -30,7 +30,7 @@ class Termina: Monster {
     
     func pacifyComment() {
         let content = UNMutableNotificationContent()
-        content.title = "Do you think you're bring clever?"
+        content.title = "Do you think you're being clever?"
         content.body = "Befriending your foes won't save you."
         let uuid = UUID().uuidString
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)

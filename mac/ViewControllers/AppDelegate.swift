@@ -67,6 +67,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+        let center = UNUserNotificationCenter.current()
+        // Request permission to display alerts and play sounds.
+        center.requestAuthorization(options: [.alert, .sound])
+        { (granted, error) in
+            
+        }
+        
         AppDelegate.gotLoadedData = AppDelegate.dataModel.loadFromFile()
         if !(AppDelegate.dataModel.appDataPath.containsFile(named: "settings.json")) {
             resetMenuItem.isEnabled = false
@@ -123,7 +131,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
+        completionHandler([.alert])
     }
     
     func applicationWillTerminate(_ aNotification: Notification) { }

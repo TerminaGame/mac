@@ -85,17 +85,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             let response = alert.runModal()
             
             if response.rawValue == 1000 {
-                try! AppDelegate.dataModel.appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
+                AppDelegate.dataModel.restoreSettings()
                 let _ = AppDelegate.dataModel.loadFromFile()
             }
         }
     }
     
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        if AppDelegate.dataModel.appDataPath.containsFile(named: "settings.json") {
+        let temporaryLoad = DataModel(whichPlayer: Player(name: "Frisk"))
+        let _ = temporaryLoad.loadFromFile()
+        
+        if AppDelegate.isHardcore {
+            AppDelegate.dataModel.deleteSettings()
+            AppDelegate.dataModel.restoreSettings()
+            return NSApplication.TerminateReply.terminateNow
+        } else if temporaryLoad.player.asArray() != AppDelegate.dataModel.player.asArray() {
             let alert = NSAlert()
             alert.messageText = "Are you sure you want to quit the game?"
-            alert.informativeText = "Any unsaved progress will be lost. If you are in Hardcore Mode, your data will not be saved."
+            alert.informativeText = "Your data will automatically save before quitting. If you are in Hardcore Mode, your data will not be saved."
             
             alert.addButton(withTitle: "Quit")
             alert.addButton(withTitle: "Cancel")
@@ -104,17 +111,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             if response == 1000 {
                 if AppDelegate.dataModel.appDataPath.containsFile(named: "settings.json") && !AppDelegate.isHardcore {
                     AppDelegate.dataModel.saveToFile(false)
-                } else if AppDelegate.isHardcore {
-                    AppDelegate.dataModel.deleteSettings()
-                    if AppDelegate.dataModel.appDataPath.containsFile(named: "settings_backup.json") {
-                        try! AppDelegate.dataModel.appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
-                    }
                 }
                 return NSApplication.TerminateReply.terminateNow
             } else {
                 return NSApplication.TerminateReply.terminateCancel
             }
         } else {
+            AppDelegate.dataModel.saveToFile(false)
             return NSApplication.TerminateReply.terminateNow
         }
     }

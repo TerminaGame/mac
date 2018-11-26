@@ -48,6 +48,16 @@ class Player: Entity {
         } else { patchNumber = temporaryPatch }
     }
     
+    func asArray() -> Dictionary<String, String> {
+        let playerDictionary = [
+            "name": name,
+            "level": String(level),
+            "health": String(health),
+            "patch": String(patchNumber)
+            ] as [String : String]
+        return playerDictionary
+    }
+    
     init(name: String, playerNode: SKSpriteNode, playerHud: HUD) {
         //Pre super-init
         patchNumber = 0

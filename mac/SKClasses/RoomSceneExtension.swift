@@ -24,8 +24,23 @@ extension RoomScene {
     }
     
     override func rightMouseUp(with event: NSEvent) {
-        if (roomEntity?.level ?? 1) > (gamePlayer?.level ?? 1) {
-            pacifyHere()
+        if (roomEntity?.level ?? 1) >= (gamePlayer?.level ?? 1) {
+            if !AppDelegate.isHardcore {
+                pacifyHere()
+            } else {
+                let alert = NSAlert()
+                alert.messageText = "Not so fast."
+                alert.informativeText = "Did you really think I'd let you do that in Hardcore Mode? Think again."
+                alert.addButton(withTitle: "OK")
+                alert.runModal()
+            }
+            
+        } else if roomEntity == nil {
+            let alert = NSAlert()
+            alert.messageText = "You can't pacify here."
+            alert.informativeText = "There's nothing to pacify in this room."
+            alert.addButton(withTitle: "OK")
+            alert.beginSheetModal(for: NSApplication.shared.mainWindow!)
         }
         
     }

@@ -127,6 +127,48 @@ class DataModel {
         }
     }
     
+    func backupSettings() {
+        if appDataPath.containsFile(named: "settings.json") {
+            do {
+                try appDataPath.file(named: "settings.json").rename(to: "settings_backup.json")
+            } catch {
+                let alert = NSAlert()
+                alert.alertStyle = NSAlert.Style.critical
+                alert.messageText = "We couldn't use back up data."
+                alert.informativeText = "Something went wrong when trying to back up your data."
+                alert.addButton(withTitle: "OK")
+                alert.beginSheetModal(for: NSApplication.shared.mainWindow!)
+            }
+        }
+    }
+    
+    func restoreSettings() {
+        if appDataPath.containsFile(named: "settings_backup.json") && !(appDataPath.containsFile(named: "settings.json")) {
+            do {
+                try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
+            } catch {
+                let alert = NSAlert()
+                alert.alertStyle = NSAlert.Style.critical
+                alert.messageText = "We couldn't restore your data."
+                alert.informativeText = "Something went wrong when trying to restore your data."
+                alert.addButton(withTitle: "OK")
+                alert.beginSheetModal(for: NSApplication.shared.mainWindow!)
+            }
+        } else {
+            deleteSettings()
+            do {
+                try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
+            } catch {
+                let alert = NSAlert()
+                alert.alertStyle = NSAlert.Style.critical
+                alert.messageText = "We couldn't restore your data."
+                alert.informativeText = "Something went wrong when trying to restore your data."
+                alert.addButton(withTitle: "OK")
+                alert.beginSheetModal(for: NSApplication.shared.mainWindow!)
+            }
+        }
+    }
+    
     func importSettings() {
         let importFilePathDialog = NSOpenPanel()
         importFilePathDialog.title = "Import Data"

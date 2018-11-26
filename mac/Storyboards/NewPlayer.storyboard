@@ -14,9 +14,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z7Y-1C-fKK">
-                                <rect key="frame" x="18" y="197" width="176" height="39"/>
+                                <rect key="frame" x="18" y="197" width="171" height="39"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Get Started" id="pD0-az-GiG">
-                                    <font key="font" metaFont="systemBold" size="32"/>
+                                    <font key="font" metaFont="systemSemibold" size="32"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -61,6 +61,7 @@ If you would like to import data from another Termina game, click ‘Import’.<
                                 <buttonCell key="cell" type="push" title="Import" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KxK-23-P3U">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">i</string>
                                 </buttonCell>
                                 <connections>
                                     <action selector="importAndDismiss:" target="zte-wa-ut0" id="uRf-eE-25m"/>

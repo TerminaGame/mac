@@ -38,9 +38,31 @@ class Termina: Monster {
         let center = UNUserNotificationCenter.current()
         center.add(newNotificationRequest, withCompletionHandler: nil)
     }
+    
+    func targetSusie() {
+        let alert = NSAlert()
+        alert.alertStyle = NSAlert.Style.critical
+        alert.messageText = "So that's how we're playing it?"
+        alert.informativeText = "Let's not forget who's in charge here. I expect nothing less from you."
+        alert.addButton(withTitle: "OK")
+        alert.runModal()
+    }
+    
+    func targetAsriel() {
+        let alert = NSAlert()
+        alert.alertStyle = NSAlert.Style.critical
+        alert.messageText = "So that's how we're playing it?"
+        alert.informativeText = "Let's see what you're hiding, old friend."
+        alert.addButton(withTitle: "OK")
+        alert.runModal()
+    }
 
     init(terminaNode: SKSpriteNode, terminaHud: HUD) {
         super.init(myName: "Termina", myLevel: 420, myNode: terminaNode, myHealth: 4200, pacifiable: "yes", thisHud: terminaHud)
+    }
+    
+    init() {
+        super.init(myName: "Termina", myLevel: 420, myNode: SKSpriteNode(), myHealth: 4200, pacifiable: "yes", thisHud: HUD())
     }
 
 }

@@ -15,21 +15,20 @@ class HardcoreViewController: NSViewController {
     
     @IBAction func submitAndDismiss(_ sender: Any) {
         let f = try! Folder(path: "/Applications/")
-        if playerNameField.stringValue == "Susie" && f.containsSubfolder(named: "SURVEY_PROGRAM.app") {
-            let alert = NSAlert()
-            alert.alertStyle = NSAlert.Style.critical
-            alert.messageText = "So that's how we're playing it?"
-            alert.informativeText = "Let's not forget who's in charge here. I expect nothing less from you."
-            alert.addButton(withTitle: "OK")
-            alert.runModal()
-        }
+        
         AppDelegate.dataModel.player = Player(name: playerNameField.stringValue)
-        if AppDelegate.dataModel.player.name == "Susie" && f.containsSubfolder(named: "SURVEY_PROGRAM.app") {
-            AppDelegate.dataModel.player.level = 10
+        
+        if f.containsSubfolder(named: "SURVEY_PROGRAM.app") {
+            if playerNameField.stringValue == "Susie" {
+                AppDelegate.dataModel.player.level = 10
+                Termina().targetSusie()
+            } else if playerNameField.stringValue == "Asriel" {
+                AppDelegate.dataModel.player.level = 30
+                Termina().targetAsriel()
+            }
         }
-        if AppDelegate.dataModel.appDataPath.containsFile(named: "settings.json") {
-            try! AppDelegate.dataModel.appDataPath.file(named: "settings.json").rename(to: "settings_backup.json")
-        }
+        
+        AppDelegate.dataModel.backupSettings()
         AppDelegate.dataModel.saveToFile(true)
         AppDelegate.isHardcore = true
         dismiss(sender)
@@ -38,6 +37,13 @@ class HardcoreViewController: NSViewController {
     @IBAction func cancelAndDismiss(_ sender: Any) {
         dismiss(sender)
     }
+    @IBAction func useExistingAndDismiss(_ sender: Any) {
+        AppDelegate.dataModel.backupSettings()
+        AppDelegate.dataModel.resetSettings()
+        AppDelegate.isHardcore = true
+        dismiss(sender)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

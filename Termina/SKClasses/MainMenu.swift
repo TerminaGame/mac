@@ -121,6 +121,13 @@ class MainMenu: SKScene {
             startGameButton?.text = "Start Normal Game"
             hardcoreButton?.text = "Start Hardcore Game"
         }
+        
+        // Check if this is a beta. If not, hide the Beta Label.
+        let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
+        if (betaString as! String).range(of: "beta") == nil {
+            childNode(withName: "betaLabel")?.isHidden = true
+        }
+
     }
     
 }

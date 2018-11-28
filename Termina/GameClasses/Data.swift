@@ -9,6 +9,9 @@
 import Foundation
 import SpriteKit
 import UserNotifications
+import AppCenterCrashes
+import AppCenterAnalytics
+import AppCenter
 
 class DataModel {
     
@@ -18,26 +21,34 @@ class DataModel {
     
     func loadFromFile() -> Bool {
         if (appDataPath.containsFile(named: "settings.json")) {
-            let settingsFile = try! appDataPath.file(named: "settings.json").readAsString()
-            let json = JSON.init(parseJSON: settingsFile)
-            
-            player.name = json["name"].string!
-            player.level = Int(json["level"].string!)!
-            player.patchNumber = Int(json["progress"].string!)!
-            
-            if Double(json["health"].string!)! >= 100 {
-                player.health = 100
-                saveToFile(true)
-            } else if Double(json["health"].string!)! == 0.0 {
-                player.health = 100
-                saveToFile(true)
-            } else {
-                player.health = Int(Double(json["health"].string!)!)
+            do {
+                let settingsFile = try appDataPath.file(named: "settings.json").readAsString()
+                let json = JSON.init(parseJSON: settingsFile)
+                player.name = json["name"].string!
+                player.level = Int(json["level"].string!)!
+                player.patchNumber = Int(json["progress"].string!)!
+                
+                if Double(json["health"].string!)! >= 100 {
+                    player.health = 100
+                    saveToFile(true)
+                } else if Double(json["health"].string!)! == 0.0 {
+                    player.health = 100
+                    saveToFile(true)
+                } else {
+                    player.health = Int(Double(json["health"].string!)!)
+                }
+                
+                AppDelegate.gotLoadedData = true
+                
+                return true
+            } catch {
+                let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
+                if (betaString as! String).range(of: "beta") != nil {
+                    MSAnalytics.trackEvent("Failed to load settings file. Reason: \(error)")
+                }
+                
+                return false
             }
-            
-            AppDelegate.gotLoadedData = true
-            
-            return true
         } else {
             let content = UNMutableNotificationContent()
             content.title = "Player Data Missing"
@@ -53,14 +64,23 @@ class DataModel {
     }
     
     func saveToFile(_ silent: Bool) {
-        try! appDataPath.createFile(named: "settings.json", contents: """
-            {
-            "name": "\(player.name)",
-            "level": "\(player.level)",
-            "progress": "\(player.patchNumber)",
-            "health": "\(Double(player.health))"
+        do {
+            try appDataPath.createFile(named: "settings.json", contents: """
+                {
+                "name": "\(player.name)",
+                "level": "\(player.level)",
+                "progress": "\(player.patchNumber)",
+                "health": "\(Double(player.health))"
+                }
+                """)
+        } catch {
+            let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
+            if (betaString as! String).range(of: "beta") != nil {
+                MSAnalytics.trackEvent("Failed to save settings file. Reason: \(error)")
             }
-""")
+        }
+        
+        
         
         if !silent {
             let content = UNMutableNotificationContent()
@@ -112,9 +132,16 @@ class DataModel {
                 do {
                     try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
                 } catch {
-                    
+                    let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
+                    if (betaString as! String).range(of: "beta") != nil {
+                        MSAnalytics.trackEvent("Failed to Rename backup. Reason: \(error)")
+                    }
                 }
             } catch {
+                let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
+                if (betaString as! String).range(of: "beta") != nil {
+                    MSAnalytics.trackEvent("Failed to delete settings file. Reason: \(error)")
+                }
                 let content = UNMutableNotificationContent()
                 content.title = "Couldn't Delete Settings"
                 content.body = "We couldn't delete your settings."
@@ -132,6 +159,10 @@ class DataModel {
             do {
                 try appDataPath.file(named: "settings.json").rename(to: "settings_backup.json")
             } catch {
+                let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
+                if (betaString as! String).range(of: "beta") != nil {
+                    MSAnalytics.trackEvent("Failed to backup settings file. Reason: \(error)")
+                }
                 let alert = NSAlert()
                 alert.alertStyle = NSAlert.Style.critical
                 alert.messageText = "We couldn't use back up data."
@@ -147,6 +178,10 @@ class DataModel {
             do {
                 try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
             } catch {
+                let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
+                if (betaString as! String).range(of: "beta") != nil {
+                    MSAnalytics.trackEvent("Failed to restore settings file. Reason: \(error)")
+                }
                 let alert = NSAlert()
                 alert.alertStyle = NSAlert.Style.critical
                 alert.messageText = "We couldn't restore your data."
@@ -159,6 +194,10 @@ class DataModel {
             do {
                 try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
             } catch {
+                let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
+                if (betaString as! String).range(of: "beta") != nil {
+                    MSAnalytics.trackEvent("Failed to rename settings file. Reason: \(error)")
+                }
                 let alert = NSAlert()
                 alert.alertStyle = NSAlert.Style.critical
                 alert.messageText = "We couldn't restore your data."
@@ -196,7 +235,10 @@ class DataModel {
                         do {
                             try self.appDataPath.file(named: "settings.json").delete()
                         } catch {
-                            
+                            let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
+                            if (betaString as! String).range(of: "beta") != nil {
+                                MSAnalytics.trackEvent("Failed to delete settings file. Reason: \(error)")
+                            }
                         }
                     }
                     try! importPathDirectory.file(named: "settings.json").copy(to: self.appDataPath)

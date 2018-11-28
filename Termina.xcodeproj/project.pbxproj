@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9184E2B06FCC6682BE0089F /* Pods_Termina.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652150F919EC5343C1E5A7A7 /* Pods_Termina.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BF082D8821AC9A4500B5406C /* Hardcore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D5E21AC9A4500B5406C /* Hardcore.storyboard */; };
 		BF082D8921AC9A4500B5406C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D5F21AC9A4500B5406C /* Profile.storyboard */; };
 		BF082D8A21AC9A4500B5406C /* NewPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6021AC9A4500B5406C /* NewPlayer.storyboard */; };
@@ -46,9 +47,15 @@
 		BF082DAE21AC9EA900B5406C /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF082DAD21AC9EA900B5406C /* UserNotifications.framework */; };
 		BF082DB021AC9EB000B5406C /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF082DAF21AC9EB000B5406C /* SpriteKit.framework */; };
 		BF082DB221AD8CC100B5406C /* About.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF082DB121AD8CC100B5406C /* About.rtf */; };
+		BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */; };
+		BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BF5D7A2D21AF3D96008CD33F /* Podfile */; };
+		BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50AFB51D567FA6B7F596F8E7 /* Pods-Termina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Termina.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Termina/Pods-Termina.debug.xcconfig"; sourceTree = "<group>"; };
+		5B237269F0E6C1BDB8D88440 /* Pods-Termina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Termina.release.xcconfig"; path = "Pods/Target Support Files/Pods-Termina/Pods-Termina.release.xcconfig"; sourceTree = "<group>"; };
+		652150F919EC5343C1E5A7A7 /* Pods_Termina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Termina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF082D4421AC99FF00B5406C /* Termina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF082D5621AC9A0000B5406C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF082D5721AC9A0000B5406C /* Termina.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Termina.entitlements; sourceTree = "<group>"; };
@@ -91,6 +98,12 @@
 		BF082DAD21AC9EA900B5406C /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		BF082DAF21AC9EB000B5406C /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		BF082DB121AD8CC100B5406C /* About.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = About.rtf; sourceTree = "<group>"; };
+		BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaViewController.swift; sourceTree = "<group>"; };
+		BF5D7A2D21AF3D96008CD33F /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Podfile; sourceTree = "<group>"; };
+		BF5D7A2F21AF4152008CD33F /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
+		BF5D7A3021AF4152008CD33F /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenter.framework"; sourceTree = "<group>"; };
+		BF5D7A3121AF4152008CD33F /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
+		BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "Termina macOS Beta Program.rtf"; path = "../../../../Library/Mobile Documents/com~apple~TextEdit/Documents/Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,18 +113,30 @@
 			files = (
 				BF082DB021AC9EB000B5406C /* SpriteKit.framework in Frameworks */,
 				BF082DAE21AC9EA900B5406C /* UserNotifications.framework in Frameworks */,
+				B9184E2B06FCC6682BE0089F /* Pods_Termina.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AC32BA1D10D2D58EE6FD8A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50AFB51D567FA6B7F596F8E7 /* Pods-Termina.debug.xcconfig */,
+				5B237269F0E6C1BDB8D88440 /* Pods-Termina.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BF082D3B21AC99FF00B5406C = {
 			isa = PBXGroup;
 			children = (
+				BF5D7A2D21AF3D96008CD33F /* Podfile */,
 				BF082D4621AC99FF00B5406C /* Termina */,
 				BF082D4521AC99FF00B5406C /* Products */,
 				BF082DAC21AC9EA900B5406C /* Frameworks */,
+				1AC32BA1D10D2D58EE6FD8A4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,7 +151,9 @@
 		BF082D4621AC99FF00B5406C /* Termina */ = {
 			isa = PBXGroup;
 			children = (
+				BF082D8421AC9A4500B5406C /* AppDelegate.swift */,
 				BF082DB121AD8CC100B5406C /* About.rtf */,
+				BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */,
 				BF082D6421AC9A4500B5406C /* Assets.xcassets */,
 				BF082D7121AC9A4500B5406C /* GameClasses */,
 				BF082D7C21AC9A4500B5406C /* Libraries */,
@@ -209,10 +236,10 @@
 				BF082D8121AC9A4500B5406C /* ViewController.swift */,
 				BF082D8221AC9A4500B5406C /* NewPlayer.swift */,
 				BF082D8321AC9A4500B5406C /* Profile.swift */,
-				BF082D8421AC9A4500B5406C /* AppDelegate.swift */,
 				BF082D8521AC9A4500B5406C /* Hardcore.swift */,
 				BF082D8621AC9A4500B5406C /* AboutViewController.swift */,
 				BF082D8721AC9A4500B5406C /* AppMenu.swift */,
+				BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -220,8 +247,12 @@
 		BF082DAC21AC9EA900B5406C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF5D7A3021AF4152008CD33F /* AppCenter.framework */,
+				BF5D7A3121AF4152008CD33F /* AppCenterAnalytics.framework */,
+				BF5D7A2F21AF4152008CD33F /* AppCenterCrashes.framework */,
 				BF082DAF21AC9EB000B5406C /* SpriteKit.framework */,
 				BF082DAD21AC9EA900B5406C /* UserNotifications.framework */,
+				652150F919EC5343C1E5A7A7 /* Pods_Termina.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -233,6 +264,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF082D5A21AC9A0000B5406C /* Build configuration list for PBXNativeTarget "Termina" */;
 			buildPhases = (
+				7C5F94AFD98419DF8E94C3A1 /* [CP] Check Pods Manifest.lock */,
 				BF082D4021AC99FF00B5406C /* Sources */,
 				BF082D4121AC99FF00B5406C /* Frameworks */,
 				BF082D4221AC99FF00B5406C /* Resources */,
@@ -294,10 +326,12 @@
 				BF082D8A21AC9A4500B5406C /* NewPlayer.storyboard in Resources */,
 				BF082D9521AC9A4500B5406C /* Environment.sks in Resources */,
 				BF082D9721AC9A4500B5406C /* 29.sks in Resources */,
+				BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */,
 				BF082D8821AC9A4500B5406C /* Hardcore.storyboard in Resources */,
 				BF082DB221AD8CC100B5406C /* About.rtf in Resources */,
 				BF082D9621AC9A4500B5406C /* 28.sks in Resources */,
 				BF082D9321AC9A4500B5406C /* Template.sks in Resources */,
+				BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */,
 				BF082D9421AC9A4500B5406C /* MainMenu.sks in Resources */,
 				BF082D8D21AC9A4500B5406C /* Assets.xcassets in Resources */,
 				BF082D8B21AC9A4500B5406C /* Main.storyboard in Resources */,
@@ -306,11 +340,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7C5F94AFD98419DF8E94C3A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Termina-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BF082D4021AC99FF00B5406C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */,
 				BF082DA921AC9A4500B5406C /* Hardcore.swift in Sources */,
 				BF082DA821AC9A4500B5406C /* AppDelegate.swift in Sources */,
 				BF082D9821AC9A4500B5406C /* Names.swift in Sources */,
@@ -470,38 +530,54 @@
 		};
 		BF082D5B21AC9A0000B5406C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50AFB51D567FA6B7F596F8E7 /* Pods-Termina.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Termina/Termina.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/AppCenter/AppCenter-SDK-Apple/macOS",
+				);
 				INFOPLIST_FILE = Termina/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		BF082D5C21AC9A0000B5406C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B237269F0E6C1BDB8D88440 /* Pods-Termina.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Termina/Termina.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/AppCenter/AppCenter-SDK-Apple/macOS",
+				);
 				INFOPLIST_FILE = Termina/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;

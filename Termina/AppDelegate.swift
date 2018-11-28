@@ -10,6 +10,9 @@ import Foundation
 import Cocoa
 import UserNotifications
 import SpriteKit
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -67,6 +70,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+        // Connect to MS AppCenter for beta testing releases
+        let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
+        if (betaString as! String).range(of: "beta") != nil {
+            MSAppCenter.start("dd5d5c2f-8d90-4f89-9c55-e81b02d36d8f", withServices:[
+                MSAnalytics.self,
+                MSCrashes.self
+                ])
+        }
+        
         
         let center = UNUserNotificationCenter.current()
         // Request permission to display alerts and play sounds.

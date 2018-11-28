@@ -18,10 +18,12 @@ class HUD: SKNode {
         
         healthHudLabel?.text = String(number)
         
-        let fadeOut = SKAction.fadeOut(withDuration: 1)
-        let fadeIn = SKAction.fadeIn(withDuration: 1)
+        let fadeOut = SKAction.fadeAlpha(to: 0.0, duration: 0.5)
+        let fadeIn = SKAction.fadeAlpha(to: 1.0, duration: 0.5)
+        
         
         healthHudBackground?.run(fadeOut)
+        healthHudBackground?.alpha = 0.0
         if number > 90 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "100")))
         } else if number > 80 {
@@ -47,6 +49,7 @@ class HUD: SKNode {
         }
         
         healthHudBackground?.run(fadeIn)
+        healthHudBackground?.alpha = 1.0
     }
     
     func updateLevel(_ number: Int) {

@@ -56,7 +56,7 @@ DQ
                                     <rect key="frame" x="0.0" y="0.0" width="424" height="195"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView editable="NO" selectable="NO" verticallyResizable="YES" allowsDocumentBackgroundColorChange="YES" spellingCorrection="YES" smartInsertDelete="YES" id="NJB-FW-gQ0">
+                                        <textView editable="NO" selectable="NO" verticallyResizable="YES" allowsDocumentBackgroundColorChange="YES" linkDetection="YES" spellingCorrection="YES" smartInsertDelete="YES" id="NJB-FW-gQ0">
                                             <rect key="frame" x="0.0" y="0.0" width="424" height="195"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>

@@ -39,6 +39,15 @@ class Termina: Monster {
         center.add(newNotificationRequest, withCompletionHandler: nil)
     }
     
+    func mockPlayerHardcore() {
+        let alert = NSAlert()
+        alert.alertStyle = NSAlert.Style.critical
+        alert.messageText = "How about no?"
+        alert.informativeText = "Do you honestly think you're being funny?"
+        alert.addButton(withTitle: "Quit")
+        alert.runModal()
+    }
+    
     func targetSusie() {
         let alert = NSAlert()
         alert.alertStyle = NSAlert.Style.critical

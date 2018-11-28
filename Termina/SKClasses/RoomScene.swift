@@ -20,6 +20,7 @@ class RoomScene: SKScene {
     
     var roomBackground: SKSpriteNode?
     var weaponNode: SKSpriteNode?
+    var bottleNode: SKSpriteNode?
     var deathOverlay: SKSpriteNode?
     
     func configureTileMap(map: SKTileMapNode, movable: Bool) {
@@ -131,6 +132,26 @@ class RoomScene: SKScene {
         }
     }
     
+    func setUpBottle() {
+        if childNode(withName: "bottleItemNode") != nil {
+            bottleNode = childNode(withName: "bottleItemNode") as? SKSpriteNode
+            
+            let chance = Int.random(in: 0 ... 10)
+            if chance >= 4 {
+                let selectRandomHelper = Int.random(in: 0 ... 3)
+                if selectRandomHelper <= 2 {
+                    bottleNode?.texture = SKTexture(imageNamed: "Potion")
+                    items.append(Potion(potionName: "Health Hotfix", affectedPlayer: gamePlayer!, potionNode: bottleNode!))
+                } else {
+                    bottleNode?.texture = SKTexture(imageNamed: "Bottle")
+                    items.append(Bottle(bottleName: "Patcher", affectedPlayer: gamePlayer!, bottleNode: bottleNode!))
+                }
+            } else {
+                bottleNode?.removeFromParent()
+            }
+        }
+    }
+    
     func setUpScene() {
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit
@@ -154,6 +175,7 @@ class RoomScene: SKScene {
             deathOverlay?.run(SKAction.fadeAlpha(to: 0.3, duration: 1.0))
         }
         
+        setUpBottle()
         setUpWeapon()
     }
     
@@ -162,10 +184,12 @@ class RoomScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        // Ensure that the scene is always the same size
         super.update(currentTime)
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit
         
+        // Track the player's key presses
         if (Keyboard.sharedKeyboard.justPressed(keys: Key.space)) {
             gamePlayer?.jump()
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.D)) {
@@ -179,19 +203,32 @@ class RoomScene: SKScene {
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.E)) {
             (items.last as? Weapon)?.equip()
             //presentNewScene(29)
+        } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.H)) {
+            if items.first is Potion {
+                (items.first as? Potion)?.use()
+            } else if items.first is Bottle {
+                (items.first as? Bottle)?.use()
+            }
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.K)) {
             gamePlayer?.health = 0
+            gamePlayer?.associatedHud.updateHealth(0)
             presentDeathMessage(how: "magic")
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Esc)) {
             self.scaleMode = .aspectFit
             self.view?.presentScene(SKScene(fileNamed: "MainMenu")!, transition: SKTransition.fade(with: NSColor.white, duration: 0.5))
-            
         }
         
+        // Update the overlay for damage
         if gamePlayer?.health ?? 100 <= 10 {
-            if deathOverlay?.alpha != 0.3 {
-                deathOverlay?.run(SKAction.fadeAlpha(to: 0.3, duration: 1.0))
-            }
+            deathOverlay?.run(SKAction.fadeAlpha(to: 0.3, duration: 1.0))
+
+        } else if gamePlayer?.health ?? 100 > 10 {
+            deathOverlay?.run(SKAction.fadeAlpha(to: 0.0, duration: 1.0))
+        }
+        
+        // Track the player's position and have the enemy move closer to the player
+        if self.isEnemyNear() && roomEntity is Monster {
+            roomEntity?.associatedNode.run(SKAction.move(to: (gamePlayer?.associatedNode.position ?? CGPoint.zero), duration: 0.5))
         }
     }
     
@@ -226,18 +263,24 @@ class RoomScene: SKScene {
             
         }
         
-        if gamePlayer?.name == "Susie" && f.containsSubfolder(named: "SURVEY_PROGRAM.app") && AppDelegate.isHardcore {
-            alert.informativeText = "You've failed me, but, of course, I should've expected that from you. You may think you're strong enough, but this isn't your imagination."
-        }
-        
         if !AppDelegate.isHardcore {
             alert.addButton(withTitle: "Restart")
-        }
-        if gamePlayer?.name == "Susie" && f.containsSubfolder(named: "SURVEY_PROGRAM.app") && AppDelegate.isHardcore {
-            alert.addButton(withTitle: "Quit in Shame")
-        } else {
             alert.addButton(withTitle: "Quit")
         }
+        
+        if AppDelegate.isHardcore {
+            if f.containsSubfolder(named: "SURVEY_PROGRAM.app") {
+                if gamePlayer?.name == "Susie" {
+                    alert.informativeText = "You've failed me, but, of course, I should've expected that from you. You may think you're strong enough, but this isn't your imagination."
+                     alert.addButton(withTitle: "Quit in Shame")
+                } else if gamePlayer?.name == "Asriel" {
+                    alert.informativeText = "You should have pushed a little harder; stay determined!"
+                } else {
+                    alert.addButton(withTitle: "Quit")
+                }
+            }
+        }
+        
         alert.beginSheetModal(for: (self.view?.window!)!) {
             (returnCode: NSApplication.ModalResponse) -> Void in
             if returnCode.rawValue == 1001 || (returnCode.rawValue == 1000 && AppDelegate.isHardcore){
@@ -254,10 +297,24 @@ class RoomScene: SKScene {
         }
     }
     
+    func isEnemyNear() -> Bool {
+        let krisNode = gamePlayer?.associatedNode
+        let kingNode = roomEntity?.associatedNode
+        
+        // Uses distance formula (⎷( (x1 -x2)^2 + (y1-y2)^2 ))
+        let damageRadius = sqrt(pow((krisNode?.position.x ?? 0) - (kingNode?.position.x ?? 0), 2.0) + pow((krisNode?.position.y ?? 0) - (kingNode?.position.y ?? 0), 2.0))
+        
+        if damageRadius < 200 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func attackHere() {
         if roomEntity != nil {
             if roomEntity is Monster {
-                if gamePlayer?.associatedNode.position.x ?? 0 < 50 + (roomEntity?.associatedNode.position.x ?? 0) {
+                if self.isEnemyNear() {
                     let damageFromPlayer = (gamePlayer?.level ?? 1) + (gamePlayer?.temporaryLevel ?? Int.random(in: 1 ... 3))
                     let error = roomEntity as? Monster
                     //print(damageFromPlayer)

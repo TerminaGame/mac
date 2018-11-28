@@ -22,7 +22,8 @@ class ViewController: NSViewController {
             if let scene = SKScene(fileNamed: "MainMenu") {
                 scene.name = "mainMenu"
                 scene.scaleMode = .aspectFit
-                view.presentScene(scene)
+                //view.presentScene(scene)
+                view.presentScene(scene, transition: SKTransition.fade(withDuration: 3.0))
             }
             
             view.ignoresSiblingOrder = true

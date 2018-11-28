@@ -124,6 +124,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             } else {
                 return NSApplication.TerminateReply.terminateCancel
             }
+        } else if !(AppDelegate.dataModel.appDataPath.containsFile(named: "settings.json")) {
+            return NSApplication.TerminateReply.terminateNow
         } else {
             AppDelegate.dataModel.saveToFile(false)
             return NSApplication.TerminateReply.terminateNow

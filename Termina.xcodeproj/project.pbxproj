@@ -43,6 +43,9 @@
 		BF082DA921AC9A4500B5406C /* Hardcore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8521AC9A4500B5406C /* Hardcore.swift */; };
 		BF082DAA21AC9A4500B5406C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8621AC9A4500B5406C /* AboutViewController.swift */; };
 		BF082DAB21AC9A4500B5406C /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8721AC9A4500B5406C /* AppMenu.swift */; };
+		BF082DAE21AC9EA900B5406C /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF082DAD21AC9EA900B5406C /* UserNotifications.framework */; };
+		BF082DB021AC9EB000B5406C /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF082DAF21AC9EB000B5406C /* SpriteKit.framework */; };
+		BF082DB221AD8CC100B5406C /* About.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF082DB121AD8CC100B5406C /* About.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,9 @@
 		BF082D8521AC9A4500B5406C /* Hardcore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hardcore.swift; sourceTree = "<group>"; };
 		BF082D8621AC9A4500B5406C /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		BF082D8721AC9A4500B5406C /* AppMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
+		BF082DAD21AC9EA900B5406C /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		BF082DAF21AC9EB000B5406C /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		BF082DB121AD8CC100B5406C /* About.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = About.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF082DB021AC9EB000B5406C /* SpriteKit.framework in Frameworks */,
+				BF082DAE21AC9EA900B5406C /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +111,7 @@
 			children = (
 				BF082D4621AC99FF00B5406C /* Termina */,
 				BF082D4521AC99FF00B5406C /* Products */,
+				BF082DAC21AC9EA900B5406C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +126,7 @@
 		BF082D4621AC99FF00B5406C /* Termina */ = {
 			isa = PBXGroup;
 			children = (
+				BF082DB121AD8CC100B5406C /* About.rtf */,
 				BF082D6421AC9A4500B5406C /* Assets.xcassets */,
 				BF082D7121AC9A4500B5406C /* GameClasses */,
 				BF082D7C21AC9A4500B5406C /* Libraries */,
@@ -207,6 +217,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		BF082DAC21AC9EA900B5406C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF082DAF21AC9EB000B5406C /* SpriteKit.framework */,
+				BF082DAD21AC9EA900B5406C /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,6 +258,11 @@
 				TargetAttributes = {
 					BF082D4321AC99FF00B5406C = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -271,6 +295,7 @@
 				BF082D9521AC9A4500B5406C /* Environment.sks in Resources */,
 				BF082D9721AC9A4500B5406C /* 29.sks in Resources */,
 				BF082D8821AC9A4500B5406C /* Hardcore.storyboard in Resources */,
+				BF082DB221AD8CC100B5406C /* About.rtf in Resources */,
 				BF082D9621AC9A4500B5406C /* 28.sks in Resources */,
 				BF082D9321AC9A4500B5406C /* Template.sks in Resources */,
 				BF082D9421AC9A4500B5406C /* MainMenu.sks in Resources */,
@@ -456,7 +481,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.Termina;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -475,7 +500,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.Termina;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};

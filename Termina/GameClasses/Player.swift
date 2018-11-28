@@ -27,6 +27,11 @@ class Player: Entity {
         }
     }
     
+    override func heal(_ amount: Int) {
+        super.heal(amount)
+        associatedHud.updateHealth(health)
+    }
+    
     override func levelUp(_ amount: Int) {
         super.levelUp(amount)
         associatedHud.updateLevel(level)

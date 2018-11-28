@@ -20,6 +20,7 @@ enum Key: CUnsignedShort {
     case Count = 0x7F
     case Esc = 0x35
     case Command = 0x37
+    case H = 0x04
 }
 
 struct KeyState {

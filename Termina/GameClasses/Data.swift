@@ -96,7 +96,7 @@ class DataModel {
             do {
                 try appDataPath.file(named: "settings.json").delete()
                 let content = UNMutableNotificationContent()
-                if appDataPath.containsFile(named: "settings_backup.json") {
+                if appDataPath.containsFile(named: "settings_backup.json") || AppDelegate.isHardcore {
                     content.title = "Hardcore Mode Data Deleted"
                     content.body = "Hardcore Mode data has been deleted."
                 } else {
@@ -137,7 +137,7 @@ class DataModel {
                 alert.messageText = "We couldn't use back up data."
                 alert.informativeText = "Something went wrong when trying to back up your data."
                 alert.addButton(withTitle: "OK")
-                alert.beginSheetModal(for: NSApplication.shared.mainWindow!)
+                alert.runModal()
             }
         }
     }
@@ -152,7 +152,7 @@ class DataModel {
                 alert.messageText = "We couldn't restore your data."
                 alert.informativeText = "Something went wrong when trying to restore your data."
                 alert.addButton(withTitle: "OK")
-                alert.beginSheetModal(for: NSApplication.shared.mainWindow!)
+                alert.runModal()
             }
         } else {
             deleteSettings()
@@ -164,7 +164,7 @@ class DataModel {
                 alert.messageText = "We couldn't restore your data."
                 alert.informativeText = "Something went wrong when trying to restore your data."
                 alert.addButton(withTitle: "OK")
-                alert.beginSheetModal(for: NSApplication.shared.mainWindow!)
+                alert.runModal()
             }
         }
     }

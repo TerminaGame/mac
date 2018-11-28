@@ -24,7 +24,7 @@ extension RoomScene {
     }
     
     override func rightMouseUp(with event: NSEvent) {
-        if (roomEntity?.level ?? 1) >= (gamePlayer?.level ?? 1) {
+        if (roomEntity?.level ?? 1) <= (gamePlayer?.level ?? 1) {
             if !AppDelegate.isHardcore {
                 pacifyHere()
             } else {

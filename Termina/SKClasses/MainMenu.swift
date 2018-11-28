@@ -116,6 +116,11 @@ class MainMenu: SKScene {
             startGameButton?.text = "Create Player"
             resetButton?.isHidden = true
         }
+        
+        if AppDelegate.isHardcore {
+            startGameButton?.text = "Start Normal Game"
+            hardcoreButton?.text = "Start Hardcore Game"
+        }
     }
     
 }

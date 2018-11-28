@@ -18,7 +18,10 @@ class HardcoreViewController: NSViewController {
         
         AppDelegate.dataModel.player = Player(name: playerNameField.stringValue)
         
-        if f.containsSubfolder(named: "SURVEY_PROGRAM.app") {
+        if playerNameField.stringValue == "Termina" {
+            Termina().mockPlayerHardcore()
+            exit(0)
+        } else if f.containsSubfolder(named: "SURVEY_PROGRAM.app") {
             if playerNameField.stringValue == "Susie" {
                 AppDelegate.dataModel.player.level = 10
                 Termina().targetSusie()

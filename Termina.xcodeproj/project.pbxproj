@@ -19,7 +19,6 @@
 		BF082D9021AC9A4500B5406C /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6821AC9A4500B5406C /* HUD.swift */; };
 		BF082D9121AC9A4500B5406C /* RoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6921AC9A4500B5406C /* RoomScene.swift */; };
 		BF082D9221AC9A4500B5406C /* RoomSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6A21AC9A4500B5406C /* RoomSceneExtension.swift */; };
-		BF082D9321AC9A4500B5406C /* Template.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6C21AC9A4500B5406C /* Template.sks */; };
 		BF082D9421AC9A4500B5406C /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6D21AC9A4500B5406C /* MainMenu.sks */; };
 		BF082D9521AC9A4500B5406C /* Environment.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6E21AC9A4500B5406C /* Environment.sks */; };
 		BF082D9621AC9A4500B5406C /* 28.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6F21AC9A4500B5406C /* 28.sks */; };
@@ -47,6 +46,7 @@
 		BF082DAE21AC9EA900B5406C /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF082DAD21AC9EA900B5406C /* UserNotifications.framework */; };
 		BF082DB021AC9EB000B5406C /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF082DAF21AC9EB000B5406C /* SpriteKit.framework */; };
 		BF082DB221AD8CC100B5406C /* About.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF082DB121AD8CC100B5406C /* About.rtf */; };
+		BF14084321B0923000A7E70E /* Template.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14084221B0923000A7E70E /* Template.sks */; };
 		BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */; };
 		BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BF5D7A2D21AF3D96008CD33F /* Podfile */; };
 		BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */; };
@@ -70,7 +70,6 @@
 		BF082D6821AC9A4500B5406C /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		BF082D6921AC9A4500B5406C /* RoomScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomScene.swift; sourceTree = "<group>"; };
 		BF082D6A21AC9A4500B5406C /* RoomSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomSceneExtension.swift; sourceTree = "<group>"; };
-		BF082D6C21AC9A4500B5406C /* Template.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Template.sks; sourceTree = "<group>"; };
 		BF082D6D21AC9A4500B5406C /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		BF082D6E21AC9A4500B5406C /* Environment.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Environment.sks; sourceTree = "<group>"; };
 		BF082D6F21AC9A4500B5406C /* 28.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 28.sks; sourceTree = "<group>"; };
@@ -98,6 +97,7 @@
 		BF082DAD21AC9EA900B5406C /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		BF082DAF21AC9EB000B5406C /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		BF082DB121AD8CC100B5406C /* About.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = About.rtf; sourceTree = "<group>"; };
+		BF14084221B0923000A7E70E /* Template.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Template.sks; sourceTree = "<group>"; };
 		BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaViewController.swift; sourceTree = "<group>"; };
 		BF5D7A2D21AF3D96008CD33F /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Podfile; sourceTree = "<group>"; };
 		BF5D7A2F21AF4152008CD33F /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 		BF082D6B21AC9A4500B5406C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				BF082D6C21AC9A4500B5406C /* Template.sks */,
+				BF14084221B0923000A7E70E /* Template.sks */,
 				BF082D6D21AC9A4500B5406C /* MainMenu.sks */,
 				BF082D6E21AC9A4500B5406C /* Environment.sks */,
 				BF082D6F21AC9A4500B5406C /* 28.sks */,
@@ -330,9 +330,9 @@
 				BF082D8821AC9A4500B5406C /* Hardcore.storyboard in Resources */,
 				BF082DB221AD8CC100B5406C /* About.rtf in Resources */,
 				BF082D9621AC9A4500B5406C /* 28.sks in Resources */,
-				BF082D9321AC9A4500B5406C /* Template.sks in Resources */,
 				BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */,
 				BF082D9421AC9A4500B5406C /* MainMenu.sks in Resources */,
+				BF14084321B0923000A7E70E /* Template.sks in Resources */,
 				BF082D8D21AC9A4500B5406C /* Assets.xcassets in Resources */,
 				BF082D8B21AC9A4500B5406C /* Main.storyboard in Resources */,
 			);

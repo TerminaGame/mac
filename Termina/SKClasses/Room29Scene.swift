@@ -26,6 +26,18 @@ class Room29Scene: RoomScene {
         
         if childNode(withName: "enemyNode") != nil { setUpEntity() }
         
+        deathOverlay = childNode(withName: "deathOverlay") as? SKSpriteNode
+        if gamePlayer?.health ?? 100 >= 10 {
+            deathOverlay?.alpha = 0.0
+        } else {
+            deathOverlay?.run(SKAction.fadeAlpha(to: 0.3, duration: 1.0))
+        }
+        
+        setUpBottle()
+        setUpWeapon()
+        
+        exitRoom = childNode(withName: "exitRoomNode") as? SKSpriteNode
+        
         
     }
 }

@@ -22,6 +22,7 @@ class RoomScene: SKScene {
     var weaponNode: SKSpriteNode?
     var bottleNode: SKSpriteNode?
     var deathOverlay: SKSpriteNode?
+    var exitRoom: SKSpriteNode?
     
     func configureTileMap(map: SKTileMapNode, movable: Bool) {
         let tileMapSize = map.tileSize
@@ -177,6 +178,9 @@ class RoomScene: SKScene {
         
         setUpBottle()
         setUpWeapon()
+        
+        exitRoom = childNode(withName: "exitRoomNode") as? SKSpriteNode
+        
     }
     
     override func didMove(to view: SKView) {
@@ -216,6 +220,15 @@ class RoomScene: SKScene {
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Esc)) {
             self.scaleMode = .aspectFit
             self.view?.presentScene(SKScene(fileNamed: "MainMenu")!, transition: SKTransition.fade(with: NSColor.white, duration: 0.5))
+        } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Return)) {
+            if self.isNearExit() && roomEntity == nil {
+//                if gamePlayer?.level >= 420 {
+                    self.presentNewScene(29)
+//                } else {
+//                    self.presentNewScene(nil)
+//                }
+                
+            }
         }
         
         // Update the overlay for damage
@@ -305,6 +318,18 @@ class RoomScene: SKScene {
         let damageRadius = sqrt(pow((krisNode?.position.x ?? 0) - (kingNode?.position.x ?? 0), 2.0) + pow((krisNode?.position.y ?? 0) - (kingNode?.position.y ?? 0), 2.0))
         
         if damageRadius < 200 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isNearExit() -> Bool {
+        let playerNode = gamePlayer?.associatedNode
+        
+        let exitRadius = sqrt(pow((playerNode?.position.x ?? 0) - (exitRoom?.position.x ?? 0), 2.0) + pow((playerNode?.position.y ?? 0) - (exitRoom?.position.y ?? 0), 2.0))
+        
+        if exitRadius < 75 {
             return true
         } else {
             return false

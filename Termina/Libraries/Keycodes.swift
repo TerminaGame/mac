@@ -14,13 +14,15 @@ enum Key: CUnsignedShort {
     case A = 0x00
     case S = 0x01
     case D = 0x02
-    case space = 0x31
+    case H = 0x04
     case E = 0x0E
     case K = 0x28
+    case space = 0x31
     case Count = 0x7F
     case Esc = 0x35
     case Command = 0x37
-    case H = 0x04
+    case Return = 0x24
+    
 }
 
 struct KeyState {

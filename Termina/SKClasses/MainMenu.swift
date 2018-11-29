@@ -146,7 +146,7 @@ extension MainMenu {
                     } else {
                         self.size = CGSize(width: 1280, height: 720)
                         self.scaleMode = .aspectFit
-                        presentNewScene(28)
+                        presentNewScene(nil)
                     }
                     break
                 case "hardcoreButton":
@@ -155,7 +155,7 @@ extension MainMenu {
                     } else {
                         self.size = CGSize(width: 1280, height: 720)
                         self.scaleMode = .aspectFit
-                        presentNewScene(28)
+                        presentNewScene(nil)
                     }
                     break
                 case "resetButton":

@@ -222,11 +222,11 @@ class RoomScene: SKScene {
             self.view?.presentScene(SKScene(fileNamed: "MainMenu")!, transition: SKTransition.fade(with: NSColor.white, duration: 0.5))
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Return)) {
             if self.isNearExit() && roomEntity == nil {
-//                if gamePlayer?.level >= 420 {
+                if (gamePlayer?.level ?? 1) >= 420 {
                     self.presentNewScene(29)
-//                } else {
-//                    self.presentNewScene(nil)
-//                }
+                } else {
+                    self.presentNewScene(nil)
+                }
                 
             }
         }

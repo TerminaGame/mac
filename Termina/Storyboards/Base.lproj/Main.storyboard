@@ -137,6 +137,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
+                                        <menuItem title="Send Feedback" hidden="YES" keyEquivalent="f" id="MH5-VW-NW6">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                            <connections>
+                                                <action selector="openFeedback:" target="Voe-Tx-rLC" id="Ft1-uZ-6sN"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Termina Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
@@ -154,6 +160,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Termina" customModuleProvider="target">
                     <connections>
                         <outlet property="deleteMenuItem" destination="YPQ-2s-o6Q" id="zGR-QH-F9T"/>
+                        <outlet property="feedbackMenuItem" destination="MH5-VW-NW6" id="cuo-yP-8wi"/>
                         <outlet property="resetMenuItem" destination="vI3-qa-Hc4" id="pue-Qd-zR9"/>
                     </connections>
                 </customObject>

@@ -22,6 +22,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     static var isHardcore = false
     @IBOutlet weak var resetMenuItem: NSMenuItem!
     @IBOutlet weak var deleteMenuItem: NSMenuItem!
+    @IBOutlet weak var feedbackMenuItem: NSMenuItem!
+    
+    @IBAction func openFeedback(_ sender: Any) {
+        NSWorkspace.shared.open(URL(string: "https://github.com/TerminaGame/mac/issues/new?template=beta-report.md")!)
+    }
     
     @IBAction func getAboutSheet(_ sender: Any) {
         NSApplication.shared.mainWindow?.contentViewController?.presentAsSheet(NSStoryboard(name: "About", bundle: Bundle.main).instantiateController(withIdentifier: "About") as! NSViewController)
@@ -78,6 +83,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 MSAnalytics.self,
                 MSCrashes.self
                 ])
+            feedbackMenuItem!.isHidden = false
         }
         
         

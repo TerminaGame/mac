@@ -205,8 +205,7 @@ class RoomScene: SKScene {
         } else if (Keyboard.sharedKeyboard.pressed(keys: Key.W, Key.A)) {
             gamePlayer?.move("left")
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.E)) {
-            (items.last as? Weapon)?.equip()
-            //presentNewScene(29)
+            equipItemHere()
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.H)) {
             if items.first is Potion {
                 (items.first as? Potion)?.use()
@@ -242,6 +241,27 @@ class RoomScene: SKScene {
         // Track the player's position and have the enemy move closer to the player
         if self.isEnemyNear() && roomEntity is Monster {
             roomEntity?.associatedNode.run(SKAction.move(to: (gamePlayer?.associatedNode.position ?? CGPoint.zero), duration: 0.5))
+        }
+    }
+    
+    func equipItemHere() {
+        if gamePlayer?.currentInventory.last is Weapon {
+            let userWeapon = gamePlayer?.currentInventory.last as? Weapon
+            let alert = NSAlert()
+            alert.messageText = "Do you want to equip \(items.last?.name ?? "NSWeapon") v.\((items.last as? Weapon)?.level ?? 1)?"
+            alert.informativeText = "You already have \(userWeapon?.name ?? "NSWeapon"), which is Version \(userWeapon?.level ?? 1). Equipping this item will unequip your current item."
+            alert.addButton(withTitle: "Equip Anyway")
+            alert.addButton(withTitle: "Cancel")
+            alert.beginSheetModal(for: NSApplication.shared.mainWindow!) {
+                (returnCode: NSApplication.ModalResponse) in
+                
+                if returnCode.rawValue == 1000 {
+                    userWeapon?.unequip()
+                    (self.items.last as? Weapon)?.equip()
+                }
+            }
+        } else {
+            (items.last as? Weapon)?.equip()
         }
     }
     

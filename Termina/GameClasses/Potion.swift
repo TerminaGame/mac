@@ -16,7 +16,9 @@ class Potion: Item {
         if currentUse > 0 {
             super.use()
             player.heal(effect)
-        } else { associatedNode.removeFromParent() }
+        } else {
+            associatedNode.removeFromParent()
+        }
     }
     
     init(potionName: String, affectedPlayer: Player, potionNode: SKNode) {

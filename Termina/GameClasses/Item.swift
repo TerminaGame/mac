@@ -31,6 +31,7 @@ class Item {
                 pulse()
             }
         } else {
+            NSSound.beep()
             associatedNode.removeFromParent()
         }
     }

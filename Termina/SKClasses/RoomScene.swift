@@ -208,19 +208,31 @@ class RoomScene: SKScene {
             equipItemHere()
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.H)) {
             if items.first is Potion {
-                (items.first as? Potion)?.use()
+                if items.first?.currentUse ?? 1 > 0 {
+                    (items.first as? Potion)?.use()
+                }
+                
             } else if items.first is Bottle {
-                (items.first as? Bottle)?.use()
+                if items.first?.currentUse ?? 1 > 0 {
+                    (items.first as? Bottle)?.use()
+                }
+                
+            } else {
+                NSSound.beep()
             }
-        } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.K)) {
-            gamePlayer?.health = 0
-            gamePlayer?.associatedHud.updateHealth(0)
-            presentDeathMessage(how: "magic")
-        } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Esc)) {
+        }
+        
+//        else if (Keyboard.sharedKeyboard.justPressed(keys: Key.K)) {
+//            gamePlayer?.health = 0
+//            gamePlayer?.associatedHud.updateHealth(0)
+//            presentDeathMessage(how: "magic")
+//        }
+        
+        else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Esc)) {
             self.scaleMode = .aspectFit
             self.view?.presentScene(SKScene(fileNamed: "MainMenu")!, transition: SKTransition.fade(with: NSColor.white, duration: 0.5))
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Return)) {
-            if self.isNearExit() && roomEntity == nil {
+            if self.isNear(node: exitRoom!, maximumDistance: 75) && roomEntity == nil {
                 if (gamePlayer?.level ?? 1) >= 420 {
                     self.presentNewScene(29)
                 } else {
@@ -239,29 +251,42 @@ class RoomScene: SKScene {
         }
         
         // Track the player's position and have the enemy move closer to the player
-        if self.isEnemyNear() && roomEntity is Monster {
-            roomEntity?.associatedNode.run(SKAction.move(to: (gamePlayer?.associatedNode.position ?? CGPoint.zero), duration: 0.5))
+        if roomEntity != nil {
+            if self.isNear(node: (roomEntity?.associatedNode)!, maximumDistance: 200) && roomEntity is Monster {
+                roomEntity?.associatedNode.run(SKAction.move(to: (gamePlayer?.associatedNode.position ?? CGPoint.zero), duration: 0.5))
+            }
         }
+        
     }
     
     func equipItemHere() {
-        if gamePlayer?.currentInventory.last is Weapon {
-            let userWeapon = gamePlayer?.currentInventory.last as? Weapon
-            let alert = NSAlert()
-            alert.messageText = "Do you want to equip \(items.last?.name ?? "NSWeapon") v.\((items.last as? Weapon)?.level ?? 1)?"
-            alert.informativeText = "You already have \(userWeapon?.name ?? "NSWeapon"), which is Version \(userWeapon?.level ?? 1). Equipping this item will unequip your current item."
-            alert.addButton(withTitle: "Equip Anyway")
-            alert.addButton(withTitle: "Cancel")
-            alert.beginSheetModal(for: NSApplication.shared.mainWindow!) {
-                (returnCode: NSApplication.ModalResponse) in
-                
-                if returnCode.rawValue == 1000 {
-                    userWeapon?.unequip()
-                    (self.items.last as? Weapon)?.equip()
+        if items.last is Weapon {
+            if gamePlayer?.currentInventory.last is Weapon {
+                let userWeapon = gamePlayer?.currentInventory.last as? Weapon
+                let alert = NSAlert()
+                alert.messageText = "Do you want to equip \(items.last?.name ?? "NSWeapon") v.\((items.last as? Weapon)?.level ?? 1)?"
+                alert.informativeText = "You already have \(userWeapon?.name ?? "NSWeapon"), which is Version \(userWeapon?.level ?? 1). Equipping this item will unequip your current item."
+                alert.addButton(withTitle: "Equip Anyway")
+                alert.addButton(withTitle: "Cancel")
+                alert.beginSheetModal(for: NSApplication.shared.mainWindow!) {
+                    (returnCode: NSApplication.ModalResponse) in
+                    
+                    if returnCode.rawValue == 1000 {
+                        userWeapon?.unequip()
+                        (self.items.last as? Weapon)?.equip()
+                        self.items.removeLast()
+                    }
                 }
+            } else {
+                (self.items.last as? Weapon)?.equip()
+                self.items.removeLast()
             }
         } else {
-            (items.last as? Weapon)?.equip()
+            let alert = NSAlert()
+            alert.messageText = "You cannot equip \(items.last?.name ?? "this item")."
+            alert.informativeText = "This item is not an equippable item."
+            alert.addButton(withTitle: "OK")
+            alert.beginSheetModal(for: NSApplication.shared.mainWindow!)
         }
     }
     
@@ -330,38 +355,31 @@ class RoomScene: SKScene {
         }
     }
     
-    func isEnemyNear() -> Bool {
-        let krisNode = gamePlayer?.associatedNode
-        let kingNode = roomEntity?.associatedNode
+    // Uses distance formula (⎷( (x1 -x2)^2 + (y1-y2)^2 ))
+    func isNear(node: SKNode, maximumDistance: CGFloat) -> Bool {
+        let krisNodePosition = gamePlayer?.associatedNode.position
+        let selectedNodePosition = node.position
         
-        // Uses distance formula (⎷( (x1 -x2)^2 + (y1-y2)^2 ))
-        let damageRadius = sqrt(pow((krisNode?.position.x ?? 0) - (kingNode?.position.x ?? 0), 2.0) + pow((krisNode?.position.y ?? 0) - (kingNode?.position.y ?? 0), 2.0))
+        let horizontalDifference = (krisNodePosition?.x ?? 0) - selectedNodePosition.x
+        let verticalDifference = (krisNodePosition?.y ?? 0) - selectedNodePosition.y
         
-        if damageRadius < 200 {
+        let radius = sqrt(pow(horizontalDifference, 2.0) + pow(verticalDifference, 2.0))
+        
+        if radius <= maximumDistance {
             return true
         } else {
             return false
         }
+        
     }
     
-    func isNearExit() -> Bool {
-        let playerNode = gamePlayer?.associatedNode
-        
-        let exitRadius = sqrt(pow((playerNode?.position.x ?? 0) - (exitRoom?.position.x ?? 0), 2.0) + pow((playerNode?.position.y ?? 0) - (exitRoom?.position.y ?? 0), 2.0))
-        
-        if exitRadius < 75 {
-            return true
-        } else {
-            return false
-        }
-    }
     
     func attackHere() {
         if roomEntity != nil {
             if roomEntity is Monster {
-                if self.isEnemyNear() {
+                let error = roomEntity as? Monster
+                if self.isNear(node: (error?.associatedNode)!, maximumDistance: 200) {
                     let damageFromPlayer = (gamePlayer?.level ?? 1) + (gamePlayer?.temporaryLevel ?? Int.random(in: 1 ... 3))
-                    let error = roomEntity as? Monster
                     //print(damageFromPlayer)
                     error?.takeDamage(damageFromPlayer)
                     
@@ -387,33 +405,46 @@ class RoomScene: SKScene {
                 gamePlayer?.takeDamage(50)
             }
         } else {
-            // play sound
+            NSSound.beep()
         }
     }
     
     func pacifyHere() {
-        if roomEntity != nil && roomEntity is Monster {
-            let ralsei = roomEntity as? Monster
-            ralsei?.associatedHud.removeFromParent()
-            ralsei?.associatedNode.removeFromParent()
-            gamePlayer?.patchUp(7)
-            
-            let content = UNMutableNotificationContent()
-            content.title = "\(ralsei?.name ?? "The error") has been pacified!"
-            content.subtitle = "It thanks you for your saving grace."
-            content.body = "You've been patched up by 7 iterations."
-            let uuid = UUID().uuidString
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-            let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-            let center = UNUserNotificationCenter.current()
-            center.add(newNotificationRequest, withCompletionHandler: nil)
-            
-            roomEntity = nil
-            
-            if Int.random(in: 0...10) > 7 {
-                Termina(terminaNode: SKSpriteNode(), terminaHud: HUD()).pacifyComment()
+        if roomEntity != nil {
+            if roomEntity is Monster {
+                if isNear(node: (roomEntity?.associatedNode)!, maximumDistance: 200) {
+                    if (roomEntity?.level ?? 1) <= (gamePlayer?.level ?? 1) {
+                        let ralsei = roomEntity as? Monster
+                        ralsei?.associatedHud.removeFromParent()
+                        ralsei?.associatedNode.removeFromParent()
+                        gamePlayer?.patchUp(7)
+                        
+                        let content = UNMutableNotificationContent()
+                        content.title = "\(ralsei?.name ?? "The error") has been pacified!"
+                        content.subtitle = "It thanks you for your saving grace."
+                        content.body = "You've been patched up by 7 iterations."
+                        let uuid = UUID().uuidString
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+                        let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                        let center = UNUserNotificationCenter.current()
+                        center.add(newNotificationRequest, withCompletionHandler: nil)
+                        
+                        roomEntity = nil
+                        
+                        if Int.random(in: 0...10) > 7 {
+                            Termina().pacifyComment()
+                        }
+                    } else {
+                        NSSound.beep()
+                    }
+                } else {
+                    NSSound.beep()
+                }
+            } else {
+                NSSound.beep()
             }
-            
+        } else {
+            NSSound.beep()
         }
     }
 }

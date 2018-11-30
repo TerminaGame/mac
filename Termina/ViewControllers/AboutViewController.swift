@@ -14,6 +14,7 @@ class AboutViewController: NSViewController {
     @IBOutlet weak var versionLabel: NSTextField!
     @IBOutlet var aboutDocumentView: NSTextView!
     @IBOutlet weak var betaButton: NSButton!
+    @IBOutlet weak var aboutLogo: NSImageView!
     
     @IBAction func dismissView(_ sender: Any) {
         dismiss(sender)
@@ -30,6 +31,8 @@ class AboutViewController: NSViewController {
         let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
         if (betaString as! String).range(of: "beta") == nil {
             betaButton.isHidden = true
+        } else {
+            aboutLogo.image = NSImage(imageLiteralResourceName: "LogoBeta")
         }
     }
     

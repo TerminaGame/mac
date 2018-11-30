@@ -374,6 +374,7 @@ class RoomScene: SKScene {
                         
                         if gamePlayer?.health == 0 {
                             gamePlayer?.associatedNode.removeFromParent()
+                            gamePlayer?.currentInventory.removeAll()
                             gamePlayer = nil
                             presentDeathMessage(how: "error")
                         }

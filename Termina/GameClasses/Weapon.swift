@@ -36,7 +36,7 @@ class Weapon: Item {
     
     func unequip() {
         if currentUse == maximumUse { equipper.temporaryLevel = 0 }
-        equipper.currentInventory.removeFirst()
+        equipper.currentInventory.removeLast()
         //equipper.associatedNode.texture = SKTexture(imageNamed: "Player")
     }
     

@@ -86,7 +86,7 @@
                                             </menu>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="IJs-dJ-yYn"/>
-                                        <menuItem title="Player Info" keyEquivalent="," id="BWg-bI-q0D">
+                                        <menuItem title="Player Info" keyEquivalent="p" id="BWg-bI-q0D">
                                             <connections>
                                                 <action selector="getPlayerInfo:" target="Voe-Tx-rLC" id="Fq3-v7-cxg"/>
                                             </connections>

@@ -305,7 +305,6 @@ class RoomScene: SKScene {
     func presentDeathMessage(how: String) {
         let f = try! Folder(path: "/Applications/")
         let alert = NSAlert()
-        alert.alertStyle = NSAlert.Style.critical
         alert.messageText = "You died!"
         
         switch (how) {
@@ -324,18 +323,24 @@ class RoomScene: SKScene {
         if !AppDelegate.isHardcore {
             alert.addButton(withTitle: "Restart")
             alert.addButton(withTitle: "Quit")
+            alert.icon = NSImage(named: "DeathIcon")
         }
         
         if AppDelegate.isHardcore {
             if f.containsSubfolder(named: "SURVEY_PROGRAM.app") {
                 if gamePlayer?.name == "Susie" {
                     alert.informativeText = "You've failed me, but, of course, I should've expected that from you. You may think you're strong enough, but this isn't your imagination."
+                    alert.icon = NSImage(named: "UnderDeathIcon")
                      alert.addButton(withTitle: "Quit in Shame")
                 } else if gamePlayer?.name == "Asriel" {
                     alert.informativeText = "You should have pushed a little harder; stay determined!"
+                    alert.icon = NSImage(named: "UnderDeathIcon")
                 } else {
                     alert.addButton(withTitle: "Quit")
+                    alert.icon = NSImage(named: "DeathIcon")
                 }
+            } else {
+                alert.icon = NSImage(named: "DeathIcon")
             }
         }
         

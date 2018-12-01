@@ -318,10 +318,26 @@ class RoomScene: SKScene {
                     alert.icon = NSImage(named: "UnderDeathIcon")
                 } else {
                     alert.addButton(withTitle: "Quit")
-                    alert.icon = NSImage(named: "DeathIcon")
+                    alert.icon = NSImage(named: "PortalDeathIcon")
+                    
+                    switch (how) {
+                    case "magic":
+                        alert.informativeText = "Unfortunately, you died from a magic spell."
+                        break
+                    case "error":
+                        alert.informativeText = "Unfortunately, \(roomEntity?.name ?? "the error") crashed you before you could catch it."
+                        break
+                    default:
+                        alert.informativeText = "Unfortunately, you died of mysterious causes..."
+                        break
+                    }
+                    
+                    if gamePlayer?.name == "Chell" {
+                        alert.informativeText = "You're not a good person; you know that, right? Good people don't die so easily here."
+                    }
+                    
                 }
             } else {
-                alert.icon = NSImage(named: "DeathIcon")
                 alert.addButton(withTitle: "Quit")
                 alert.icon = NSImage(named: "DeathIcon")
                 

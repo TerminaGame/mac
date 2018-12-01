@@ -309,7 +309,6 @@ class RoomScene: SKScene {
         
         if AppDelegate.isHardcore {
             if f.containsSubfolder(named: "SURVEY_PROGRAM.app") {
-                print(gamePlayer?.name)
                 if gamePlayer?.name == "Susie" {
                     alert.informativeText = "You've failed me, but, of course, I should've expected that from you. You may think you're strong enough, but this isn't your imagination."
                     alert.icon = NSImage(named: "UnderDeathIcon")

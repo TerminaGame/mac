@@ -138,7 +138,16 @@ class RoomScene: SKScene {
             if self.name == "20" {
                 roomBackground?.texture = SKTexture(imageNamed: "bg25")
             } else {
-                roomBackground?.texture = SKTexture(imageNamed: "bg" + String(Int.random(in: 25...28)))
+                let randomLower = Int.random(in: 1...24)
+                let randomUpper = Int.random(in: 26...28)
+                let chosenOne = Bool.random()
+                
+                if chosenOne {
+                    roomBackground?.texture = SKTexture(imageNamed: "bg" + String(randomLower))
+                } else {
+                    roomBackground?.texture = SKTexture(imageNamed: "bg" + String(randomUpper))
+                }
+                
             }
         } else {
             roomBackground?.texture = SKTexture(imageNamed: "bg" + String(bg ?? 1))

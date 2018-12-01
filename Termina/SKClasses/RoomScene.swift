@@ -307,31 +307,13 @@ class RoomScene: SKScene {
         let alert = NSAlert()
         alert.messageText = "You died!"
         
-        switch (how) {
-        case "magic":
-            alert.informativeText = "Unfortunately, you died from a magic spell."
-            break
-        case "error":
-            alert.informativeText = "Unfortunately, \(roomEntity?.name ?? "the error") crashed you before you could catch it."
-            break
-        default:
-            alert.informativeText = "Unfortunately, you died of mysterious causes..."
-            break
-            
-        }
-        
-        if !AppDelegate.isHardcore {
-            alert.addButton(withTitle: "Restart")
-            alert.addButton(withTitle: "Quit")
-            alert.icon = NSImage(named: "DeathIcon")
-        }
-        
         if AppDelegate.isHardcore {
             if f.containsSubfolder(named: "SURVEY_PROGRAM.app") {
+                print(gamePlayer?.name)
                 if gamePlayer?.name == "Susie" {
                     alert.informativeText = "You've failed me, but, of course, I should've expected that from you. You may think you're strong enough, but this isn't your imagination."
                     alert.icon = NSImage(named: "UnderDeathIcon")
-                     alert.addButton(withTitle: "Quit in Shame")
+                    alert.addButton(withTitle: "Quit in Shame")
                 } else if gamePlayer?.name == "Asriel" {
                     alert.informativeText = "You should have pushed a little harder; stay determined!"
                     alert.icon = NSImage(named: "UnderDeathIcon")
@@ -341,7 +323,38 @@ class RoomScene: SKScene {
                 }
             } else {
                 alert.icon = NSImage(named: "DeathIcon")
+                alert.addButton(withTitle: "Quit")
+                alert.icon = NSImage(named: "DeathIcon")
+                
+                switch (how) {
+                case "magic":
+                    alert.informativeText = "Unfortunately, you died from a magic spell."
+                    break
+                case "error":
+                    alert.informativeText = "Unfortunately, \(roomEntity?.name ?? "the error") crashed you before you could catch it."
+                    break
+                default:
+                    alert.informativeText = "Unfortunately, you died of mysterious causes..."
+                    break
+                }
             }
+        } else {
+            alert.addButton(withTitle: "Restart")
+            alert.addButton(withTitle: "Quit")
+            alert.icon = NSImage(named: "DeathIcon")
+            
+            switch (how) {
+            case "magic":
+                alert.informativeText = "Unfortunately, you died from a magic spell."
+                break
+            case "error":
+                alert.informativeText = "Unfortunately, \(roomEntity?.name ?? "the error") crashed you before you could catch it."
+                break
+            default:
+                alert.informativeText = "Unfortunately, you died of mysterious causes..."
+                break
+            }
+            
         }
         
         alert.beginSheetModal(for: (self.view?.window!)!) {
@@ -398,8 +411,8 @@ class RoomScene: SKScene {
                         if gamePlayer?.health == 0 {
                             gamePlayer?.associatedNode.removeFromParent()
                             gamePlayer?.currentInventory.removeAll()
-                            gamePlayer = nil
                             presentDeathMessage(how: "error")
+                            gamePlayer = nil
                         }
                     }
                 }

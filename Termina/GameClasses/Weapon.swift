@@ -10,9 +10,19 @@ import Foundation
 import SpriteKit
 
 class Weapon: Item {
+    /**
+     Level of attack
+     */
     var level: Int
+    
+    /**
+     The player that is holding the weapon
+     */
     var equipper: Player
     
+    /**
+     Adds the weapon to the player's inventory and removes the node from its parent scene.
+     */
     func equip() {
         equipper.currentInventory.append(self)
         equipper.temporaryLevel = level
@@ -34,12 +44,24 @@ class Weapon: Item {
         }
     }
     
+    /**
+     Removes the item from the player's inventory
+     */
     func unequip() {
         if currentUse == maximumUse { equipper.temporaryLevel = 0 }
         equipper.currentInventory.removeLast()
         //equipper.associatedNode.texture = SKTexture(imageNamed: "Player")
     }
     
+    /**
+     Initializes the Weapon object
+     
+     - Parameters:
+         - name: The name of the weapon
+         - equipLevel: The level of the weapon
+         - player: The associated player that will equip the weapon
+         - node: The associated node from the SKScene
+     */
     init(name: String, equipLevel: Int, player: Player, node: SKNode) {
         level = equipLevel
         equipper = player

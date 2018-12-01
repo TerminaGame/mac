@@ -13,8 +13,20 @@ import UserNotifications
 class RoomScene: SKScene {
     
     var hasEntity = false
+    
+    /**
+     The room's entity, either a monster or NPC.
+     */
     var roomEntity: Entity?
+    
+    /**
+     The room's player
+     */
     var gamePlayer: Player?
+    
+    /**
+     The room's inventory
+     */
     var items = [Item]()
     var leaveFlag = false
     
@@ -24,6 +36,13 @@ class RoomScene: SKScene {
     var deathOverlay: SKSpriteNode?
     var exitRoom: SKSpriteNode?
     
+    /**
+     Create a tile node for every item in a tilemap and then remove the tilemap.
+     
+     - Parameters:
+        - map: The tilemap to create tile nodes for.
+        - movable: Whether the tiles nodes will be affected by gravity and can be moved by entities or other nodes
+     */
     func configureTileMap(map: SKTileMapNode, movable: Bool) {
         let tileMapSize = map.tileSize
         
@@ -75,6 +94,9 @@ class RoomScene: SKScene {
         map.removeFromParent()
     }
     
+    /**
+     Sets up the entities in a given room.
+     */
     func setUpEntity() {
         let randomSeed = Int.random(in: 0...9)
         if randomSeed > 4 {
@@ -102,6 +124,12 @@ class RoomScene: SKScene {
         }
     }
     
+    /**
+     Randomly selects a background from a list.
+     
+     - Parameters:
+        - bg: The number of the background to update to. If filled, will not randomly select a background.
+     */
     func setUpBackground(_ bg: Int?) {
         roomBackground = childNode(withName: "roomBackground") as? SKSpriteNode
         if bg == nil {
@@ -112,6 +140,9 @@ class RoomScene: SKScene {
         
     }
     
+    /**
+     Sets up the player and hooks it to the AppDelegate's player
+     */
     func setUpPlayer() {
         gamePlayer = AppDelegate.dataModel.player
         gamePlayer?.associatedNode = (childNode(withName: "playerSprite") as? SKSpriteNode)!
@@ -119,6 +150,9 @@ class RoomScene: SKScene {
         gamePlayer?.associatedHud.update(newHealth: gamePlayer?.health ?? 100, newLevel: gamePlayer?.level ?? 1, newName: gamePlayer?.name ?? "Name")
     }
     
+    /**
+     Sets up the weapon in a given room
+     */
     func setUpWeapon() {
         if childNode(withName: "weaponItemNode") != nil {
             weaponNode = childNode(withName: "weaponItemNode") as? SKSpriteNode
@@ -133,6 +167,9 @@ class RoomScene: SKScene {
         }
     }
     
+    /**
+     Sets up the potions or bottles in a given room.
+     */
     func setUpBottle() {
         if childNode(withName: "bottleItemNode") != nil {
             bottleNode = childNode(withName: "bottleItemNode") as? SKSpriteNode
@@ -153,6 +190,9 @@ class RoomScene: SKScene {
         }
     }
     
+    /**
+    Sets up the room's scene and all of its components
+     */
     func setUpScene() {
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit
@@ -222,12 +262,6 @@ class RoomScene: SKScene {
             }
         }
         
-//        else if (Keyboard.sharedKeyboard.justPressed(keys: Key.K)) {
-//            gamePlayer?.health = 0
-//            gamePlayer?.associatedHud.updateHealth(0)
-//            presentDeathMessage(how: "magic")
-//        }
-        
         else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Esc)) {
             self.scaleMode = .aspectFit
             self.view?.presentScene(SKScene(fileNamed: "MainMenu")!, transition: SKTransition.fade(with: NSColor.white, duration: 0.5))
@@ -259,6 +293,9 @@ class RoomScene: SKScene {
         
     }
     
+    /**
+     Attempts to equip an item from the room to the player.
+     */
     func equipItemHere() {
         if items.last is Weapon {
             if gamePlayer?.currentInventory.last is Weapon {
@@ -290,6 +327,12 @@ class RoomScene: SKScene {
         }
     }
     
+    /**
+     Swaps out the scene with a new scene randomly.
+     
+     - Parameters:
+        - override: The scene to display. If filled, this will not pick a random scene.
+     */
     func presentNewScene(_ override: Int?) {
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit
@@ -302,6 +345,14 @@ class RoomScene: SKScene {
         self.scaleMode = .aspectFit
     }
     
+    /**
+     Presents the death alert.
+     
+     If the player is in Hardcore Mode, the only option in the alert will be to quit the game entirely.
+     
+     - Parameters:
+        - how: How the player died. (magic, error)
+     */
     func presentDeathMessage(how: String) {
         let f = try! Folder(path: "/Applications/")
         let alert = NSAlert()
@@ -388,7 +439,17 @@ class RoomScene: SKScene {
         }
     }
     
-    // Uses distance formula (⎷( (x1 -x2)^2 + (y1-y2)^2 ))
+    /**
+     Determine if the distance between the player sprite and a given node are within a certain range.
+     
+     This uses the distance formula with the player node and the requested node being the two points to draw a distance from. This is used to determine how close a sprite is to another sprite.
+     
+     - Parameters:
+        - node: The node to create a reference point from
+        - maximumDistance: The maximum distance length before reporting false
+     
+     - Returns: Boolean value that indicates if the player node falls in a certain distance
+     */
     func isNear(node: SKNode, maximumDistance: CGFloat) -> Bool {
         let krisNodePosition = gamePlayer?.associatedNode.position
         let selectedNodePosition = node.position
@@ -396,6 +457,7 @@ class RoomScene: SKScene {
         let horizontalDifference = (krisNodePosition?.x ?? 0) - selectedNodePosition.x
         let verticalDifference = (krisNodePosition?.y ?? 0) - selectedNodePosition.y
         
+        // Uses distance formula (⎷( (x1 -x2)^2 + (y1-y2)^2 ))
         let radius = sqrt(pow(horizontalDifference, 2.0) + pow(verticalDifference, 2.0))
         
         if radius <= maximumDistance {
@@ -406,7 +468,9 @@ class RoomScene: SKScene {
         
     }
     
-    
+    /**
+     Attempts to attack the room's entity, if possible.
+     */
     func attackHere() {
         if roomEntity != nil {
             if roomEntity is Monster {
@@ -442,6 +506,11 @@ class RoomScene: SKScene {
         }
     }
     
+    /**
+     Attempts to pacify the room's monster, if present.
+     
+     Pacification will fail if there isn't a monster in the room or if the monster's level is greater than the player's.
+     */
     func pacifyHere() {
         if roomEntity != nil {
             if roomEntity is Monster {

@@ -9,8 +9,17 @@
 import Foundation
 import SpriteKit
 
+/**
+ Heads-up display that reflects level information and current health of an entity
+ */
 class HUD: SKNode {
     
+    /**
+     Updates the health number and respective graphic to an amount.
+     
+     - Parameters:
+        - number: The number to update the HUD's health to
+     */
     func updateHealth(_ number: Int) {
         let healthHudBackground = childNode(withName: "healthHudDisplay") as? SKSpriteNode
         let healthHudLabel = childNode(withName: "healthHudNumber") as? SKLabelNode
@@ -52,18 +61,39 @@ class HUD: SKNode {
         healthHudBackground?.alpha = 1.0
     }
     
+    /**
+     Updates the level badge to a number
+     
+     - Parameters:
+        - number: The number to update the level to
+     */
     func updateLevel(_ number: Int) {
         let levelBadgeNumber = childNode(withName: "levelBadgeCount") as? SKLabelNode
         levelBadgeNumber?.fontName = NSFont.systemFont(ofSize: 18).fontName
         levelBadgeNumber?.text = String(number)
     }
     
+    /**
+     Updates the name of the entity under the HUD
+     
+     - Parameters:
+        - name: The string to update the name to
+     */
     func updateName(_ name: String) {
         let nameLabel = childNode(withName: "entityNameLabel") as? SKLabelNode
         nameLabel?.fontName = NSFont.boldSystemFont(ofSize: 18).fontName
         nameLabel?.text = name
     }
     
+    
+    /**
+     Updates the health, level, and name at once
+     
+     - Parameters:
+         - newHealth: The health number to update
+         - newLevel: The level number to update
+         - newName: The string to update
+     */
     func update(newHealth: Int, newLevel: Int, newName: String) {
         updateHealth(newHealth)
         updateLevel(newLevel)

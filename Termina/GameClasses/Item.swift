@@ -9,18 +9,45 @@
 import Foundation
 import SpriteKit
 
+/**
+ Base class for items
+ */
 class Item {
+    /**
+     The name of the item
+     */
     var name: String
+    
+    /**
+     The item's power.
+     */
     var effect: Int
+    
+    /**
+     The maximum amount of uses for this item.
+     */
     var maximumUse: Int
+    
+    /**
+     The amount of uses it has received.
+     */
     var currentUse: Int
+    
+    /**
+     The associated node from an SKScene
+     */
     var associatedNode: SKNode
     
+    /**
+     Fade the item's sprite after each use.
+     */
     func pulse() {
         associatedNode.run(SKAction.fadeAlpha(by: CGFloat(1.0 / Double(maximumUse * -1)), duration: 0.5))
-        print(associatedNode.alpha)
     }
     
+    /**
+     Increment the current use counter and pulse
+     */
     func use() {
         if currentUse > 0 {
             if currentUse - 1 <= 0 {
@@ -36,6 +63,13 @@ class Item {
         }
     }
     
+    /**
+     Initializes the Item class.
+     
+     - Parameters:
+         - itemName: The name of the item
+         - itemNode: The associated SKNode from an SKScene
+     */
     init(itemName: String, itemNode: SKNode) {
         name = itemName
         effect = Int.random(in: 10 ... 20)

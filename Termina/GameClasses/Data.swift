@@ -13,12 +13,31 @@ import AppCenterCrashes
 import AppCenterAnalytics
 import AppCenter
 
+/**
+ Class responsible for managing player data
+ */
 class DataModel {
     
+    /**
+     The player to import, create, save, or load settings for
+     */
     var player: Player
+    
+    /**
+     Temporary stored level value (used when restoring from Hardcore Mode)
+     */
     var storedLevel: Int = 0
+    
+    /**
+     The data path where Termina's data files are located.
+     
+     Termina runs in a sandbox, so the default directory is in the user's Library of containers (`/Users/<username>/Library/Containers/io.github.terminagame.mac/Data/`)
+     */
     let appDataPath = try! Folder(path: Folder.home.path)
     
+    /**
+     Attempts to load data from the folder.
+     */
     func loadFromFile() -> Bool {
         if (appDataPath.containsFile(named: "settings.json")) {
             do {
@@ -42,11 +61,9 @@ class DataModel {
                 
                 return true
             } catch {
-                let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-                if (betaString as! String).range(of: "beta") != nil {
+                if BetaHandler.isBetaBuild {
                     MSAnalytics.trackEvent("Failed to load settings file. Reason: \(error)")
                 }
-                
                 return false
             }
         } else {
@@ -63,6 +80,9 @@ class DataModel {
         }
     }
     
+    /**
+     Attempts to save the file to the data folder.
+     */
     func saveToFile(_ silent: Bool) {
         do {
             try appDataPath.createFile(named: "settings.json", contents: """
@@ -74,8 +94,7 @@ class DataModel {
                 }
                 """)
         } catch {
-            let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-            if (betaString as! String).range(of: "beta") != nil {
+            if BetaHandler.isBetaBuild {
                 MSAnalytics.trackEvent("Failed to save settings file. Reason: \(error)")
             }
         }
@@ -96,6 +115,9 @@ class DataModel {
         
     }
     
+    /**
+     Resets the settings to default values, with the exception of the player's name.
+     */
     func resetSettings() {
         player.level = 1
         player.patchNumber = 0
@@ -111,6 +133,9 @@ class DataModel {
         center.add(newNotificationRequest, withCompletionHandler: nil)
     }
     
+    /**
+     Attempts to delete the settings file.
+     */
     func deleteSettings() {
         if (appDataPath.containsFile(named: "settings.json")) {
             do {
@@ -132,14 +157,12 @@ class DataModel {
                 do {
                     try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
                 } catch {
-                    let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-                    if (betaString as! String).range(of: "beta") != nil {
+                    if BetaHandler.isBetaBuild {
                         MSAnalytics.trackEvent("Failed to Rename backup. Reason: \(error)")
                     }
                 }
             } catch {
-                let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-                if (betaString as! String).range(of: "beta") != nil {
+                if BetaHandler.isBetaBuild {
                     MSAnalytics.trackEvent("Failed to delete settings file. Reason: \(error)")
                 }
                 let content = UNMutableNotificationContent()
@@ -154,13 +177,15 @@ class DataModel {
         }
     }
     
+    /**
+     Attempts to make a backup copy of the settings file.
+     */
     func backupSettings() {
         if appDataPath.containsFile(named: "settings.json") {
             do {
                 try appDataPath.file(named: "settings.json").rename(to: "settings_backup.json")
             } catch {
-                let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-                if (betaString as! String).range(of: "beta") != nil {
+                if BetaHandler.isBetaBuild {
                     MSAnalytics.trackEvent("Failed to backup settings file. Reason: \(error)")
                 }
                 let alert = NSAlert()
@@ -173,13 +198,15 @@ class DataModel {
         }
     }
     
+    /**
+     Attempts to restore the settings file from a backup.
+     */
     func restoreSettings() {
         if appDataPath.containsFile(named: "settings_backup.json") && !(appDataPath.containsFile(named: "settings.json")) {
             do {
                 try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
             } catch {
-                let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-                if (betaString as! String).range(of: "beta") != nil {
+                if BetaHandler.isBetaBuild {
                     MSAnalytics.trackEvent("Failed to restore settings file. Reason: \(error)")
                 }
                 let alert = NSAlert()
@@ -194,8 +221,7 @@ class DataModel {
             do {
                 try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
             } catch {
-                let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-                if (betaString as! String).range(of: "beta") != nil {
+                if BetaHandler.isBetaBuild {
                     MSAnalytics.trackEvent("Failed to rename settings file. Reason: \(error)")
                 }
                 let alert = NSAlert()
@@ -208,6 +234,9 @@ class DataModel {
         }
     }
     
+    /**
+     Attempts to import the settings file a player selects from an NSOpenPanel
+     */
     func importSettings() {
         let importFilePathDialog = NSOpenPanel()
         importFilePathDialog.title = "Import Data"
@@ -235,8 +264,7 @@ class DataModel {
                         do {
                             try self.appDataPath.file(named: "settings.json").delete()
                         } catch {
-                            let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-                            if (betaString as! String).range(of: "beta") != nil {
+                            if BetaHandler.isBetaBuild {
                                 MSAnalytics.trackEvent("Failed to delete settings file. Reason: \(error)")
                             }
                         }
@@ -258,6 +286,12 @@ class DataModel {
         }
     }
     
+    /**
+     Initializes the DataModel class.
+     
+     - Parameters:
+        - whichPlayer: The player to associate with a data model
+     */
     init(whichPlayer: Player) {
         player = whichPlayer
     }

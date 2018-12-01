@@ -78,6 +78,7 @@
 		BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */; };
 		BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BF5D7A2D21AF3D96008CD33F /* Podfile */; };
 		BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */; };
+		BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -172,6 +173,7 @@
 		BF5D7A3021AF4152008CD33F /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenter.framework"; sourceTree = "<group>"; };
 		BF5D7A3121AF4152008CD33F /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
 		BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "Termina macOS Beta Program.rtf"; path = "../../../../Library/Mobile Documents/com~apple~TextEdit/Documents/Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
+		BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 				BF082D7921AC9A4500B5406C /* Termina.swift */,
 				BF082D7A21AC9A4500B5406C /* Player.swift */,
 				BF082D7B21AC9A4500B5406C /* Potion.swift */,
+				BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */,
 			);
 			path = GameClasses;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */,
+				BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */,
 				BF082DA921AC9A4500B5406C /* Hardcore.swift in Sources */,
 				BF082DA821AC9A4500B5406C /* AppDelegate.swift in Sources */,
 				BF082D9821AC9A4500B5406C /* Names.swift in Sources */,

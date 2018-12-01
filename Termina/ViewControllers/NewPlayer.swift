@@ -12,14 +12,24 @@ import Cocoa
 class NewPlayer: NSViewController {
     @IBOutlet weak var playerNameField: NSTextField!
     
+    /**
+     Cancels the operation and dismisses the sheet.
+     */
     @IBAction func cancelAndDismiss(_ sender: Any) {
         dismiss(sender)
     }
+    
+    /**
+     Proceeds with importing a player's settings and dismisses the sheet.
+     */
     @IBAction func importAndDismiss(_ sender: Any) {
         dismiss(sender)
         AppDelegate.dataModel.importSettings()
     }
     
+    /**
+     Takes the input from the sheet, creates player data, and then dismisses the sheet.
+     */
     @IBAction func submitAndDismiss(_ sender: Any) {
         AppDelegate.dataModel.player = Player(name: playerNameField.stringValue)
         AppDelegate.dataModel.saveToFile(true)

@@ -10,14 +10,25 @@ import Foundation
 import SpriteKit
 import UserNotifications
 
+/**
+ Special monster class for Termina
+ */
 class Termina: Monster {
-
+    
+    /**
+     Private API key
+     
+     Use this to connect to services such as Tutoriel, Aperture TestFile, and Project Scotia
+     */
     private let apikey = "2be7654ed74eb3670ac46cf3bffd7a2c354159ab"
 
     func insult() {}
 
     func speakBeforeFighting() {}
-
+    
+    /**
+     Takes damage and heals if within a specific range
+     */
     override func takeDamage(_ amount: Int) {
         if Int.random(in: 0...10) > 3 {
             super.takeDamage(amount)
@@ -28,6 +39,9 @@ class Termina: Monster {
         }
     }
     
+    /**
+     Sends a notification to the user, mocking them about pacifying the entity
+     */
     func pacifyComment() {
         let content = UNMutableNotificationContent()
         content.title = "Do you think you're being clever?"
@@ -39,6 +53,9 @@ class Termina: Monster {
         center.add(newNotificationRequest, withCompletionHandler: nil)
     }
     
+    /**
+     Alerts the user when attempting to set 'Termina' as the name in Hardcore Mode
+     */
     func mockPlayerHardcore() {
         let alert = NSAlert()
         alert.alertStyle = NSAlert.Style.critical
@@ -48,6 +65,9 @@ class Termina: Monster {
         alert.runModal()
     }
     
+    /**
+     Alerts the user when attempting to set 'Susie' as the name in Hardcore Mode, given a set of conditions
+     */
     func targetSusie() {
         let alert = NSAlert()
         alert.alertStyle = NSAlert.Style.critical
@@ -57,6 +77,11 @@ class Termina: Monster {
         alert.runModal()
     }
     
+    /**
+     Alerts the user when attempting to set 'Asriel' as the name in Hardcore Mode, given a set of conditions
+     
+     Because he's here, she'll try to find what it is he wanted her to see, anyway.
+     */
     func targetAsriel() {
         let alert = NSAlert()
         alert.alertStyle = NSAlert.Style.critical
@@ -65,11 +90,23 @@ class Termina: Monster {
         alert.addButton(withTitle: "OK")
         alert.runModal()
     }
-
+    
+    /**
+     Initialize the Termina class.
+     
+     - Parameters:
+         - terminaNode: Termina's node in an SKScene
+         - terminaHud: Termina's hud in an SKScene
+     */
     init(terminaNode: SKSpriteNode, terminaHud: HUD) {
         super.init(myName: "Termina", myLevel: 420, myNode: terminaNode, myHealth: 4200, pacifiable: "yes", thisHud: terminaHud)
     }
     
+    /**
+     Initialize the Termina class with a blank node and HUD.
+     
+     Use this class if you need to access Termina's functions without hooking her up to an SKScene.
+     */
     init() {
         super.init(myName: "Termina", myLevel: 420, myNode: SKSpriteNode(), myHealth: 4200, pacifiable: "yes", thisHud: HUD())
     }

@@ -13,6 +13,9 @@ class BetaViewController: NSViewController {
     
     @IBOutlet var aboutDocumentView: NSTextView!
     
+    /**
+     Dismisses the sheet
+     */
     @IBAction func dismissSheet(_ sender: Any) {
         dismiss(sender)
     }

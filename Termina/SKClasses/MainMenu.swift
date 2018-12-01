@@ -20,6 +20,9 @@ class MainMenu: SKScene {
     
     var background: SKSpriteNode?
     
+    /**
+     Changes the font of the SKLabelNodes to Apple's default system font
+     */
     func getSystemFont() {
         menuTitle?.fontName = NSFont.boldSystemFont(ofSize: 72).fontName
         startGameButton?.fontName = NSFont.systemFont(ofSize: 32).fontName
@@ -28,6 +31,12 @@ class MainMenu: SKScene {
         quitButton?.fontName = NSFont.systemFont(ofSize: 32).fontName
     }
     
+    /**
+     Swaps out the scene with a new scene randomly.
+     
+     - Parameters:
+        - override: The scene to display. If filled, this will not pick a random scene.
+     */
     func presentNewScene(_ override: Int?) {
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit
@@ -41,6 +50,9 @@ class MainMenu: SKScene {
         self.scaleMode = .aspectFit
     }
     
+    /**
+     Prompts the user to confirm resetting data (or gives option to delete it)
+     */
     func resetPlayerData() {
         let alert = NSAlert()
         alert.messageText = "Are you sure you want to reset your player data?"
@@ -59,6 +71,9 @@ class MainMenu: SKScene {
         }
     }
     
+    /**
+     Prompts the user to confirm deleting data
+     */
     func deleteSettings() {
         let alert = NSAlert()
         alert.alertStyle = NSAlert.Style.critical
@@ -76,10 +91,16 @@ class MainMenu: SKScene {
         }
     }
     
+    /**
+     Exits the application.
+     */
     func quitGame() {
         exit(0)
     }
     
+    /**
+     Sets up the menu
+     */
     func setUpMenu() {
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit
@@ -123,8 +144,7 @@ class MainMenu: SKScene {
         }
         
         // Check if this is a beta. If not, hide the Beta Label.
-        let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-        if (betaString as! String).range(of: "beta") == nil {
+        if !(BetaHandler.isBetaBuild) {
             childNode(withName: "betaLabel")?.isHidden = true
         }
 

@@ -16,6 +16,9 @@ class AboutViewController: NSViewController {
     @IBOutlet weak var betaButton: NSButton!
     @IBOutlet weak var aboutLogo: NSImageView!
     
+    /**
+     Dismisses the sheet
+     */
     @IBAction func dismissView(_ sender: Any) {
         dismiss(sender)
     }
@@ -28,8 +31,7 @@ class AboutViewController: NSViewController {
         aboutDocumentView.textStorage?.setAttributedString(rtfPathString)
         aboutDocumentView.textStorage?.foregroundColor = NSColor.white
         
-        let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-        if (betaString as! String).range(of: "beta") == nil {
+        if !(BetaHandler.isBetaBuild) {
             betaButton.isHidden = true
         } else {
             aboutLogo.image = NSImage(imageLiteralResourceName: "LogoBeta")

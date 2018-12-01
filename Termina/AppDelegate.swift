@@ -17,6 +17,9 @@ import AppCenterCrashes
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
     
+    /**
+     The data model which stores player information.
+     */
     static var dataModel = DataModel(whichPlayer: Player(name: "Frisk"))
     static var gotLoadedData = false
     static var isHardcore = false
@@ -24,27 +27,44 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     @IBOutlet weak var deleteMenuItem: NSMenuItem!
     @IBOutlet weak var feedbackMenuItem: NSMenuItem!
     
+    /**
+     Opens the feedback website (if in a beta program)
+     */
     @IBAction func openFeedback(_ sender: Any) {
         NSWorkspace.shared.open(URL(string: "https://github.com/TerminaGame/mac/issues/new?template=beta-report.md")!)
     }
     
+    /**
+     Opens the About pane.
+     */
     @IBAction func getAboutSheet(_ sender: Any) {
         NSApplication.shared.mainWindow?.contentViewController?.presentAsSheet(NSStoryboard(name: "About", bundle: Bundle.main).instantiateController(withIdentifier: "About") as! NSViewController)
     }
-
+    
+    /**
+     Opens the player profile page.
+     */
     @IBAction func getPlayerInfo(_ sender: Any) {
         NSApplication.shared.mainWindow?.contentViewController?.presentAsSheet(NSStoryboard(name: "Profile", bundle: Bundle.main).instantiateController(withIdentifier: "Profile") as! NSViewController)
     }
     
-    
+    /**
+     Tells the data model to use an NSOpenPanel to import settings.
+     */
     @IBAction func importSettingsFIle(_ sender: Any) {
         AppDelegate.dataModel.importSettings()
     }
     
+    /**
+     Tells the data model to save the play profile.
+     */
     @IBAction func saveDataFromMenu(_ sender: Any) {
         AppDelegate.dataModel.saveToFile(false)
     }
     
+    /**
+     Prompts the user to confirm a reset.
+     */
     @IBAction func resetPlayerData(_ sender: Any) {
         let alert = NSAlert()
         alert.alertStyle = NSAlert.Style.warning
@@ -59,6 +79,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         }
     }
     
+    /**
+     Prompts the user to confirm deleting their data.
+     */
     @IBAction func deletePlayerData(_ sender: Any) {
         let alert = NSAlert()
         alert.alertStyle = NSAlert.Style.critical
@@ -73,19 +96,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         }
     }
     
-    
+    /**
+     Typical code to launch after the application finishes loading.
+     */
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         // Connect to MS AppCenter for beta testing releases
-        let betaString = Bundle.main.infoDictionary?["CFBundleVersion"]
-        if (betaString as! String).range(of: "beta") != nil {
+        if BetaHandler.isBetaBuild {
             MSAppCenter.start("dd5d5c2f-8d90-4f89-9c55-e81b02d36d8f", withServices:[
                 MSAnalytics.self,
                 MSCrashes.self
                 ])
             feedbackMenuItem!.isHidden = false
         }
-        
         
         let center = UNUserNotificationCenter.current()
         // Request permission to display alerts and play sounds.
@@ -118,6 +141,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         }
     }
     
+    /**
+     Typical code that executes upon receiving a request to terminate the application.
+     */
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         let temporaryLoad = DataModel(whichPlayer: Player(name: "Frisk"))
         let _ = temporaryLoad.loadFromFile()
@@ -151,6 +177,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         }
     }
     
+    /**
+     Handler and operator for user notifications.
+     */
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert])
     }

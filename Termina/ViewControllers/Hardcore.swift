@@ -13,6 +13,9 @@ class HardcoreViewController: NSViewController {
     
     @IBOutlet weak var playerNameField: NSTextField!
     
+    /**
+     Takes the player's input, parses it, creates the temporary player data, and then dismisses the sheet
+     */
     @IBAction func submitAndDismiss(_ sender: Any) {
         let f = try! Folder(path: "/Applications/")
         
@@ -37,9 +40,16 @@ class HardcoreViewController: NSViewController {
         dismiss(sender)
     }
     
+    /**
+     Cancels the operation and dismisses the sheet
+     */
     @IBAction func cancelAndDismiss(_ sender: Any) {
         dismiss(sender)
     }
+    
+    /**
+     Creates a backup of the player data, resets the settings, and then dismisses the sheet.
+     */
     @IBAction func useExistingAndDismiss(_ sender: Any) {
         AppDelegate.dataModel.backupSettings()
         AppDelegate.dataModel.resetSettings()

@@ -9,11 +9,33 @@
 import Foundation
 import SpriteKit
 
+/**
+ Base class for living beings
+ */
 class Entity {
+    /**
+     The name of the entity
+     */
     var name: String
+    
+    /**
+     Current health of the entity
+     */
     var health: Int
+    
+    /**
+     Maximum or ideal health of the entity
+     */
     var maximumHealth: Int
+    
+    /**
+     Entity's level
+     */
     var level: Int
+    
+    /**
+     Entity's associated SKSpriteNode from an SKScene
+     */
     var associatedNode: SKSpriteNode
     
     // SKActions
@@ -23,6 +45,12 @@ class Entity {
     let SKDamageLeftAction = SKAction.moveBy(x: -5, y: 50, duration: 0.25)
     let SKDamageRightAction = SKAction.moveBy(x: 5, y: 50, duration: 0.25)
     
+    /**
+     Takes damage by an amount and moves the sprite
+     
+     - Parameters:
+        - amount: The amount of damage to give
+     */
     func takeDamage(_ amount: Int) {
         let temporaryHealth = health - amount
         if temporaryHealth < 0 {
@@ -37,6 +65,12 @@ class Entity {
         }
     }
     
+    /**
+     Heals by an amount or resets the health to its maximum if it goes over
+     
+     - Parameters:
+        - amount: Amount of health to restore
+     */
     func heal(_ amount: Int) {
         let temporaryHealth = health + amount
         if temporaryHealth > maximumHealth {
@@ -46,6 +80,12 @@ class Entity {
         }
     }
     
+    /**
+     Increases level count
+     
+     - Parameters:
+        - amount: The amount to increase the level by
+     */
     func levelUp(_ amount: Int) {
         level += amount
     }
@@ -54,10 +94,19 @@ class Entity {
     
     func saySomething(what: String) {}
     
+    /**
+     Moves the sprite up and then down
+     */
     func jump() {
         associatedNode.run(SKJumpAction)
     }
     
+    /**
+     Moves the sprite in a given direction.
+     
+     - Parameters:
+        - direction: The direction for the sprite to move in. Either left or right.
+     */
     func move(_ direction: String) {
         if direction == "left" {
             associatedNode.run(SKMoveLeftAction)
@@ -66,6 +115,15 @@ class Entity {
         }
     }
     
+    /**
+     Initializes the Entity class
+     
+     - Parameters:
+         - thisName: The name of the entity
+         - thisLevel: The entity's level
+         - defaultHealth: The default and maximum health of the entity
+         - thisNode: The associated SKSpriteNode from an SKScene
+     */
     init(thisName: String, thisLevel: Int, defaultHealth: Int, thisNode: SKSpriteNode) {
         name = thisName
         level = thisLevel
@@ -74,6 +132,16 @@ class Entity {
         associatedNode = thisNode
     }
     
+    /**
+     Initializes the Entity class. Automatically sets the node to a blank SKSpriteNode.
+     
+     Use this if you want to interact with an entity class but can't attach it to any nodes.
+     
+     - Parameters:
+         - thisName: The name of the entity
+         - thisLevel: The entity's level
+         - defaultHealth: The default and maximum health of the entity
+     */
     init(thisName: String, thisLevel: Int, defaultHealth: Int) {
         name = thisName
         level = thisLevel

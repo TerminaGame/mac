@@ -17,9 +17,16 @@ class ProfileViewController: NSViewController {
     @IBOutlet weak var currentWeapon: NSTextField!
     @IBOutlet weak var dropWeaponButton: NSButton!
     
+    /**
+     Dismisses the profile sheet.
+     */
     @IBAction func dismissProfile(_ sender: Any) {
         dismiss(sender)
     }
+    
+    /**
+     Prompts the user to confirm dropping the weapon and then dismisses the sheet.
+     */
     @IBAction func dropWeapon(_ sender: Any) {
         let alert = NSAlert()
         alert.alertStyle = NSAlert.Style.critical

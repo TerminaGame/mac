@@ -10,8 +10,14 @@ import Foundation
 import SpriteKit
 
 class Potion: Item {
+    /**
+     The player to administer health to
+     */
     var player: Player
     
+    /**
+     Heal the player and count it as a use
+     */
     override func use() {
         if currentUse > 0 {
             super.use()
@@ -21,6 +27,14 @@ class Potion: Item {
         }
     }
     
+    /**
+     Initializes the Potion class.
+     
+     - Parameters:
+         - potionName: The name of the potion
+         - affectedPlayer: The player to administer health to
+         - potionNode: The potion's SKNode in an SKScene
+     */
     init(potionName: String, affectedPlayer: Player, potionNode: SKNode) {
         player = affectedPlayer
         

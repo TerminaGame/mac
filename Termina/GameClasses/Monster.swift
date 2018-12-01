@@ -9,11 +9,26 @@
 import Foundation
 import SpriteKit
 
+/**
+ Base class for monsters.
+ 
+ This class is responsible for adding the logic behind monsters when attached to SKSpriteNodes.
+ */
 class Monster: Entity {
     
+    /**
+     Power of attack (damage an entity will receive)
+     */
     var attack: Int
+    
+    /**
+     Variable that dictates ability to be pacified
+     */
     var canBePacified: Bool
     
+    /**
+     The associated HUD from the room scene
+     */
     var associatedHud: HUD
     
     override func takeDamage(_ amount: Int) {
@@ -29,6 +44,17 @@ class Monster: Entity {
     
     func pacify() {}
     
+    /**
+     Initializes the Monster class.
+     
+     - Parameters:
+        - myName: Name of the monster
+         - myLevel: Monster's level
+         - myNode: The associated node from the SKScene
+         - myHealth: The default health
+         - pacifiable: Whether the monster is pacifiable. Can either be "yes", "random", or "no"
+         - thisHud: The associated HUD from the SKSScene
+     */
     init(myName: String, myLevel: Int, myNode: SKSpriteNode, myHealth: Int, pacifiable: String, thisHud: HUD) {
         attack = myLevel + 5
         

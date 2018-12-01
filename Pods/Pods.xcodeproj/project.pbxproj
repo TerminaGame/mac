@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,13 +19,13 @@
 		43B19F7530477E15E4D98CCDCD7B8BBF /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "AppCenter-SDK-Apple/macOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
 		5987A8FD0A59D1D14DDBB609C86672BE /* Pods-Termina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Termina.release.xcconfig"; sourceTree = "<group>"; };
 		7B572A230096577346CB0291AF877D57 /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "AppCenter-SDK-Apple/macOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AC847DF3FDCDB257D18BF94244A9569B /* Pods-Termina-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Termina-resources.sh"; sourceTree = "<group>"; };
 		B21FD0A6D9DB368BE15CA505A34905CB /* Pods-Termina-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Termina-frameworks.sh"; sourceTree = "<group>"; };
 		B3F2AA88626CC78E9C0E5357B2D2D4F4 /* Pods-Termina.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Termina.modulemap"; sourceTree = "<group>"; };
 		D2E79B43CF3C38C61F569C6BB3FD6E48 /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "AppCenter-SDK-Apple/macOS/AppCenter.framework"; sourceTree = "<group>"; };
 		E95E05185C678DE4EBA4D373FF98ED86 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA4078857C9D0E3345778925D2529CC2 /* Pods_Termina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Termina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4078857C9D0E3345778925D2529CC2 /* Pods_Termina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Termina.framework; path = "Pods-Termina.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4A86F6963389CEF0B1F8331A968C90 /* Pods-Termina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Termina.debug.xcconfig"; sourceTree = "<group>"; };
 		F2AFE638F59E262D940905854A013372 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		F5784C8FE54D3ADB45B0515DCE6AA23A /* Pods-Termina-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Termina-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -66,6 +66,7 @@
 				9EE13F7E6DB656EA069185A561AFA2DE /* Core */,
 				7887D30DE6098B8B49964BA5EDB1C9D5 /* Crashes */,
 			);
+			name = AppCenter;
 			path = AppCenter;
 			sourceTree = "<group>";
 		};
@@ -269,7 +270,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "Target Support Files/Pods-Termina/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MODULEMAP_FILE = "Target Support Files/Pods-Termina/Pods-Termina.modulemap";
@@ -304,7 +309,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "Target Support Files/Pods-Termina/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MODULEMAP_FILE = "Target Support Files/Pods-Termina/Pods-Termina.modulemap";
@@ -375,7 +384,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};

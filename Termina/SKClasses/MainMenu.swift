@@ -44,7 +44,8 @@ class MainMenu: SKScene {
         if override != nil {
             self.view?.presentScene(SKScene(fileNamed: String(override ?? 0))!, transition: SKTransition.fade(withDuration: 1.5))
         } else {
-            self.view?.presentScene(SKScene(fileNamed: String(Int.random(in: 0...28)))!, transition: SKTransition.fade(withDuration: 1.5))
+            let newRoom = String(Int.random(in: 0...28))
+            self.view?.presentScene(SKScene(fileNamed: newRoom)!, transition: SKTransition.fade(withDuration: 1.5))
         }
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit
@@ -166,7 +167,7 @@ extension MainMenu {
                     } else {
                         self.size = CGSize(width: 1280, height: 720)
                         self.scaleMode = .aspectFit
-                        presentNewScene(nil)
+                        presentNewScene(20)
                     }
                     break
                 case "hardcoreButton":

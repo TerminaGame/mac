@@ -133,7 +133,13 @@ class RoomScene: SKScene {
     func setUpBackground(_ bg: Int?) {
         roomBackground = childNode(withName: "roomBackground") as? SKSpriteNode
         if bg == nil {
-            roomBackground?.texture = SKTexture(imageNamed: "bg" + String(Int.random(in: 27...28)))
+            
+            // For special backgrounds, they need to be paired with the right scene.
+            if self.name == "20" {
+                roomBackground?.texture = SKTexture(imageNamed: "bg25")
+            } else {
+                roomBackground?.texture = SKTexture(imageNamed: "bg" + String(Int.random(in: 25...28)))
+            }
         } else {
             roomBackground?.texture = SKTexture(imageNamed: "bg" + String(bg ?? 1))
         }

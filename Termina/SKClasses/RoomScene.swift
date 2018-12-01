@@ -132,7 +132,7 @@ class RoomScene: SKScene {
      */
     func setUpBackground(_ bg: Int?) {
         roomBackground = childNode(withName: "roomBackground") as? SKSpriteNode
-        if bg == nil {
+        if bg == nil && self.name != "Tutorial" {
             
             // For special backgrounds, they need to be paired with the right scene.
             if self.name == "20" {
@@ -343,7 +343,11 @@ class RoomScene: SKScene {
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit
         if override != nil {
-            self.view?.presentScene(SKScene(fileNamed: String(override ?? 0))!, transition: SKTransition.fade(withDuration: 1.5))
+            if override == -1 {
+                self.view?.presentScene(SKScene(fileNamed: "Tutorial")!, transition: SKTransition.fade(withDuration: 3.0))
+            } else {
+                self.view?.presentScene(SKScene(fileNamed: String(override ?? 0))!, transition: SKTransition.fade(withDuration: 1.5))
+            }
         } else {
             self.view?.presentScene(SKScene(fileNamed: String(Int.random(in: 0...28)))!, transition: SKTransition.fade(withDuration: 1.5))
         }

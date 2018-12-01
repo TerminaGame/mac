@@ -40,12 +40,14 @@ class MainMenu: SKScene {
     func presentNewScene(_ override: Int?) {
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit
-        
         if override != nil {
-            self.view?.presentScene(SKScene(fileNamed: String(override ?? 0))!, transition: SKTransition.fade(withDuration: 1.5))
+            if override == -1 {
+                self.view?.presentScene(SKScene(fileNamed: "Tutorial")!, transition: SKTransition.fade(withDuration: 3.0))
+            } else {
+                self.view?.presentScene(SKScene(fileNamed: String(override ?? 0))!, transition: SKTransition.fade(withDuration: 1.5))
+            }
         } else {
-            let newRoom = String(Int.random(in: 0...28))
-            self.view?.presentScene(SKScene(fileNamed: newRoom)!, transition: SKTransition.fade(withDuration: 1.5))
+            self.view?.presentScene(SKScene(fileNamed: String(Int.random(in: 0...28)))!, transition: SKTransition.fade(withDuration: 1.5))
         }
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit
@@ -167,7 +169,12 @@ extension MainMenu {
                     } else {
                         self.size = CGSize(width: 1280, height: 720)
                         self.scaleMode = .aspectFit
-                        presentNewScene(20)
+                        if AppDelegate.dataModel.player.level == 1 && AppDelegate.dataModel.player.patchNumber == 0 {
+                            presentNewScene(-1)
+                        } else {
+                            presentNewScene(nil)
+                        }
+                        
                     }
                     break
                 case "hardcoreButton":

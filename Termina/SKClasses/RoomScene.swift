@@ -301,7 +301,11 @@ class RoomScene: SKScene {
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Return)) {
             if self.isNear(node: exitRoom!, maximumDistance: 75) && roomEntity == nil {
                 if (gamePlayer?.level ?? 1) >= 420 {
-                    self.presentNewScene(29)
+                    if self.name == "29" {
+                        self.presentNewScene(nil)
+                    } else {
+                        self.presentNewScene(29)
+                    }
                 } else {
                     self.presentNewScene(nil)
                 }

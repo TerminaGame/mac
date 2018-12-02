@@ -26,7 +26,7 @@ class Weapon: Item {
     func equip() {
         equipper.currentInventory.append(self)
         equipper.temporaryLevel = level
-        //equipper.associatedNode.texture = SKTexture(imageNamed: "PlayerWithWeapon")
+        equipper.associatedNode.texture = SKTexture(imageNamed: "PlayerWithWeapon")
         associatedNode.removeFromParent()
     }
     
@@ -50,7 +50,7 @@ class Weapon: Item {
     func unequip() {
         if currentUse == maximumUse { equipper.temporaryLevel = 0 }
         equipper.currentInventory.removeLast()
-        //equipper.associatedNode.texture = SKTexture(imageNamed: "Player")
+        equipper.associatedNode.texture = SKTexture(imageNamed: "Player")
     }
     
     /**

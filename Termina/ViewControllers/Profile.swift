@@ -50,7 +50,6 @@ class ProfileViewController: NSViewController {
         playerHealth.stringValue = "\(AppDelegate.dataModel.player.health)%"
         
         let inventory = AppDelegate.dataModel.player.currentInventory
-        print(inventory)
         
         if inventory.isEmpty {
             currentWeapon.stringValue = "No items being carried."

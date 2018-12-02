@@ -118,6 +118,10 @@ class RoomScene: SKScene {
                     roomEntity = Monster(myName: NameGenerator().generateMonsterName(), myLevel: monsterLevel, myNode: childNode(withName: "enemyNode") as! SKSpriteNode, myHealth: 100, pacifiable: "no", thisHud: childNode(withName: "otherHud") as! HUD)
                 }
             }
+            
+            // Change the node's texture
+            roomEntity?.associatedNode.texture = SKTexture(imageNamed: "ErrorNode")
+            
         } else {
             childNode(withName: "otherHud")?.removeFromParent()
             childNode(withName: "enemyNode")?.removeFromParent()
@@ -163,6 +167,10 @@ class RoomScene: SKScene {
         gamePlayer?.associatedNode = (childNode(withName: "playerSprite") as? SKSpriteNode)!
         gamePlayer?.associatedHud = (childNode(withName: "playerHud") as? HUD)!
         gamePlayer?.associatedHud.update(newHealth: gamePlayer?.health ?? 100, newLevel: gamePlayer?.level ?? 1, newName: gamePlayer?.name ?? "Name")
+        
+        if gamePlayer?.currentInventory.last != nil {
+            gamePlayer?.associatedNode.texture = SKTexture(imageNamed: "PlayerWithWeapon")
+        }
     }
     
     /**
@@ -301,7 +309,7 @@ class RoomScene: SKScene {
         
         // Track the player's position and have the enemy move closer to the player
         if roomEntity != nil {
-            if self.isNear(node: (roomEntity?.associatedNode)!, maximumDistance: 200) && roomEntity is Monster {
+            if self.isNear(node: (roomEntity?.associatedNode)!, maximumDistance: 100) && roomEntity is Monster {
                 roomEntity?.associatedNode.run(SKAction.move(to: (gamePlayer?.associatedNode.position ?? CGPoint.zero), duration: 0.5))
             }
         }
@@ -494,10 +502,12 @@ class RoomScene: SKScene {
         if roomEntity != nil {
             if roomEntity is Monster {
                 let error = roomEntity as? Monster
-                if self.isNear(node: (error?.associatedNode)!, maximumDistance: 200) {
+                if self.isNear(node: (error?.associatedNode)!, maximumDistance: 100) {
                     let damageFromPlayer = (gamePlayer?.level ?? 1) + (gamePlayer?.temporaryLevel ?? Int.random(in: 1 ... 3))
-                    //print(damageFromPlayer)
                     error?.takeDamage(damageFromPlayer)
+                    if gamePlayer?.currentInventory.last != nil {
+                        gamePlayer?.currentInventory.last?.use()
+                    }
                     
                     if error?.health == 0 {
                         roomEntity?.associatedNode.removeFromParent()

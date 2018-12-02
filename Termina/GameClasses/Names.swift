@@ -1,6 +1,6 @@
 //
 //  Names.swift
-//  termina-base
+//  mac
 //
 //  Created by Marquis Kurt on 10/23/18.
 //  Copyright © 2018 Marquis Kurt. All rights reserved.
@@ -77,8 +77,6 @@ class NameGenerator {
         "Format",
         "Array",
         "Guard",
-        "Assignment",
-        "Optional",
         "Type",
         "Class",
         "Loop",
@@ -86,8 +84,6 @@ class NameGenerator {
         "Protocol",
         "JSON",
         "List",
-        "Aperture",
-        "Dictionary",
         "Area",
         "View",
         ""
@@ -103,10 +99,8 @@ class NameGenerator {
         "Call",
         "Invalid",
         "Conversion",
-        "Construction",
         "Interrupt",
         "NotExist",
-        "Unavailable",
         "Exception",
         "State",
         "Loop",

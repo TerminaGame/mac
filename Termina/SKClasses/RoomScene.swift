@@ -391,7 +391,12 @@ class RoomScene: SKScene {
                 self.view?.presentScene(SKScene(fileNamed: String(override ?? 0))!, transition: SKTransition.fade(withDuration: 1.5))
             }
         } else {
-            self.view?.presentScene(SKScene(fileNamed: String(Int.random(in: 0...28)))!, transition: SKTransition.fade(withDuration: 1.5))
+            if self.name == "29" {
+                self.view?.presentScene(SKScene(fileNamed: "MainMenu.sks")!, transition: SKTransition.fade(withDuration: 3.0))
+            } else {
+                self.view?.presentScene(SKScene(fileNamed: String(Int.random(in: 0...28)))!, transition: SKTransition.fade(withDuration: 1.5))
+            }
+            
         }
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit

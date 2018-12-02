@@ -10,7 +10,7 @@
             <objects>
                 <viewController title="Profile" storyboardIdentifier="Profile" id="Ws1-5g-JbF" customClass="ProfileViewController" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="quA-Fn-8iN">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="176"/>
+                        <rect key="frame" x="0.0" y="0.0" width="650" height="176"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qoq-jo-flX">
@@ -30,7 +30,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="thE-yO-fdJ">
-                                <rect key="frame" x="399" y="13" width="87" height="32"/>
+                                <rect key="frame" x="549" y="13" width="87" height="32"/>
                                 <buttonCell key="cell" type="push" title="Dismiss" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P1H-vA-hzH">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -51,7 +51,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tqg-D1-u3B">
-                                <rect key="frame" x="280" y="13" width="123" height="32"/>
+                                <rect key="frame" x="14" y="13" width="123" height="32"/>
                                 <buttonCell key="cell" type="push" title="Drop Weapon" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q3M-va-xdf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -61,26 +61,38 @@ DQ
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="36S-Iz-E7f">
-                                <rect key="frame" x="418" y="122" width="64" height="29"/>
+                                <rect key="frame" x="568" y="122" width="64" height="29"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="100%" id="XXr-Fz-diM">
                                     <font key="font" metaFont="system" size="24"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HvG-6Y-mqt">
+                                <rect key="frame" x="427" y="13" width="126" height="32"/>
+                                <buttonCell key="cell" type="push" title="Change Name" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XZG-3o-aOA">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeNameSegue:" target="Ws1-5g-JbF" id="siG-FJ-C7W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="e6G-J5-12C" firstAttribute="leading" secondItem="quA-Fn-8iN" secondAttribute="leading" constant="20" id="31j-9u-BJg"/>
+                            <constraint firstAttribute="bottom" secondItem="HvG-6Y-mqt" secondAttribute="bottom" constant="20" id="5y2-V0-JE0"/>
                             <constraint firstItem="gSz-gw-n5w" firstAttribute="leading" secondItem="quA-Fn-8iN" secondAttribute="leading" constant="20" id="A4k-Gh-zNi"/>
-                            <constraint firstAttribute="bottom" secondItem="Tqg-D1-u3B" secondAttribute="bottom" constant="20" id="E6C-hj-pIT"/>
+                            <constraint firstItem="Tqg-D1-u3B" firstAttribute="leading" secondItem="quA-Fn-8iN" secondAttribute="leading" constant="20" id="Caw-jc-YUR"/>
                             <constraint firstItem="qoq-jo-flX" firstAttribute="top" secondItem="quA-Fn-8iN" secondAttribute="top" constant="20" id="ESt-Mm-2C2"/>
                             <constraint firstItem="qoq-jo-flX" firstAttribute="leading" secondItem="quA-Fn-8iN" secondAttribute="leading" constant="20" id="Ies-D9-oJH"/>
                             <constraint firstAttribute="bottom" secondItem="thE-yO-fdJ" secondAttribute="bottom" constant="20" id="LZK-sx-COj"/>
                             <constraint firstAttribute="trailing" secondItem="36S-Iz-E7f" secondAttribute="trailing" constant="20" id="RRb-SU-nlC"/>
                             <constraint firstItem="gSz-gw-n5w" firstAttribute="top" secondItem="e6G-J5-12C" secondAttribute="bottom" constant="8" id="VSM-AQ-1eV"/>
+                            <constraint firstItem="thE-yO-fdJ" firstAttribute="leading" secondItem="HvG-6Y-mqt" secondAttribute="trailing" constant="8" id="dcu-0d-7gy"/>
+                            <constraint firstAttribute="bottom" secondItem="Tqg-D1-u3B" secondAttribute="bottom" constant="20" id="kGt-HJ-9Sg"/>
                             <constraint firstItem="e6G-J5-12C" firstAttribute="top" secondItem="qoq-jo-flX" secondAttribute="bottom" constant="8" id="qOk-da-Csc"/>
                             <constraint firstItem="36S-Iz-E7f" firstAttribute="top" secondItem="quA-Fn-8iN" secondAttribute="top" constant="25" id="u5K-DZ-O15"/>
-                            <constraint firstItem="thE-yO-fdJ" firstAttribute="leading" secondItem="Tqg-D1-u3B" secondAttribute="trailing" constant="8" id="uRN-nx-13c"/>
                             <constraint firstAttribute="trailing" secondItem="thE-yO-fdJ" secondAttribute="trailing" constant="20" id="yPR-Ew-W8I"/>
                         </constraints>
                     </view>
@@ -90,11 +102,94 @@ DQ
                         <outlet property="playerHealth" destination="36S-Iz-E7f" id="jwB-R8-Zia"/>
                         <outlet property="playerName" destination="qoq-jo-flX" id="YvD-PX-nA1"/>
                         <outlet property="playerProgress" destination="e6G-J5-12C" id="h16-Rv-jAb"/>
+                        <segue destination="Atd-ND-ZJt" kind="modal" identifier="ChangeName" id="Y5e-ql-FVx"/>
                     </connections>
                 </viewController>
                 <customObject id="XGv-C7-e6B" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13" y="37"/>
+        </scene>
+        <!--Change Name-->
+        <scene sceneID="CuC-XU-IJv">
+            <objects>
+                <viewController title="Change Name" id="Atd-ND-ZJt" customClass="ChangeNameViewController" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="GYo-Dp-S3k">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1UM-KK-6g3">
+                                <rect key="frame" x="18" y="158" width="219" height="22"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Change your player name" id="kIc-Io-xj5">
+                                    <font key="font" metaFont="systemSemibold" size="18"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="fxS-EW-zTf">
+                                <rect key="frame" x="18" y="116" width="414" height="34"/>
+                                <textFieldCell key="cell" selectable="YES" title="Type in the new name for your player. If you don't want to change your name, click 'Cancel'." id="rjB-AS-yJe">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A0L-Kp-n2H">
+                                <rect key="frame" x="20" y="86" width="410" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Q2R-kS-Lpc">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2nu-gT-WjD">
+                                <rect key="frame" x="310" y="13" width="126" height="32"/>
+                                <buttonCell key="cell" type="push" title="Change Name" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PUR-jz-eSS">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeNameAndDismiss:" target="Atd-ND-ZJt" id="k1I-l9-f7m"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Usn-PA-3Bq">
+                                <rect key="frame" x="232" y="13" width="82" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F7v-1n-EmB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissThisView:" target="Atd-ND-ZJt" id="w2I-ix-LRN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="A0L-Kp-n2H" secondAttribute="trailing" constant="20" id="1u4-Kj-5Vw"/>
+                            <constraint firstItem="fxS-EW-zTf" firstAttribute="top" secondItem="1UM-KK-6g3" secondAttribute="bottom" constant="8" id="2ul-ss-PPY"/>
+                            <constraint firstItem="fxS-EW-zTf" firstAttribute="leading" secondItem="GYo-Dp-S3k" secondAttribute="leading" constant="20" id="5Qn-PO-kkX"/>
+                            <constraint firstAttribute="bottom" secondItem="2nu-gT-WjD" secondAttribute="bottom" constant="20" id="8La-o8-bnf"/>
+                            <constraint firstAttribute="trailing" secondItem="2nu-gT-WjD" secondAttribute="trailing" constant="20" id="Cvi-oZ-D7W"/>
+                            <constraint firstAttribute="trailing" secondItem="fxS-EW-zTf" secondAttribute="trailing" constant="20" id="ILu-K4-Wjf"/>
+                            <constraint firstItem="A0L-Kp-n2H" firstAttribute="leading" secondItem="GYo-Dp-S3k" secondAttribute="leading" constant="20" id="K5Z-8J-q5R"/>
+                            <constraint firstAttribute="bottom" secondItem="Usn-PA-3Bq" secondAttribute="bottom" constant="20" id="KAx-b6-6zV"/>
+                            <constraint firstItem="A0L-Kp-n2H" firstAttribute="top" secondItem="fxS-EW-zTf" secondAttribute="bottom" constant="8" id="RjC-i8-NSg"/>
+                            <constraint firstItem="2nu-gT-WjD" firstAttribute="leading" secondItem="Usn-PA-3Bq" secondAttribute="trailing" constant="8" id="Xwt-m8-ZwI"/>
+                            <constraint firstItem="1UM-KK-6g3" firstAttribute="leading" secondItem="GYo-Dp-S3k" secondAttribute="leading" constant="20" id="l8k-70-gS9"/>
+                            <constraint firstItem="1UM-KK-6g3" firstAttribute="top" secondItem="GYo-Dp-S3k" secondAttribute="top" constant="20" id="vjC-44-Mby"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newNameField" destination="A0L-Kp-n2H" id="nNp-g5-QUJ"/>
+                    </connections>
+                </viewController>
+                <customObject id="2Yo-N5-1uZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="37"/>
         </scene>
     </scenes>
 </document>

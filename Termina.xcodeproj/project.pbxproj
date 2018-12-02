@@ -75,6 +75,7 @@
 		BF1408B221B09B9800A7E70E /* 2.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089621B09B9800A7E70E /* 2.sks */; };
 		BF1408B321B09B9800A7E70E /* 18.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089721B09B9800A7E70E /* 18.sks */; };
 		BF1408B421B09B9800A7E70E /* 5.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089821B09B9800A7E70E /* 5.sks */; };
+		BF1787DD21B468DF0056CD88 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1787DC21B468DF0056CD88 /* ChangeNameViewController.swift */; };
 		BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */; };
 		BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BF5D7A2D21AF3D96008CD33F /* Podfile */; };
 		BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */; };
@@ -169,8 +170,9 @@
 		BF14089621B09B9800A7E70E /* 2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 2.sks; sourceTree = "<group>"; };
 		BF14089721B09B9800A7E70E /* 18.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 18.sks; sourceTree = "<group>"; };
 		BF14089821B09B9800A7E70E /* 5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 5.sks; sourceTree = "<group>"; };
+		BF1787DC21B468DF0056CD88 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
 		BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaViewController.swift; sourceTree = "<group>"; };
-		BF5D7A2D21AF3D96008CD33F /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Podfile; sourceTree = "<group>"; };
+		BF5D7A2D21AF3D96008CD33F /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BF5D7A2F21AF4152008CD33F /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
 		BF5D7A3021AF4152008CD33F /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenter.framework"; sourceTree = "<group>"; };
 		BF5D7A3121AF4152008CD33F /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				BF082D8421AC9A4500B5406C /* AppDelegate.swift */,
+				BF082D8121AC9A4500B5406C /* ViewController.swift */,
 				BF082DB121AD8CC100B5406C /* About.rtf */,
 				BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */,
 				BF082D6421AC9A4500B5406C /* Assets.xcassets */,
@@ -308,13 +311,13 @@
 		BF082D8021AC9A4500B5406C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BF082D8121AC9A4500B5406C /* ViewController.swift */,
 				BF082D8221AC9A4500B5406C /* NewPlayer.swift */,
 				BF082D8321AC9A4500B5406C /* Profile.swift */,
 				BF082D8521AC9A4500B5406C /* Hardcore.swift */,
 				BF082D8621AC9A4500B5406C /* AboutViewController.swift */,
 				BF082D8721AC9A4500B5406C /* AppMenu.swift */,
 				BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */,
+				BF1787DC21B468DF0056CD88 /* ChangeNameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				BF082D9021AC9A4500B5406C /* HUD.swift in Sources */,
 				BF082D9121AC9A4500B5406C /* RoomScene.swift in Sources */,
 				BF082DA021AC9A4500B5406C /* Player.swift in Sources */,
+				BF1787DD21B468DF0056CD88 /* ChangeNameViewController.swift in Sources */,
 				BF082D9221AC9A4500B5406C /* RoomSceneExtension.swift in Sources */,
 				BF082D8F21AC9A4500B5406C /* Room29Scene.swift in Sources */,
 				BF082D9D21AC9A4500B5406C /* Item.swift in Sources */,

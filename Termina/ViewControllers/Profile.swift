@@ -24,6 +24,11 @@ class ProfileViewController: NSViewController {
         dismiss(sender)
     }
     
+    @IBAction func changeNameSegue(_ sender: Any) {
+        performSegue(withIdentifier: "ChangeName", sender: sender)
+        dismiss(sender)
+    }
+    
     /**
      Prompts the user to confirm dropping the weapon and then dismisses the sheet.
      */
@@ -61,7 +66,7 @@ class ProfileViewController: NSViewController {
     
     override var representedObject: Any? {
         didSet {
-            // Update the view, if already loaded.
+            playerName.stringValue = AppDelegate.dataModel.player.name
         }
     }
 }

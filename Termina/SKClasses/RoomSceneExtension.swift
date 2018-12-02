@@ -50,7 +50,12 @@ extension RoomScene {
     }
     
     override func keyDown(with event: NSEvent) {
-        Keyboard.sharedKeyboard.handleKey(event: event, isDown: true)
+        if gamePlayer?.health == 0 {
+            Keyboard.sharedKeyboard.handleKey(event: event, isDown: false)
+        } else {
+            Keyboard.sharedKeyboard.handleKey(event: event, isDown: true)
+        }
+        
     }
     
     override func keyUp(with event: NSEvent) {

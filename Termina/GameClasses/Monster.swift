@@ -42,7 +42,17 @@ class Monster: Entity {
         }
     }
     
-    func pacify() {}
+    /**
+     Remove the HUD, physics body, and change the texture of the entity.
+     
+     This is typically used to put the monster in a pacified state, meaning that it won't attack a Player.
+     */
+    func pacify() {
+        associatedHud.removeFromParent()
+        associatedNode.physicsBody = nil
+        associatedNode.texture = SKTexture(imageNamed: "PacifiedErrorNode")
+        associatedHud.zPosition = -1
+    }
     
     /**
      Initializes the Monster class.

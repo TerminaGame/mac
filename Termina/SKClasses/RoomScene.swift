@@ -250,6 +250,31 @@ class RoomScene: SKScene {
         self.setUpScene()
     }
     
+    /**
+     Attempt to use an item in the room.
+     
+     If the Player object is near the item, it can be used.
+     */
+    func useItemHere() {
+        if items.first != nil {
+            if isNear(node: (items.first?.associatedNode)!, maximumDistance: 75) {
+                if items.first is Potion {
+                    if items.first?.currentUse ?? 1 > 0 {
+                        (items.first as? Potion)?.use()
+                    }
+                } else if items.first is Bottle {
+                    if items.first?.currentUse ?? 1 > 0 {
+                        (items.first as? Bottle)?.use()
+                    }
+                } else {
+                    NSSound.beep()
+                }
+            } else {
+                NSSound.beep()
+            }
+        }
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         // Ensure that the scene is always the same size
         super.update(currentTime)
@@ -268,23 +293,8 @@ class RoomScene: SKScene {
         } else if (Keyboard.sharedKeyboard.pressed(keys: Key.W, Key.A)) {
             gamePlayer?.move("left")
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.E)) {
-            equipItemHere()
-        } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.H)) {
-            if items.first is Potion {
-                if items.first?.currentUse ?? 1 > 0 {
-                    (items.first as? Potion)?.use()
-                }
-                
-            } else if items.first is Bottle {
-                if items.first?.currentUse ?? 1 > 0 {
-                    (items.first as? Bottle)?.use()
-                }
-                
-            } else {
-                NSSound.beep()
-            }
+            decideItemAndAct()
         }
-        
         else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Esc)) {
             self.scaleMode = .aspectFit
             self.view?.presentScene(SKScene(fileNamed: "MainMenu")!, transition: SKTransition.fade(with: NSColor.white, duration: 0.5))
@@ -295,7 +305,8 @@ class RoomScene: SKScene {
                 } else {
                     self.presentNewScene(nil)
                 }
-                
+            } else {
+                NSSound.beep()
             }
         }
         
@@ -314,6 +325,20 @@ class RoomScene: SKScene {
             }
         }
         
+    }
+    
+    /**
+     Determine the position of the player and an item and use it
+     
+     When using this fuction, it will attempt to use the node's name to run the corresponding action, reducing the need for another key. To do this, it cycles through all of the nodes in a scene, checks if they are near the player, and the node's name to get a match. The maximum distance is determined by the node's size and an extra eight points for padding.
+     */
+    func decideItemAndAct() {
+        for node in self.children {
+            if isNear(node: node, maximumDistance: 72) {
+                if node.name == "weaponItemNode" { equipItemHere() }
+                else if node.name == "bottleItemNode" { useItemHere() }
+            }
+        }
     }
     
     /**
@@ -546,8 +571,7 @@ class RoomScene: SKScene {
                 if isNear(node: (roomEntity?.associatedNode)!, maximumDistance: 200) {
                     if (roomEntity?.level ?? 1) <= (gamePlayer?.level ?? 1) {
                         let ralsei = roomEntity as? Monster
-                        ralsei?.associatedHud.removeFromParent()
-                        ralsei?.associatedNode.removeFromParent()
+                        ralsei?.pacify()
                         gamePlayer?.patchUp(7)
                         
                         let content = UNMutableNotificationContent()

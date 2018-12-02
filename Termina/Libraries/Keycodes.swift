@@ -22,6 +22,7 @@ enum Key: CUnsignedShort {
     case Esc = 0x35
     case Command = 0x37
     case Return = 0x24
+    case LeftShift = 0x38
     
 }
 

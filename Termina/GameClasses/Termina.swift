@@ -43,7 +43,7 @@ class Termina: Monster {
      Sends a notification to the user, mocking them about pacifying the entity
      */
     func pacifyComment() {
-        if TerminaUserDefaults.canSendNotifications {
+        if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendGameNotifications {
             let content = UNMutableNotificationContent()
             content.title = "Do you think you're being clever?"
             content.body = "Befriending your foes won't save you."

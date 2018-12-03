@@ -636,15 +636,17 @@ class RoomScene: SKScene {
                         ralsei?.pacify()
                         gamePlayer?.patchUp(7)
                         
-                        let content = UNMutableNotificationContent()
-                        content.title = "\(ralsei?.name ?? "The error") has been pacified!"
-                        content.subtitle = "It thanks you for your saving grace."
-                        content.body = "You've been patched up by 7 iterations."
-                        let uuid = UUID().uuidString
-                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-                        let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-                        let center = UNUserNotificationCenter.current()
-                        center.add(newNotificationRequest, withCompletionHandler: nil)
+                        if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendGameNotifications {
+                            let content = UNMutableNotificationContent()
+                            content.title = "\(ralsei?.name ?? "The error") has been pacified!"
+                            content.subtitle = "It thanks you for your saving grace."
+                            content.body = "You've been patched up by 7 iterations."
+                            let uuid = UUID().uuidString
+                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+                            let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                            let center = UNUserNotificationCenter.current()
+                            center.add(newNotificationRequest, withCompletionHandler: nil)
+                        }
                         
                         roomEntity = nil
                         

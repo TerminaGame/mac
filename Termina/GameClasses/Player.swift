@@ -70,7 +70,7 @@ class Player: Entity {
         super.levelUp(amount)
         associatedHud.updateLevel(level)
         
-        if TerminaUserDefaults.canSendNotifications {
+        if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendGameNotifications {
             let content = UNMutableNotificationContent()
             content.title = "Congratulations!"
             content.body = "You upgraded to version \(level)!"

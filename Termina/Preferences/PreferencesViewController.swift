@@ -16,9 +16,4 @@ class PreferencesViewController: NSViewController {
         
         self.preferredContentSize = NSMakeSize(self.view.frame.width, self.view.frame.height)
     }
-    
-    override func viewDidAppear() {
-        self.parent?.view.window?.title = self.title!
-    }
-    
 }

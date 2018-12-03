@@ -67,7 +67,7 @@ class DataModel {
                 return false
             }
         } else {
-            if TerminaUserDefaults.canSendNotifications {
+            if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendDataNotifications {
                 let content = UNMutableNotificationContent()
                 content.title = "Player Data Missing"
                 content.subtitle = "Termina couldn't locate your player data."
@@ -104,7 +104,7 @@ class DataModel {
         
         
         if !silent {
-            if TerminaUserDefaults.canSendNotifications {
+            if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendDataNotifications {
                 let content = UNMutableNotificationContent()
                 content.title = "Player Data Saved"
                 content.subtitle = player.name
@@ -145,7 +145,7 @@ class DataModel {
             do {
                 try appDataPath.file(named: "settings.json").delete()
                 
-                if TerminaUserDefaults.canSendNotifications {
+                if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendDataNotifications {
                     let content = UNMutableNotificationContent()
                     if appDataPath.containsFile(named: "settings_backup.json") || AppDelegate.isHardcore {
                         content.title = "Hardcore Mode Data Deleted"
@@ -175,7 +175,7 @@ class DataModel {
                     MSAnalytics.trackEvent("Failed to delete settings file. Reason: \(error)")
                 }
                 
-                if TerminaUserDefaults.canSendNotifications {
+                if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendDataNotifications {
                     let content = UNMutableNotificationContent()
                     content.title = "Couldn't Delete Settings"
                     content.body = "We couldn't delete your settings."
@@ -284,7 +284,7 @@ class DataModel {
                     try! importPathDirectory.file(named: "settings.json").copy(to: self.appDataPath)
                     let _ = self.loadFromFile()
                     
-                    if TerminaUserDefaults.canSendNotifications {
+                    if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendDataNotifications {
                         let content = UNMutableNotificationContent()
                         content.title = "Data Import Successful"
                         content.body = "Your player data has been imported."

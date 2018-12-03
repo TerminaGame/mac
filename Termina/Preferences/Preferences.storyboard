@@ -9,7 +9,7 @@
         <scene sceneID="U9N-Vc-uvk">
             <objects>
                 <windowController id="dsM-Rt-73b" customClass="PreferencesWindowController" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Q7k-1e-IW8">
+                    <window key="window" title="Termina Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Q7k-1e-IW8">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="70" y="174"/>
         </scene>
-        <!--Preferences-->
+        <!--Termina Preferences-->
         <scene sceneID="65A-4v-6jZ">
             <objects>
-                <tabViewController title="Preferences" selectedTabViewItemIndex="0" tabStyle="toolbar" id="kbk-Pu-fLe" sceneMemberID="viewController">
+                <tabViewController title="Termina Preferences" selectedTabViewItemIndex="0" tabStyle="toolbar" id="kbk-Pu-fLe" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem identifier="" image="Notifications" id="udq-Q1-rwW"/>
                         <tabViewItem identifier="" id="ZRO-9b-L5Z"/>
@@ -61,39 +61,110 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="128"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yt4-d7-hD2">
-                                <rect key="frame" x="18" y="92" width="175" height="18"/>
-                                <buttonCell key="cell" type="check" title="Enable push notifications" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fxL-Vc-ubS">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Md3-in-eP3">
+                                <rect key="frame" x="18" y="91" width="107" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Notify me when:" id="dB4-uE-hNa">
+                                    <font key="font" metaFont="systemSemibold" size="13"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3ZN-QB-Kvs">
+                                <rect key="frame" x="30" y="67" width="254" height="18"/>
+                                <buttonCell key="cell" type="check" title="I import, save, or delete my game data" bezelStyle="regularSquare" imagePosition="left" inset="2" id="r0t-o8-8hL">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Kk-I3-pbF">
+                                <rect key="frame" x="30" y="47" width="184" height="18"/>
+                                <buttonCell key="cell" type="check" title="I level up or pacify an error" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Gfx-2f-p2q">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="yt4-d7-hD2" firstAttribute="top" secondItem="8oN-sG-r7K" secondAttribute="top" constant="20" id="2qD-uE-ldv"/>
-                            <constraint firstItem="yt4-d7-hD2" firstAttribute="leading" secondItem="8oN-sG-r7K" secondAttribute="leading" constant="20" id="WvF-2X-p0q"/>
+                            <constraint firstItem="3ZN-QB-Kvs" firstAttribute="leading" secondItem="8oN-sG-r7K" secondAttribute="leading" constant="32" id="B71-Kc-yfZ"/>
+                            <constraint firstItem="6Kk-I3-pbF" firstAttribute="leading" secondItem="8oN-sG-r7K" secondAttribute="leading" constant="32" id="Kap-3e-RA5"/>
+                            <constraint firstItem="Md3-in-eP3" firstAttribute="leading" secondItem="8oN-sG-r7K" secondAttribute="leading" constant="20" id="TuV-vP-O3B"/>
+                            <constraint firstItem="Md3-in-eP3" firstAttribute="top" secondItem="8oN-sG-r7K" secondAttribute="top" constant="20" id="UUo-oz-WNf"/>
+                            <constraint firstItem="6Kk-I3-pbF" firstAttribute="top" secondItem="3ZN-QB-Kvs" secondAttribute="bottom" constant="6" id="Z34-ig-Fpe"/>
+                            <constraint firstItem="3ZN-QB-Kvs" firstAttribute="top" secondItem="Md3-in-eP3" secondAttribute="bottom" constant="8" id="qNv-ry-Vg8"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="enableAllNotifications" destination="yt4-d7-hD2" id="Kfm-IL-oAP"/>
+                        <outlet property="dataNotificationStatus" destination="3ZN-QB-Kvs" id="wjd-9z-QOD"/>
+                        <outlet property="gameNotificationStatus" destination="6Kk-I3-pbF" id="8KS-fq-rIx"/>
                     </connections>
                 </viewController>
                 <customObject id="hgV-8o-dCi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747" y="448"/>
+            <point key="canvasLocation" x="-270" y="1140"/>
         </scene>
         <!--Appearance-->
         <scene sceneID="wvE-gS-GJP">
             <objects>
                 <viewController title="Appearance" id="vD6-uS-36v" customClass="PreferencesViewController" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="6wy-C7-AgK">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GJ8-bx-Hmc">
+                                <rect key="frame" x="18" y="163" width="146" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="Do not show on HUDs:" id="ucD-Ta-4fT">
+                                    <font key="font" metaFont="systemSemibold" size="13"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-sb-Tkg">
+                                <rect key="frame" x="30" y="139" width="101" height="18"/>
+                                <buttonCell key="cell" type="check" title="Entity names" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="LbL-GU-WQJ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cDm-bl-csN">
+                                <rect key="frame" x="30" y="119" width="112" height="18"/>
+                                <buttonCell key="cell" type="check" title="Health number" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="mgE-TV-hxA">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="puV-Oi-qUs">
+                                <rect key="frame" x="30" y="99" width="102" height="18"/>
+                                <buttonCell key="cell" type="check" title="Level badges" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="uha-4z-7Iv">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ot7-30-tDX">
+                                <rect key="frame" x="18" y="20" width="262" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="These options aren't available in this build." id="AYY-tn-1V0">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Ot7-30-tDX" secondAttribute="bottom" constant="20" id="KT0-Np-hTL"/>
+                            <constraint firstItem="H5x-sb-Tkg" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="VTg-13-dkW"/>
+                            <constraint firstItem="Ot7-30-tDX" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="20" id="XT6-xB-Tdf"/>
+                            <constraint firstItem="cDm-bl-csN" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="XW0-xj-QBv"/>
+                            <constraint firstItem="GJ8-bx-Hmc" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="20" id="fXO-wE-1ec"/>
+                            <constraint firstItem="H5x-sb-Tkg" firstAttribute="top" secondItem="GJ8-bx-Hmc" secondAttribute="bottom" constant="8" id="p8f-gt-06K"/>
+                            <constraint firstItem="puV-Oi-qUs" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="tge-Fm-RbQ"/>
+                            <constraint firstItem="cDm-bl-csN" firstAttribute="top" secondItem="H5x-sb-Tkg" secondAttribute="bottom" constant="6" id="tp2-Z2-PiV"/>
+                            <constraint firstItem="GJ8-bx-Hmc" firstAttribute="top" secondItem="6wy-C7-AgK" secondAttribute="top" constant="20" id="vBj-R2-xHM"/>
+                            <constraint firstItem="puV-Oi-qUs" firstAttribute="top" secondItem="cDm-bl-csN" secondAttribute="bottom" constant="6" id="x9C-ky-NeZ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="uXn-3Q-SiC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747" y="739"/>
+            <point key="canvasLocation" x="415" y="1226"/>
         </scene>
     </scenes>
     <resources>

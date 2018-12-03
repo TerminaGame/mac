@@ -16,9 +16,13 @@ struct TerminaUserDefaults {
     static var canSendNotifications = UserDefaults().bool(forKey: "canSendNotifications")
     
     /**
+     User-set preference for Termina sending data-related notifications
      */
     static var canSendDataNotifications = UserDefaults().bool(forKey: "canSendDataNotifications")
     
+    /**
+     User-set preference for Termina sending game-related notifications
+     */
     static var canSendGameNotifications = UserDefaults().bool(forKey: "canSendGameNotifications")
     
     /**

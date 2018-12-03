@@ -99,32 +99,81 @@ class RoomScene: SKScene {
      */
     func setUpEntity() {
         let randomSeed = Int.random(in: 0...9)
+        let enemyNode = childNode(withName: "enemyNode") as! SKSpriteNode
+        let enemyHud = childNode(withName: "otherHud") as! HUD
+        let enemyName = NameGenerator().generateMonsterName()
+        
+        
         if randomSeed > 4 {
             hasEntity = true
             
             if gamePlayer?.level ?? 1 < 15 {
                 let monsterLevel = Int.random(in: 1 ... 14)
                 if gamePlayer?.level ?? 1 > monsterLevel {
-                    roomEntity = Monster(myName: NameGenerator().generateMonsterName(), myLevel: monsterLevel, myNode: childNode(withName: "enemyNode") as! SKSpriteNode, myHealth: 100, pacifiable: "yes", thisHud: childNode(withName: "otherHud") as! HUD)
+                    roomEntity = Monster(
+                        myName: enemyName,
+                        myLevel: monsterLevel,
+                        myNode: enemyNode,
+                        myHealth: 100,
+                        pacifiable: "yes",
+                        thisHud: enemyHud
+                    )
                 } else {
-                    roomEntity = Monster(myName: NameGenerator().generateMonsterName(), myLevel: monsterLevel, myNode: childNode(withName: "enemyNode") as! SKSpriteNode, myHealth: 100, pacifiable: "no", thisHud: (childNode(withName: "otherHud") as! HUD))
+                    roomEntity = Monster(
+                        myName: enemyName,
+                        myLevel: monsterLevel,
+                        myNode: enemyNode,
+                        myHealth: 100,
+                        pacifiable: "no",
+                        thisHud: enemyHud
+                    )
                 }
                 
             } else {
                 let monsterLevel = Int.random(in: ((gamePlayer?.level ?? 1) - 15)...((gamePlayer?.level ?? 1) + 15))
                 if gamePlayer?.level ?? 1 > monsterLevel {
-                    roomEntity = Monster(myName: NameGenerator().generateMonsterName(), myLevel: monsterLevel, myNode: childNode(withName: "enemyNode") as! SKSpriteNode, myHealth: 100, pacifiable: "yes", thisHud: childNode(withName: "otherHud") as! HUD)
+                    roomEntity = Monster(
+                        myName: enemyName,
+                        myLevel: monsterLevel,
+                        myNode: enemyNode,
+                        myHealth: 100,
+                        pacifiable: "yes",
+                        thisHud: enemyHud
+                    )
                 } else {
-                    roomEntity = Monster(myName: NameGenerator().generateMonsterName(), myLevel: monsterLevel, myNode: childNode(withName: "enemyNode") as! SKSpriteNode, myHealth: 100, pacifiable: "no", thisHud: childNode(withName: "otherHud") as! HUD)
+                    roomEntity = Monster(
+                        myName: enemyName,
+                        myLevel: monsterLevel,
+                        myNode: enemyNode,
+                        myHealth: 100,
+                        pacifiable: "no",
+                        thisHud: enemyHud
+                    )
                 }
             }
+            
+            // Change the node's size to the size of the texture
+            roomEntity?.associatedNode.size = CGSize(width: 64, height: 64)
             
             // Change the node's texture
             roomEntity?.associatedNode.texture = SKTexture(imageNamed: "ErrorNode")
             
+            // Create a new physics body and hitbox, respectively.
+            roomEntity?.associatedNode.physicsBody? = SKPhysicsBody(rectangleOf: (roomEntity?.associatedNode.size)!)
+            
+            // Change the physics body so that it follows the same rules as the player.
+            let entityPhysics = roomEntity?.associatedNode.physicsBody
+            
+            entityPhysics?.isDynamic = true
+            entityPhysics?.restitution = 0
+            entityPhysics?.mass = 70
+            entityPhysics?.affectedByGravity = true
+            entityPhysics?.allowsRotation = false
+            entityPhysics?.friction = 0.7
+            
         } else {
-            childNode(withName: "otherHud")?.removeFromParent()
-            childNode(withName: "enemyNode")?.removeFromParent()
+            enemyHud.removeFromParent()
+            enemyNode.removeFromParent()
         }
     }
     

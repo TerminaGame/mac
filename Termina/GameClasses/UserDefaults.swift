@@ -28,7 +28,7 @@ struct TerminaUserDefaults {
     /**
      Create the list of user defaults if it doesn't exist already.
      */
-    func createUserDefaults() {
+    func createUserDefaults(){
         if !(UserDefaults().exists(key: "canSendNotifications")) {
             setUserNotifications(status: true)
         }

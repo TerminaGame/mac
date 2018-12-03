@@ -21,6 +21,11 @@
                                                 <action selector="getAboutSheet:" target="Voe-Tx-rLC" id="gDR-nb-lt8"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Preferences..." keyEquivalent="," id="bS5-mR-XqG">
+                                            <connections>
+                                                <action selector="openPreferencesPane:" target="Voe-Tx-rLC" id="7Eu-BJ-lIU"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>

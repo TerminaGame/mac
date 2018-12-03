@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="dsM-Rt-73b">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="U9N-Vc-uvk">
+            <objects>
+                <windowController id="dsM-Rt-73b" customClass="PreferencesWindowController" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Q7k-1e-IW8">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                        <connections>
+                            <outlet property="delegate" destination="dsM-Rt-73b" id="yUq-Dd-AeM"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="kbk-Pu-fLe" kind="relationship" relationship="window.shadowedContentViewController" id="ThH-07-edG"/>
+                    </connections>
+                </windowController>
+                <customObject id="EPW-Og-myF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="174"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="65A-4v-6jZ">
+            <objects>
+                <tabViewController title="Preferences" selectedTabViewItemIndex="0" tabStyle="toolbar" id="kbk-Pu-fLe" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem identifier="" image="Notifications" id="udq-Q1-rwW"/>
+                        <tabViewItem identifier="" id="ZRO-9b-L5Z"/>
+                    </tabViewItems>
+                    <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
+                    <tabView key="tabView" type="noTabsNoBorder" id="BVh-qx-J2t">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <connections>
+                            <outlet property="delegate" destination="kbk-Pu-fLe" id="cK1-wU-jkj"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="BVh-qx-J2t" id="Wzc-bX-p7X"/>
+                        <segue destination="GKo-N7-FQm" kind="relationship" relationship="tabItems" id="yhV-iD-btw"/>
+                        <segue destination="vD6-uS-36v" kind="relationship" relationship="tabItems" id="3zq-6S-arX"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="vY9-NJ-H1e" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="633"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="MZ6-el-7Xo">
+            <objects>
+                <viewController title="Notifications" id="GKo-N7-FQm" customClass="NotificationPane" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="8oN-sG-r7K">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="128"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yt4-d7-hD2">
+                                <rect key="frame" x="18" y="92" width="175" height="18"/>
+                                <buttonCell key="cell" type="check" title="Enable push notifications" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fxL-Vc-ubS">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="yt4-d7-hD2" firstAttribute="top" secondItem="8oN-sG-r7K" secondAttribute="top" constant="20" id="2qD-uE-ldv"/>
+                            <constraint firstItem="yt4-d7-hD2" firstAttribute="leading" secondItem="8oN-sG-r7K" secondAttribute="leading" constant="20" id="WvF-2X-p0q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enableAllNotifications" destination="yt4-d7-hD2" id="Kfm-IL-oAP"/>
+                    </connections>
+                </viewController>
+                <customObject id="hgV-8o-dCi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747" y="448"/>
+        </scene>
+        <!--Appearance-->
+        <scene sceneID="wvE-gS-GJP">
+            <objects>
+                <viewController title="Appearance" id="vD6-uS-36v" customClass="PreferencesViewController" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="6wy-C7-AgK">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="uXn-3Q-SiC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747" y="739"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Notifications" width="512" height="512"/>
+    </resources>
+</document>

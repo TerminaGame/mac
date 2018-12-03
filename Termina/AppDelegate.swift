@@ -27,6 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     @IBOutlet weak var deleteMenuItem: NSMenuItem!
     @IBOutlet weak var feedbackMenuItem: NSMenuItem!
     
+    var preferencesController: NSWindowController?
+    
     /**
      Opens the feedback website (if in a beta program)
      */
@@ -46,6 +48,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
      */
     @IBAction func getPlayerInfo(_ sender: Any) {
         NSApplication.shared.mainWindow?.contentViewController?.presentAsSheet(NSStoryboard(name: "Profile", bundle: Bundle.main).instantiateController(withIdentifier: "Profile") as! NSViewController)
+    }
+    
+    @IBAction func openPreferencesPane(_ sender: Any) {
+        if !(preferencesController != nil) {
+            
+            let storyboard = NSStoryboard(name: "Preferences", bundle: nil)
+            
+            preferencesController = storyboard.instantiateInitialController() as? NSWindowController
+            
+        }
+        
+        if preferencesController != nil {
+            preferencesController?.showWindow(sender)
+        }
     }
     
     /**

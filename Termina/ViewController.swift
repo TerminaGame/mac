@@ -17,6 +17,8 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(TerminaUserDefaults.canSendNotifications)
+        
         if let view = self.skView {
             
             if let scene = SKScene(fileNamed: "MainMenu") {

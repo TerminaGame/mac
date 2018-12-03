@@ -67,15 +67,17 @@ class DataModel {
                 return false
             }
         } else {
-            let content = UNMutableNotificationContent()
-            content.title = "Player Data Missing"
-            content.subtitle = "Termina couldn't locate your player data."
-            content.body = "If you are starting a new game, you can ignore this message."
-            let uuid = UUID().uuidString
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-            let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-            let center = UNUserNotificationCenter.current()
-            center.add(newNotificationRequest, withCompletionHandler: nil)
+            if TerminaUserDefaults.canSendNotifications {
+                let content = UNMutableNotificationContent()
+                content.title = "Player Data Missing"
+                content.subtitle = "Termina couldn't locate your player data."
+                content.body = "If you are starting a new game, you can ignore this message."
+                let uuid = UUID().uuidString
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+                let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                let center = UNUserNotificationCenter.current()
+                center.add(newNotificationRequest, withCompletionHandler: nil)
+            }
             return false
         }
     }
@@ -102,15 +104,17 @@ class DataModel {
         
         
         if !silent {
-            let content = UNMutableNotificationContent()
-            content.title = "Player Data Saved"
-            content.subtitle = player.name
-            content.body = "Your player data has been saved."
-            let uuid = UUID().uuidString
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-            let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-            let center = UNUserNotificationCenter.current()
-            center.add(newNotificationRequest, withCompletionHandler: nil)
+            if TerminaUserDefaults.canSendNotifications {
+                let content = UNMutableNotificationContent()
+                content.title = "Player Data Saved"
+                content.subtitle = player.name
+                content.body = "Your player data has been saved."
+                let uuid = UUID().uuidString
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+                let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                let center = UNUserNotificationCenter.current()
+                center.add(newNotificationRequest, withCompletionHandler: nil)
+            }
         }
         
     }
@@ -140,19 +144,24 @@ class DataModel {
         if (appDataPath.containsFile(named: "settings.json")) {
             do {
                 try appDataPath.file(named: "settings.json").delete()
-                let content = UNMutableNotificationContent()
-                if appDataPath.containsFile(named: "settings_backup.json") || AppDelegate.isHardcore {
-                    content.title = "Hardcore Mode Data Deleted"
-                    content.body = "Hardcore Mode data has been deleted."
-                } else {
-                    content.title = "Player Data Deleted"
-                    content.body = "Your player data has been deleted."
+                
+                if TerminaUserDefaults.canSendNotifications {
+                    let content = UNMutableNotificationContent()
+                    if appDataPath.containsFile(named: "settings_backup.json") || AppDelegate.isHardcore {
+                        content.title = "Hardcore Mode Data Deleted"
+                        content.body = "Hardcore Mode data has been deleted."
+                    } else {
+                        content.title = "Player Data Deleted"
+                        content.body = "Your player data has been deleted."
+                    }
+                    let uuid = UUID().uuidString
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+                    let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                    let center = UNUserNotificationCenter.current()
+                    center.add(newNotificationRequest, withCompletionHandler: nil)
                 }
-                let uuid = UUID().uuidString
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-                let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-                let center = UNUserNotificationCenter.current()
-                center.add(newNotificationRequest, withCompletionHandler: nil)
+                
+                
                 
                 do {
                     try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
@@ -165,14 +174,17 @@ class DataModel {
                 if BetaHandler.isBetaBuild {
                     MSAnalytics.trackEvent("Failed to delete settings file. Reason: \(error)")
                 }
-                let content = UNMutableNotificationContent()
-                content.title = "Couldn't Delete Settings"
-                content.body = "We couldn't delete your settings."
-                let uuid = UUID().uuidString
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-                let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-                let center = UNUserNotificationCenter.current()
-                center.add(newNotificationRequest, withCompletionHandler: nil)
+                
+                if TerminaUserDefaults.canSendNotifications {
+                    let content = UNMutableNotificationContent()
+                    content.title = "Couldn't Delete Settings"
+                    content.body = "We couldn't delete your settings."
+                    let uuid = UUID().uuidString
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+                    let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                    let center = UNUserNotificationCenter.current()
+                    center.add(newNotificationRequest, withCompletionHandler: nil)
+                }
             }
         }
     }
@@ -272,14 +284,16 @@ class DataModel {
                     try! importPathDirectory.file(named: "settings.json").copy(to: self.appDataPath)
                     let _ = self.loadFromFile()
                     
-                    let content = UNMutableNotificationContent()
-                    content.title = "Data Import Successful"
-                    content.body = "Your player data has been imported."
-                    let uuid = UUID().uuidString
-                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-                    let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-                    let center = UNUserNotificationCenter.current()
-                    center.add(newNotificationRequest, withCompletionHandler: nil)
+                    if TerminaUserDefaults.canSendNotifications {
+                        let content = UNMutableNotificationContent()
+                        content.title = "Data Import Successful"
+                        content.body = "Your player data has been imported."
+                        let uuid = UUID().uuidString
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+                        let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                        let center = UNUserNotificationCenter.current()
+                        center.add(newNotificationRequest, withCompletionHandler: nil)
+                    }
                 }
                 
             }

@@ -69,14 +69,17 @@ class Player: Entity {
     override func levelUp(_ amount: Int) {
         super.levelUp(amount)
         associatedHud.updateLevel(level)
-        let content = UNMutableNotificationContent()
-        content.title = "Congratulations!"
-        content.body = "You upgraded to version \(level)!"
-        let uuid = UUID().uuidString
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-        let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-        let center = UNUserNotificationCenter.current()
-        center.add(newNotificationRequest, withCompletionHandler: nil)
+        
+        if TerminaUserDefaults.canSendNotifications {
+            let content = UNMutableNotificationContent()
+            content.title = "Congratulations!"
+            content.body = "You upgraded to version \(level)!"
+            let uuid = UUID().uuidString
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+            let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+            let center = UNUserNotificationCenter.current()
+            center.add(newNotificationRequest, withCompletionHandler: nil)
+        }
     }
     
     /**

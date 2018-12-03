@@ -43,14 +43,16 @@ class Termina: Monster {
      Sends a notification to the user, mocking them about pacifying the entity
      */
     func pacifyComment() {
-        let content = UNMutableNotificationContent()
-        content.title = "Do you think you're being clever?"
-        content.body = "Befriending your foes won't save you."
-        let uuid = UUID().uuidString
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-        let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-        let center = UNUserNotificationCenter.current()
-        center.add(newNotificationRequest, withCompletionHandler: nil)
+        if TerminaUserDefaults.canSendNotifications {
+            let content = UNMutableNotificationContent()
+            content.title = "Do you think you're being clever?"
+            content.body = "Befriending your foes won't save you."
+            let uuid = UUID().uuidString
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+            let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+            let center = UNUserNotificationCenter.current()
+            center.add(newNotificationRequest, withCompletionHandler: nil)
+        }
     }
     
     /**

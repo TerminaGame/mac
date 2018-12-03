@@ -77,6 +77,7 @@
 		BF1408B421B09B9800A7E70E /* 5.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089821B09B9800A7E70E /* 5.sks */; };
 		BF1787DD21B468DF0056CD88 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1787DC21B468DF0056CD88 /* ChangeNameViewController.swift */; };
 		BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */; };
+		BF46539D21B5A3E3006BBF04 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */; };
 		BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BF5D7A2D21AF3D96008CD33F /* Podfile */; };
 		BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */; };
 		BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */; };
@@ -172,6 +173,7 @@
 		BF14089821B09B9800A7E70E /* 5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 5.sks; sourceTree = "<group>"; };
 		BF1787DC21B468DF0056CD88 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
 		BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaViewController.swift; sourceTree = "<group>"; };
+		BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		BF5D7A2D21AF3D96008CD33F /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BF5D7A2F21AF4152008CD33F /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
 		BF5D7A3021AF4152008CD33F /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenter.framework"; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				BF082D7A21AC9A4500B5406C /* Player.swift */,
 				BF082D7B21AC9A4500B5406C /* Potion.swift */,
 				BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */,
+				BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */,
 			);
 			path = GameClasses;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				BF082DA221AC9A4500B5406C /* SwiftyJSON.swift in Sources */,
 				BF082D8E21AC9A4500B5406C /* MainMenu.swift in Sources */,
 				BF082D9E21AC9A4500B5406C /* Bottle.swift in Sources */,
+				BF46539D21B5A3E3006BBF04 /* UserDefaults.swift in Sources */,
 				BF082D9B21AC9A4500B5406C /* Data.swift in Sources */,
 				BF082D9921AC9A4500B5406C /* Monster.swift in Sources */,
 				BF082DA321AC9A4500B5406C /* Keycodes.swift in Sources */,

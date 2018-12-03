@@ -31,8 +31,8 @@
             <objects>
                 <tabViewController title="Termina Preferences" selectedTabViewItemIndex="0" tabStyle="toolbar" id="kbk-Pu-fLe" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem identifier="" image="Notifications" id="udq-Q1-rwW"/>
-                        <tabViewItem identifier="" id="ZRO-9b-L5Z"/>
+                        <tabViewItem label="Notifications" identifier="" image="Notifications" id="udq-Q1-rwW"/>
+                        <tabViewItem label="Appearance" identifier="" image="Appearance" id="ZRO-9b-L5Z"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="BVh-qx-J2t">
@@ -58,11 +58,11 @@
             <objects>
                 <viewController title="Notifications" id="GKo-N7-FQm" customClass="NotificationPane" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="8oN-sG-r7K">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Md3-in-eP3">
-                                <rect key="frame" x="18" y="91" width="107" height="17"/>
+                                <rect key="frame" x="18" y="71" width="107" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Notify me when:" id="dB4-uE-hNa">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -70,14 +70,14 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3ZN-QB-Kvs">
-                                <rect key="frame" x="30" y="67" width="254" height="18"/>
+                                <rect key="frame" x="30" y="47" width="254" height="18"/>
                                 <buttonCell key="cell" type="check" title="I import, save, or delete my game data" bezelStyle="regularSquare" imagePosition="left" inset="2" id="r0t-o8-8hL">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Kk-I3-pbF">
-                                <rect key="frame" x="30" y="47" width="184" height="18"/>
+                                <rect key="frame" x="30" y="27" width="184" height="18"/>
                                 <buttonCell key="cell" type="check" title="I level up or pacify an error" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Gfx-2f-p2q">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -107,11 +107,11 @@
             <objects>
                 <viewController title="Appearance" id="vD6-uS-36v" customClass="PreferencesViewController" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="6wy-C7-AgK">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="156"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GJ8-bx-Hmc">
-                                <rect key="frame" x="18" y="163" width="146" height="17"/>
+                                <rect key="frame" x="18" y="119" width="146" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="Do not show on HUDs:" id="ucD-Ta-4fT">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -119,21 +119,21 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-sb-Tkg">
-                                <rect key="frame" x="30" y="139" width="101" height="18"/>
+                                <rect key="frame" x="30" y="95" width="101" height="18"/>
                                 <buttonCell key="cell" type="check" title="Entity names" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="LbL-GU-WQJ">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cDm-bl-csN">
-                                <rect key="frame" x="30" y="119" width="112" height="18"/>
+                                <rect key="frame" x="30" y="75" width="112" height="18"/>
                                 <buttonCell key="cell" type="check" title="Health number" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="mgE-TV-hxA">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="puV-Oi-qUs">
-                                <rect key="frame" x="30" y="99" width="102" height="18"/>
+                                <rect key="frame" x="30" y="55" width="102" height="18"/>
                                 <buttonCell key="cell" type="check" title="Level badges" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="uha-4z-7Iv">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -164,10 +164,11 @@
                 </viewController>
                 <customObject id="uXn-3Q-SiC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415" y="1226"/>
+            <point key="canvasLocation" x="404" y="1164"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Appearance" width="512" height="512"/>
         <image name="Notifications" width="512" height="512"/>
     </resources>
 </document>

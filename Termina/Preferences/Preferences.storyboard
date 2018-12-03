@@ -33,6 +33,7 @@
                     <tabViewItems>
                         <tabViewItem label="Notifications" identifier="" image="Notifications" id="udq-Q1-rwW"/>
                         <tabViewItem label="Appearance" identifier="" image="Appearance" id="ZRO-9b-L5Z"/>
+                        <tabViewItem label="Beta Program" image="LogoBeta" id="MKL-6P-K71"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="BVh-qx-J2t">
@@ -47,6 +48,7 @@
                         <outlet property="tabView" destination="BVh-qx-J2t" id="Wzc-bX-p7X"/>
                         <segue destination="GKo-N7-FQm" kind="relationship" relationship="tabItems" id="yhV-iD-btw"/>
                         <segue destination="vD6-uS-36v" kind="relationship" relationship="tabItems" id="3zq-6S-arX"/>
+                        <segue destination="lbx-uo-MRL" kind="relationship" relationship="tabItems" id="TJv-YE-geB"/>
                     </connections>
                 </tabViewController>
                 <customObject id="vY9-NJ-H1e" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -100,7 +102,7 @@
                 </viewController>
                 <customObject id="hgV-8o-dCi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="1140"/>
+            <point key="canvasLocation" x="-509" y="1140"/>
         </scene>
         <!--Appearance-->
         <scene sceneID="wvE-gS-GJP">
@@ -164,11 +166,52 @@
                 </viewController>
                 <customObject id="uXn-3Q-SiC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="404" y="1164"/>
+            <point key="canvasLocation" x="70" y="1164"/>
+        </scene>
+        <!--Beta Program-->
+        <scene sceneID="lQ0-cb-Et9">
+            <objects>
+                <viewController title="Beta Program" id="lbx-uo-MRL" customClass="BetaProgramPane" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="2dV-Cm-Oev">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="108"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bMA-uV-5nc">
+                                <rect key="frame" x="18" y="72" width="248" height="18"/>
+                                <buttonCell key="cell" type="check" title="Send analytics to Termina developers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iVr-1i-eDK">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="SpB-3H-l4G">
+                                <rect key="frame" x="18" y="32" width="414" height="34"/>
+                                <textFieldCell key="cell" selectable="YES" title="Termina sends this data to collect error information that may be a potenial issue." id="0lS-fi-IWo">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SpB-3H-l4G" secondAttribute="trailing" constant="20" id="X4k-1d-QH4"/>
+                            <constraint firstItem="bMA-uV-5nc" firstAttribute="top" secondItem="2dV-Cm-Oev" secondAttribute="top" constant="20" id="dg6-p4-I6G"/>
+                            <constraint firstItem="SpB-3H-l4G" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="i8L-li-A5p"/>
+                            <constraint firstItem="bMA-uV-5nc" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="jJ9-hc-tMi"/>
+                            <constraint firstItem="SpB-3H-l4G" firstAttribute="top" secondItem="bMA-uV-5nc" secondAttribute="bottom" constant="8" id="sFE-vi-gPM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sendAnalytics" destination="bMA-uV-5nc" id="5v6-bc-xcy"/>
+                    </connections>
+                </viewController>
+                <customObject id="raO-PK-u8m" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="639" y="1140"/>
         </scene>
     </scenes>
     <resources>
         <image name="Appearance" width="512" height="512"/>
+        <image name="LogoBeta" width="512" height="512"/>
         <image name="Notifications" width="512" height="512"/>
     </resources>
 </document>

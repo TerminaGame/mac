@@ -119,10 +119,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         
         // Connect to MS AppCenter for beta testing releases
         if BetaHandler.isBetaBuild {
-            MSAppCenter.start("dd5d5c2f-8d90-4f89-9c55-e81b02d36d8f", withServices:[
-                MSAnalytics.self,
-                MSCrashes.self
-                ])
+            if TerminaUserDefaults.sendBetaAnalytics {
+                MSAppCenter.start("dd5d5c2f-8d90-4f89-9c55-e81b02d36d8f", withServices:[
+                    MSAnalytics.self,
+                    MSCrashes.self
+                    ])
+            } else {
+                MSAppCenter.start("dd5d5c2f-8d90-4f89-9c55-e81b02d36d8f", withServices:[
+                    MSCrashes.self
+                    ])
+            }
+            
             feedbackMenuItem!.isHidden = false
         }
         

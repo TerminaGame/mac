@@ -85,6 +85,8 @@
 		BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BF5D7A2D21AF3D96008CD33F /* Podfile */; };
 		BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */; };
 		BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */; };
+		BFBE9C1221B5E6A300AA1C6C /* BetaProgramPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */; };
+		BFBE9C1321B5E6A300AA1C6C /* BetaProgramPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBE9C1121B5E6A300AA1C6C /* BetaProgramPane.xib */; };
 		BFF9FBBB21B320FB001DAAC9 /* Tutorial.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFF9FBBA21B320FB001DAAC9 /* Tutorial.sks */; };
 		BFF9FBBD21B329AB001DAAC9 /* TutorialRoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9FBBC21B329AB001DAAC9 /* TutorialRoomScene.swift */; };
 /* End PBXBuildFile section */
@@ -188,6 +190,8 @@
 		BF5D7A3121AF4152008CD33F /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
 		BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "Termina macOS Beta Program.rtf"; path = "../../../../Library/Mobile Documents/com~apple~TextEdit/Documents/Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
 		BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaHandler.swift; sourceTree = "<group>"; };
+		BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaProgramPane.swift; sourceTree = "<group>"; };
+		BFBE9C1121B5E6A300AA1C6C /* BetaProgramPane.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetaProgramPane.xib; sourceTree = "<group>"; };
 		BFF9FBBA21B320FB001DAAC9 /* Tutorial.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial.sks; sourceTree = "<group>"; };
 		BFF9FBBC21B329AB001DAAC9 /* TutorialRoomScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialRoomScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -389,6 +393,8 @@
 			isa = PBXGroup;
 			children = (
 				BF4CA6BA21B5B01E007A39F1 /* Preferences.storyboard */,
+				BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */,
+				BFBE9C1121B5E6A300AA1C6C /* BetaProgramPane.xib */,
 				BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */,
 				BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */,
 				BF4CA6C021B5BD04007A39F1 /* NotificationPane.swift */,
@@ -431,6 +437,9 @@
 					BF082D4321AC99FF00B5406C = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -478,6 +487,7 @@
 				BF082D9521AC9A4500B5406C /* Environment.sks in Resources */,
 				BF082D9721AC9A4500B5406C /* 29.sks in Resources */,
 				BF14089921B09B9800A7E70E /* 16.sks in Resources */,
+				BFBE9C1321B5E6A300AA1C6C /* BetaProgramPane.xib in Resources */,
 				BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */,
 				BF14089D21B09B9800A7E70E /* 21.sks in Resources */,
 				BF082D8821AC9A4500B5406C /* Hardcore.storyboard in Resources */,
@@ -566,6 +576,7 @@
 				BF082D9C21AC9A4500B5406C /* Entity.swift in Sources */,
 				BF082DA421AC9A4500B5406C /* Files.swift in Sources */,
 				BF082DA221AC9A4500B5406C /* SwiftyJSON.swift in Sources */,
+				BFBE9C1221B5E6A300AA1C6C /* BetaProgramPane.swift in Sources */,
 				BF082D8E21AC9A4500B5406C /* MainMenu.swift in Sources */,
 				BF082D9E21AC9A4500B5406C /* Bottle.swift in Sources */,
 				BF46539D21B5A3E3006BBF04 /* UserDefaults.swift in Sources */,
@@ -715,6 +726,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/AppCenter/AppCenter-SDK-Apple/macOS",
@@ -742,6 +754,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/AppCenter/AppCenter-SDK-Apple/macOS",

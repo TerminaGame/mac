@@ -26,6 +26,11 @@ struct TerminaUserDefaults {
     static var canSendGameNotifications = UserDefaults().bool(forKey: "canSendGameNotifications")
     
     /**
+     Beta program preference for sending analytics to AppCenter.
+     */
+    static var sendBetaAnalytics = UserDefaults().bool(forKey: "sendBetaAnalytics")
+    
+    /**
      Change the user-set preference for sending notifications to a new value
      
      - Parameters:
@@ -58,6 +63,10 @@ struct TerminaUserDefaults {
         }
     }
     
+    func setBetaAnalytics(status: Bool) {
+        UserDefaults().set(status, forKey: "sendBetaAnalytics")
+    }
+    
     /**
      Create the list of user defaults if it doesn't exist already.
      */
@@ -66,6 +75,14 @@ struct TerminaUserDefaults {
         
         for key in allKeys {
             if !(UserDefaults().exists(key: key)) {
+                UserDefaults().set(true, forKey: key)
+            }
+        }
+        
+        // Beta-specific
+        let betaKeys = ["sendBetaAnalytics"]
+        for key in betaKeys {
+            if !(UserDefaults().exists(key: key)) && BetaHandler.isBetaBuild {
                 UserDefaults().set(true, forKey: key)
             }
         }

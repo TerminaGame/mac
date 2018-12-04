@@ -47,7 +47,18 @@ class MainMenu: SKScene {
                 self.view?.presentScene(SKScene(fileNamed: String(override ?? 0))!, transition: SKTransition.fade(withDuration: 1.5))
             }
         } else {
-            self.view?.presentScene(SKScene(fileNamed: String(Int.random(in: 0...28)))!, transition: SKTransition.fade(withDuration: 1.5))
+            let randomLower = Int.random(in: 0...8)
+            let randomUpper = Int.random(in: 20...28)
+            
+            let chosenOne = Bool.random()
+            
+            if chosenOne {
+                self.view?.presentScene(SKScene(fileNamed: String(randomLower))!, transition: SKTransition.fade(withDuration: 1.5))
+            } else {
+                self.view?.presentScene(SKScene(fileNamed: String(randomUpper))!, transition: SKTransition.fade(withDuration: 1.5))
+            }
+            
+            // self.view?.presentScene(SKScene(fileNamed: String(Int.random(in: 0...28)))!, transition: SKTransition.fade(withDuration: 1.5))
         }
         self.size = CGSize(width: 1280, height: 720)
         self.scaleMode = .aspectFit

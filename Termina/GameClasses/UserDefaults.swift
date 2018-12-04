@@ -31,6 +31,11 @@ struct TerminaUserDefaults {
     static var sendBetaAnalytics = UserDefaults().bool(forKey: "sendBetaAnalytics")
     
     /**
+     Beta program preference for displaying node count and FPS
+     */
+    static var displayBetaInformation = UserDefaults().bool(forKey: "displayBetaInformation")
+    
+    /**
      Change the user-set preference for sending notifications to a new value
      
      - Parameters:
@@ -67,6 +72,10 @@ struct TerminaUserDefaults {
         UserDefaults().set(status, forKey: "sendBetaAnalytics")
     }
     
+    func setBetaDisplay(status: Bool) {
+        UserDefaults().set(status, forKey: "displayBetaInformation")
+    }
+    
     /**
      Create the list of user defaults if it doesn't exist already.
      */
@@ -80,7 +89,7 @@ struct TerminaUserDefaults {
         }
         
         // Beta-specific
-        let betaKeys = ["sendBetaAnalytics"]
+        let betaKeys = ["sendBetaAnalytics", "displayBetaInformation"]
         for key in betaKeys {
             if !(UserDefaults().exists(key: key)) && BetaHandler.isBetaBuild {
                 UserDefaults().set(true, forKey: key)

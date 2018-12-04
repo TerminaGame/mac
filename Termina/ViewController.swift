@@ -28,11 +28,18 @@ class ViewController: NSViewController {
             
             view.ignoresSiblingOrder = true
             
-            if BetaHandler.isBetaBuild {
+            if BetaHandler.isBetaBuild && TerminaUserDefaults.displayBetaInformation {
                 view.showsFPS = true
                 view.showsNodeCount = true
             }
             
+        }
+    }
+    
+    override func viewWillAppear() {
+        if BetaHandler.isBetaBuild && TerminaUserDefaults.displayBetaInformation {
+            self.skView.showsFPS = true
+            self.skView.showsNodeCount = true
         }
     }
     

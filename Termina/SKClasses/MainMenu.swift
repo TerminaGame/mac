@@ -125,6 +125,7 @@ class MainMenu: SKScene {
         resetButton = childNode(withName: "resetButton") as? SKLabelNode
         quitButton = childNode(withName: "quitButton") as? SKLabelNode
         background = childNode(withName: "mainMenuBackground") as? SKSpriteNode
+        let termina = childNode(withName: "terminaAvatar") as? SKSpriteNode
         
         if !AppDelegate.gotLoadedData {
             resetButton?.isHidden = true
@@ -133,6 +134,9 @@ class MainMenu: SKScene {
         
         getSystemFont()
         background?.texture = SKTexture(imageNamed: "mainMenu")
+        
+        termina?.texture = SKTexture(imageNamed: "MenuArtT")
+        termina?.size = (NSImage(named: "MenuArtT")?.size)!
         
     }
     

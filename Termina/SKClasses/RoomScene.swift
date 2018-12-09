@@ -492,12 +492,22 @@ class RoomScene: SKScene {
                 if gamePlayer?.name == "Susie" {
                     alert.informativeText = "You've failed me, but, of course, I should've expected that from you. You may think you're strong enough, but this isn't your imagination."
                     alert.icon = NSImage(named: "UnderDeathIcon")
-                    alert.addButton(withTitle: "Quit in Shame")
+                    if TerminaUserDefaults.demoMode {
+                        alert.addButton(withTitle: "Restart Demo in Shame")
+                    } else {
+                        alert.addButton(withTitle: "Quit in Shame")
+                    }
+                    
                 } else if gamePlayer?.name == "Asriel" {
                     alert.informativeText = "You should have pushed a little harder; stay determined!"
                     alert.icon = NSImage(named: "UnderDeathIcon")
                 } else {
-                    alert.addButton(withTitle: "Quit")
+                    if TerminaUserDefaults.demoMode {
+                        alert.addButton(withTitle: "Restart Demo")
+                    } else {
+                        alert.addButton(withTitle: "Quit")
+                    }
+                    
                     alert.icon = NSImage(named: "PortalDeathIcon")
                     
                     switch (how) {
@@ -518,7 +528,12 @@ class RoomScene: SKScene {
                     
                 }
             } else {
-                alert.addButton(withTitle: "Quit")
+                if TerminaUserDefaults.demoMode {
+                    alert.addButton(withTitle: "Restart Demo")
+                } else {
+                    alert.addButton(withTitle: "Quit")
+                }
+                
                 alert.icon = NSImage(named: "DeathIcon")
                 
                 switch (how) {
@@ -556,8 +571,13 @@ class RoomScene: SKScene {
             (returnCode: NSApplication.ModalResponse) -> Void in
             if returnCode.rawValue == 1000 {
                 if AppDelegate.isHardcore {
-                    AppDelegate.dataModel.deleteSettings()
-                    exit(0)
+                    if TerminaUserDefaults.demoMode {
+                        AppDelegate.dataModel.resetSettings()
+                        self.presentNewScene(nil)
+                    } else {
+                        AppDelegate.dataModel.deleteSettings()
+                        exit(0)
+                    }
                 } else {
                     let _ = AppDelegate.dataModel.loadFromFile()
                     AppDelegate.dataModel.player.health = 100

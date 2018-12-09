@@ -12,6 +12,7 @@ class BetaProgramPane: PreferencesViewController {
 
     @IBOutlet weak var sendAnalytics: NSButton!
     @IBOutlet weak var displayBetaInfo: NSButton!
+    @IBOutlet weak var demoMode: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,12 @@ class BetaProgramPane: PreferencesViewController {
         } else {
             displayBetaInfo.state = .off
         }
+        
+        if TerminaUserDefaults.demoMode {
+            demoMode.state = .on
+        } else {
+            demoMode.state = .off
+        }
     }
     
     override func viewDidDisappear() {
@@ -45,6 +52,12 @@ class BetaProgramPane: PreferencesViewController {
             TerminaUserDefaults().setBetaDisplay(status: true)
         } else {
             TerminaUserDefaults().setBetaDisplay(status: false)
+        }
+        
+        if demoMode.state == .on {
+            TerminaUserDefaults().toggleDemoMode(status: true)
+        } else {
+            TerminaUserDefaults().toggleDemoMode(status: false)
         }
     }
     

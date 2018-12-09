@@ -36,6 +36,11 @@ struct TerminaUserDefaults {
     static var displayBetaInformation = UserDefaults().bool(forKey: "displayBetaInformation")
     
     /**
+     Beta program preference for enabling demo/kiosk mode
+     */
+    static var demoMode = UserDefaults().bool(forKey: "demoMode")
+    
+    /**
      Change the user-set preference for sending notifications to a new value
      
      - Parameters:
@@ -76,6 +81,10 @@ struct TerminaUserDefaults {
         UserDefaults().set(status, forKey: "displayBetaInformation")
     }
     
+    func toggleDemoMode(status: Bool) {
+        UserDefaults().set(status, forKey: "demoMode")
+    }
+    
     /**
      Create the list of user defaults if it doesn't exist already.
      */
@@ -94,6 +103,10 @@ struct TerminaUserDefaults {
             if !(UserDefaults().exists(key: key)) && BetaHandler.isBetaBuild {
                 UserDefaults().set(true, forKey: key)
             }
+        }
+        
+        if !(UserDefaults().exists(key: "demoMode")) && BetaHandler.isBetaBuild {
+            UserDefaults().set(false, forKey: "demoMode")
         }
     }
     

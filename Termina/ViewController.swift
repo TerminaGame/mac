@@ -41,6 +41,10 @@ class ViewController: NSViewController {
             self.skView.showsFPS = true
             self.skView.showsNodeCount = true
         }
+        
+        if TerminaUserDefaults.demoMode {
+            self.skView.window?.title = "Termina - Demo Mode"
+        }
     }
     
 }

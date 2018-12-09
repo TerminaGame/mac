@@ -356,7 +356,7 @@ class RoomScene: SKScene {
             self.scaleMode = .aspectFit
             self.view?.presentScene(SKScene(fileNamed: "MainMenu")!, transition: SKTransition.fade(with: NSColor.white, duration: 0.5))
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Return)) {
-            if self.isNear(node: exitRoom!, maximumDistance: 75) && roomEntity == nil {
+            if self.isNear(node: exitRoom!, maximumDistance: 90) && roomEntity == nil {
                 if (gamePlayer?.level ?? 1) >= 420 {
                     if self.name == "29" {
                         self.presentNewScene(nil)

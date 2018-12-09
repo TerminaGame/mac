@@ -126,6 +126,7 @@ class MainMenu: SKScene {
             startGameButton?.removeFromParent()
             hardcoreButton?.removeFromParent()
             resetButton?.removeFromParent()
+            quitButton?.removeFromParent()
             childNode(withName: "betaLabel")?.removeFromParent()
             termina?.position.x = 0
         } else if (63 <= randomChance && randomChance < 65) {

@@ -234,11 +234,15 @@ class RoomScene: SKScene {
             weaponNode = childNode(withName: "weaponItemNode") as? SKSpriteNode
             weaponNode?.texture = SKTexture(imageNamed: "Weapon")
             
-            let chance = Int.random(in: 0...10)
-            if (chance >= 3 && chance <= 6) {
-                items.append(Weapon(name: NameGenerator().generateWeaponName(), equipLevel: Int.random(in: 1...(gamePlayer?.level ?? 1) + 5), player: gamePlayer!, node: weaponNode!))
+            if (gamePlayer?.level ?? 1) <= 5 {
+                items.append(Weapon(name: NameGenerator().generateWeaponName(), equipLevel: Int.random(in: 1 ... 5), player: gamePlayer!, node: weaponNode!))
             } else {
-                weaponNode?.removeFromParent()
+                let chance = Int.random(in: 0...10)
+                if (chance >= 3 && chance <= 6) {
+                    items.append(Weapon(name: NameGenerator().generateWeaponName(), equipLevel: Int.random(in: 1...(gamePlayer?.level ?? 1) + 5), player: gamePlayer!, node: weaponNode!))
+                } else {
+                    weaponNode?.removeFromParent()
+                }
             }
         }
     }

@@ -113,6 +113,30 @@ class MainMenu: SKScene {
     }
     
     /**
+     Sets up Termina's overlay
+     */
+    func setUpTermina() {
+        let termina = childNode(withName: "terminaAvatar") as? SKSpriteNode
+        let randomChance = Int.random(in: 0...65)
+        
+        if randomChance == 65 {
+            termina?.texture = SKTexture(imageNamed: "MenuArtTSpecial")
+            background?.texture = SKTexture(imageNamed: "mainMenuGhost")
+            menuTitle?.removeFromParent()
+            startGameButton?.removeFromParent()
+            hardcoreButton?.removeFromParent()
+            resetButton?.removeFromParent()
+            childNode(withName: "betaLabel")?.removeFromParent()
+            termina?.position.x = 0
+        } else if (63 <= randomChance && randomChance < 65) {
+            termina?.texture = SKTexture(imageNamed: "MenuArtTGhost")
+        } else {
+            termina?.texture = SKTexture(imageNamed: "MenuArtT")
+        }
+        termina?.size = (NSImage(named: "MenuArtT")?.size)!
+    }
+    
+    /**
      Sets up the menu
      */
     func setUpMenu() {
@@ -125,7 +149,6 @@ class MainMenu: SKScene {
         resetButton = childNode(withName: "resetButton") as? SKLabelNode
         quitButton = childNode(withName: "quitButton") as? SKLabelNode
         background = childNode(withName: "mainMenuBackground") as? SKSpriteNode
-        let termina = childNode(withName: "terminaAvatar") as? SKSpriteNode
         
         if !AppDelegate.gotLoadedData {
             resetButton?.isHidden = true
@@ -135,8 +158,7 @@ class MainMenu: SKScene {
         getSystemFont()
         background?.texture = SKTexture(imageNamed: "mainMenu")
         
-        termina?.texture = SKTexture(imageNamed: "MenuArtT")
-        termina?.size = (NSImage(named: "MenuArtT")?.size)!
+        setUpTermina()
         
     }
     

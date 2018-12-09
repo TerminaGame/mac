@@ -117,6 +117,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
      */
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
+        // Create the user defaults.
+        TerminaUserDefaults().createUserDefaults()
+        
         // Connect to MS AppCenter for beta testing releases
         if BetaHandler.isBetaBuild {
             if TerminaUserDefaults.sendBetaAnalytics {

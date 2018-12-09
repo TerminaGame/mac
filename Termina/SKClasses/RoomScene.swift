@@ -550,16 +550,18 @@ class RoomScene: SKScene {
         
         alert.beginSheetModal(for: (self.view?.window!)!) {
             (returnCode: NSApplication.ModalResponse) -> Void in
-            if returnCode.rawValue == 1001 || (returnCode.rawValue == 1000 && AppDelegate.isHardcore){
+            if returnCode.rawValue == 1000 {
                 if AppDelegate.isHardcore {
                     AppDelegate.dataModel.deleteSettings()
+                    exit(0)
+                } else {
+                    let _ = AppDelegate.dataModel.loadFromFile()
+                    AppDelegate.dataModel.player.health = 100
+                    AppDelegate.dataModel.saveToFile(true)
+                    self.presentNewScene(nil)
                 }
-                exit(0)
             } else {
-                let _ = AppDelegate.dataModel.loadFromFile()
-                AppDelegate.dataModel.player.health = 100
-                AppDelegate.dataModel.saveToFile(true)
-                self.presentNewScene(28)
+                exit(0)
             }
         }
     }

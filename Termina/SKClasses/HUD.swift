@@ -99,4 +99,23 @@ class HUD: SKNode {
         updateLevel(newLevel)
         updateName(newName)
     }
+    
+    func toggleNameInvisibility(to: Bool) {
+        let nameLabel = childNode(withName: "entityNameLabel")
+        nameLabel?.isHidden = to
+    }
+    
+    func toggleNumberInvisibility(to: Bool) {
+        let number = childNode(withName: "healthHudNumber") as? SKLabelNode
+        
+        number?.isHidden = to
+    }
+    
+    func toggleBadgeInvisibility(to: Bool) {
+        let badgeNumber = childNode(withName: "levelBadgeCount")
+        let badgeBackground = childNode(withName: "levelBadgeBackground")
+        
+        badgeBackground?.isHidden = to
+        badgeNumber?.isHidden = to
+    }
 }

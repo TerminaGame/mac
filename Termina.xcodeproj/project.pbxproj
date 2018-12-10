@@ -83,6 +83,7 @@
 		BF4CA6BF21B5B59D007A39F1 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */; };
 		BF4CA6C121B5BD04007A39F1 /* NotificationPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6C021B5BD04007A39F1 /* NotificationPane.swift */; };
 		BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BF5D7A2D21AF3D96008CD33F /* Podfile */; };
+		BF70B6DD21BEF1F1002473B6 /* AppearancePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF70B6DC21BEF1F1002473B6 /* AppearancePane.swift */; };
 		BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */; };
 		BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */; };
 		BFBE9C1221B5E6A300AA1C6C /* BetaProgramPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */; };
@@ -188,6 +189,7 @@
 		BF5D7A2F21AF4152008CD33F /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
 		BF5D7A3021AF4152008CD33F /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenter.framework"; sourceTree = "<group>"; };
 		BF5D7A3121AF4152008CD33F /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
+		BF70B6DC21BEF1F1002473B6 /* AppearancePane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePane.swift; sourceTree = "<group>"; };
 		BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "Termina macOS Beta Program.rtf"; path = "../../../../Library/Mobile Documents/com~apple~TextEdit/Documents/Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
 		BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaHandler.swift; sourceTree = "<group>"; };
 		BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaProgramPane.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */,
 				BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */,
 				BF4CA6C021B5BD04007A39F1 /* NotificationPane.swift */,
+				BF70B6DC21BEF1F1002473B6 /* AppearancePane.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				BF082D9B21AC9A4500B5406C /* Data.swift in Sources */,
 				BF082D9921AC9A4500B5406C /* Monster.swift in Sources */,
 				BF4CA6BF21B5B59D007A39F1 /* PreferencesWindowController.swift in Sources */,
+				BF70B6DD21BEF1F1002473B6 /* AppearancePane.swift in Sources */,
 				BF082DA321AC9A4500B5406C /* Keycodes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

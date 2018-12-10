@@ -107,7 +107,7 @@
         <!--Appearance-->
         <scene sceneID="wvE-gS-GJP">
             <objects>
-                <viewController title="Appearance" id="vD6-uS-36v" customClass="PreferencesViewController" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Appearance" id="vD6-uS-36v" customClass="AppearancePane" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="6wy-C7-AgK">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="156"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -122,47 +122,53 @@
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-sb-Tkg">
                                 <rect key="frame" x="30" y="95" width="101" height="18"/>
-                                <buttonCell key="cell" type="check" title="Entity names" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="LbL-GU-WQJ">
+                                <buttonCell key="cell" type="check" title="Entity names" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LbL-GU-WQJ">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cDm-bl-csN">
                                 <rect key="frame" x="30" y="75" width="112" height="18"/>
-                                <buttonCell key="cell" type="check" title="Health number" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="mgE-TV-hxA">
+                                <buttonCell key="cell" type="check" title="Health number" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mgE-TV-hxA">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="puV-Oi-qUs">
                                 <rect key="frame" x="30" y="55" width="102" height="18"/>
-                                <buttonCell key="cell" type="check" title="Level badges" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="uha-4z-7Iv">
+                                <buttonCell key="cell" type="check" title="Level badges" bezelStyle="regularSquare" imagePosition="left" inset="2" id="uha-4z-7Iv">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ot7-30-tDX">
-                                <rect key="frame" x="18" y="20" width="262" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="These options aren't available in this build." id="AYY-tn-1V0">
-                                    <font key="font" metaFont="system"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="WZ5-rn-LfL">
+                                <rect key="frame" x="18" y="32" width="414" height="17"/>
+                                <textFieldCell key="cell" selectable="YES" title="Changes will take effect on next launch of the game." id="SiF-Kn-TRz">
+                                    <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Ot7-30-tDX" secondAttribute="bottom" constant="20" id="KT0-Np-hTL"/>
+                            <constraint firstItem="WZ5-rn-LfL" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="20" id="DfV-P3-NOs"/>
                             <constraint firstItem="H5x-sb-Tkg" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="VTg-13-dkW"/>
-                            <constraint firstItem="Ot7-30-tDX" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="20" id="XT6-xB-Tdf"/>
                             <constraint firstItem="cDm-bl-csN" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="XW0-xj-QBv"/>
+                            <constraint firstAttribute="trailing" secondItem="WZ5-rn-LfL" secondAttribute="trailing" constant="20" id="duF-1j-qlc"/>
                             <constraint firstItem="GJ8-bx-Hmc" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="20" id="fXO-wE-1ec"/>
                             <constraint firstItem="H5x-sb-Tkg" firstAttribute="top" secondItem="GJ8-bx-Hmc" secondAttribute="bottom" constant="8" id="p8f-gt-06K"/>
                             <constraint firstItem="puV-Oi-qUs" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="tge-Fm-RbQ"/>
                             <constraint firstItem="cDm-bl-csN" firstAttribute="top" secondItem="H5x-sb-Tkg" secondAttribute="bottom" constant="6" id="tp2-Z2-PiV"/>
                             <constraint firstItem="GJ8-bx-Hmc" firstAttribute="top" secondItem="6wy-C7-AgK" secondAttribute="top" constant="20" id="vBj-R2-xHM"/>
+                            <constraint firstItem="WZ5-rn-LfL" firstAttribute="top" secondItem="puV-Oi-qUs" secondAttribute="bottom" constant="8" id="vf8-bG-Oxx"/>
                             <constraint firstItem="puV-Oi-qUs" firstAttribute="top" secondItem="cDm-bl-csN" secondAttribute="bottom" constant="6" id="x9C-ky-NeZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hideBadge" destination="puV-Oi-qUs" id="uF6-hw-HaV"/>
+                        <outlet property="hideHealthInteger" destination="cDm-bl-csN" id="hBv-On-Xxd"/>
+                        <outlet property="hideNames" destination="H5x-sb-Tkg" id="ee0-le-Kru"/>
+                    </connections>
                 </viewController>
                 <customObject id="uXn-3Q-SiC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

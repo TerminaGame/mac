@@ -386,6 +386,43 @@ class RoomScene: SKScene {
             }
         }
         
+        
+        // Hide elements from preferences
+        if TerminaUserDefaults.shouldHideNamesOnHud {
+            gamePlayer?.associatedHud.toggleNameInvisibility(to: true)
+            if roomEntity is Monster {
+                (roomEntity as? Monster)?.associatedHud.toggleNameInvisibility(to: true)
+            }
+        } else {
+            gamePlayer?.associatedHud.toggleNameInvisibility(to: false)
+            if roomEntity is Monster {
+                (roomEntity as? Monster)?.associatedHud.toggleNameInvisibility(to: false)
+            }
+        }
+        
+        if TerminaUserDefaults.shouldHideHealthNumberOnHud {
+            gamePlayer?.associatedHud.toggleNumberInvisibility(to: true)
+            if roomEntity is Monster {
+                (roomEntity as? Monster)?.associatedHud.toggleNumberInvisibility(to: true)
+            }
+        } else {
+            gamePlayer?.associatedHud.toggleNumberInvisibility(to: false)
+            if roomEntity is Monster {
+                (roomEntity as? Monster)?.associatedHud.toggleNumberInvisibility(to: false)
+            }
+        }
+        
+        if TerminaUserDefaults.shouldHideLevelBadgeOnHud {
+            gamePlayer?.associatedHud.toggleBadgeInvisibility(to: true)
+            if roomEntity is Monster {
+                (roomEntity as? Monster)?.associatedHud.toggleBadgeInvisibility(to: true)
+            }
+        } else {
+            gamePlayer?.associatedHud.toggleNumberInvisibility(to: false)
+            if roomEntity is Monster {
+                (roomEntity as? Monster)?.associatedHud.toggleNumberInvisibility(to: false)
+            }
+        }
     }
     
     /**

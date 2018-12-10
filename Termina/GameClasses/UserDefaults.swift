@@ -41,6 +41,21 @@ struct TerminaUserDefaults {
     static var demoMode = UserDefaults().bool(forKey: "demoMode")
     
     /**
+     Preference for hiding name from HUD
+     */
+    static var shouldHideNamesOnHud = UserDefaults().bool(forKey: "shouldHideNamesOnHud")
+    
+    /**
+     Preference for hiding number on HUD
+     */
+    static var shouldHideHealthNumberOnHud = UserDefaults().bool(forKey: "shouldHideHealthNumberOnHud")
+    
+    /**
+     Preference for hiding the level badge on HUD
+     */
+    static var shouldHideLevelBadgeOnHud = UserDefaults().bool(forKey: "shouldHideLevelBadgeOnHud")
+    
+    /**
      Change the user-set preference for sending notifications to a new value
      
      - Parameters:
@@ -85,15 +100,57 @@ struct TerminaUserDefaults {
         UserDefaults().set(status, forKey: "demoMode")
     }
     
+    func hideElement(what: String) throws {
+        switch (what) {
+        case "names":
+            UserDefaults().set(true, forKey: "shouldHideNamesOnHud")
+            break
+        case "numbers":
+            UserDefaults().set(true, forKey: "shouldHideHealthNumberOnHud")
+            break
+        case "badges":
+            UserDefaults().set(true, forKey: "shouldHideLevelBadgeOnHud")
+            break
+        default:
+            throw TerminaUserDefaultsError.invalid
+        }
+    }
+    
+    func showElement(what: String) throws {
+        switch (what) {
+        case "names":
+            UserDefaults().set(false, forKey: "shouldHideNamesOnHud")
+            break
+        case "numbers":
+            UserDefaults().set(false, forKey: "shouldHideHealthNumberOnHud")
+            break
+        case "badges":
+            UserDefaults().set(false, forKey: "shouldHideLevelBadgeOnHud")
+            break
+        default:
+            throw TerminaUserDefaultsError.invalid
+        }
+    }
+    
     /**
      Create the list of user defaults if it doesn't exist already.
      */
     func createUserDefaults(){
-        let allKeys = ["canSendNotifications", "canSendGameNotifications", "canSendDataNotifications"]
+        // All keys that should be TRUE
+        let allTrueKeys = ["canSendNotifications", "canSendGameNotifications", "canSendDataNotifications"]
         
-        for key in allKeys {
+        for key in allTrueKeys {
             if !(UserDefaults().exists(key: key)) {
                 UserDefaults().set(true, forKey: key)
+            }
+        }
+        
+        // All keys that should be FALSE
+        let allFalseKeys = ["shouldHideNamesOnHud", "shouldHideHealthNumberOnHud", "shouldHideLevelBadgeOnHud"]
+        
+        for key in allFalseKeys {
+            if !(UserDefaults().exists(key: key)) {
+                UserDefaults().set(false, forKey: key)
             }
         }
         
@@ -108,6 +165,7 @@ struct TerminaUserDefaults {
         if !(UserDefaults().exists(key: "demoMode")) && BetaHandler.isBetaBuild {
             UserDefaults().set(false, forKey: "demoMode")
         }
+        
     }
     
 }

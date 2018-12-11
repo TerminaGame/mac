@@ -85,6 +85,7 @@
 		BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BF5D7A2D21AF3D96008CD33F /* Podfile */; };
 		BF70B6DD21BEF1F1002473B6 /* AppearancePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF70B6DC21BEF1F1002473B6 /* AppearancePane.swift */; };
 		BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */; };
+		BF90A4C921C03D8100F64D5D /* GhostMenuMusic.aif in Resources */ = {isa = PBXBuildFile; fileRef = BF90A4C821C03D8100F64D5D /* GhostMenuMusic.aif */; };
 		BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */; };
 		BFBE9C1221B5E6A300AA1C6C /* BetaProgramPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */; };
 		BFBE9C1321B5E6A300AA1C6C /* BetaProgramPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBE9C1121B5E6A300AA1C6C /* BetaProgramPane.xib */; };
@@ -191,6 +192,7 @@
 		BF5D7A3121AF4152008CD33F /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
 		BF70B6DC21BEF1F1002473B6 /* AppearancePane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePane.swift; sourceTree = "<group>"; };
 		BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "Termina macOS Beta Program.rtf"; path = "../../../../Library/Mobile Documents/com~apple~TextEdit/Documents/Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
+		BF90A4C821C03D8100F64D5D /* GhostMenuMusic.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = GhostMenuMusic.aif; sourceTree = "<group>"; };
 		BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaHandler.swift; sourceTree = "<group>"; };
 		BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaProgramPane.swift; sourceTree = "<group>"; };
 		BFBE9C1121B5E6A300AA1C6C /* BetaProgramPane.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetaProgramPane.xib; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				BF082D6521AC9A4500B5406C /* SKClasses */,
 				BF082D5D21AC9A4500B5406C /* Storyboards */,
 				BF082D8021AC9A4500B5406C /* ViewControllers */,
+				BF90A4C721C03D6D00F64D5D /* Audio */,
 				BF082D5621AC9A0000B5406C /* Info.plist */,
 				BF082D5721AC9A0000B5406C /* Termina.entitlements */,
 			);
@@ -405,6 +408,14 @@
 			path = Preferences;
 			sourceTree = "<group>";
 		};
+		BF90A4C721C03D6D00F64D5D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				BF90A4C821C03D8100F64D5D /* GhostMenuMusic.aif */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -502,6 +513,7 @@
 				BF1408A221B09B9800A7E70E /* 27.sks in Resources */,
 				BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */,
 				BF082D9421AC9A4500B5406C /* MainMenu.sks in Resources */,
+				BF90A4C921C03D8100F64D5D /* GhostMenuMusic.aif in Resources */,
 				BF14089A21B09B9800A7E70E /* 8.sks in Resources */,
 				BF1408AE21B09B9800A7E70E /* 22.sks in Resources */,
 				BF14084321B0923000A7E70E /* Template.sks in Resources */,

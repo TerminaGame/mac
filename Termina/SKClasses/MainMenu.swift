@@ -20,6 +20,8 @@ class MainMenu: SKScene {
     
     var background: SKSpriteNode?
     
+    var music: NSSound?
+    
     /**
      Changes the font of the SKLabelNodes to Apple's default system font
      */
@@ -129,6 +131,11 @@ class MainMenu: SKScene {
             quitButton?.removeFromParent()
             childNode(withName: "betaLabel")?.removeFromParent()
             termina?.position.x = 0
+            
+            music = NSSound(named: "GhostMenuMusic")
+            music?.loops = true
+            music?.play()
+            
         } else if (63 <= randomChance && randomChance < 65) {
             termina?.texture = SKTexture(imageNamed: "MenuArtTGhost")
         } else {

@@ -102,69 +102,79 @@
                 </viewController>
                 <customObject id="hgV-8o-dCi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-509" y="1140"/>
+            <point key="canvasLocation" x="-509" y="1128"/>
         </scene>
         <!--Appearance-->
         <scene sceneID="wvE-gS-GJP">
             <objects>
                 <viewController title="Appearance" id="vD6-uS-36v" customClass="AppearancePane" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="6wy-C7-AgK">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="156"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GJ8-bx-Hmc">
-                                <rect key="frame" x="18" y="119" width="146" height="17"/>
+                                <rect key="frame" x="18" y="133" width="146" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="Do not show on HUDs:" id="ucD-Ta-4fT">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-sb-Tkg">
-                                <rect key="frame" x="30" y="95" width="101" height="18"/>
-                                <buttonCell key="cell" type="check" title="Entity names" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LbL-GU-WQJ">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cDm-bl-csN">
-                                <rect key="frame" x="30" y="75" width="112" height="18"/>
-                                <buttonCell key="cell" type="check" title="Health number" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mgE-TV-hxA">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="puV-Oi-qUs">
-                                <rect key="frame" x="30" y="55" width="102" height="18"/>
-                                <buttonCell key="cell" type="check" title="Level badges" bezelStyle="regularSquare" imagePosition="left" inset="2" id="uha-4z-7Iv">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="WZ5-rn-LfL">
-                                <rect key="frame" x="18" y="32" width="414" height="17"/>
+                                <rect key="frame" x="18" y="20" width="414" height="17"/>
                                 <textFieldCell key="cell" selectable="YES" title="Changes will take effect on next launch of the game." id="SiF-Kn-TRz">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qfD-cx-V0r">
+                                <rect key="frame" x="18" y="164" width="192" height="18"/>
+                                <buttonCell key="cell" type="check" title="Display node count and FPS" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hRA-fx-ayl">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-sb-Tkg">
+                                <rect key="frame" x="30" y="109" width="101" height="18"/>
+                                <buttonCell key="cell" type="check" title="Entity names" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LbL-GU-WQJ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cDm-bl-csN">
+                                <rect key="frame" x="30" y="89" width="112" height="18"/>
+                                <buttonCell key="cell" type="check" title="Health number" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mgE-TV-hxA">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="puV-Oi-qUs">
+                                <rect key="frame" x="30" y="69" width="102" height="18"/>
+                                <buttonCell key="cell" type="check" title="Level badges" bezelStyle="regularSquare" imagePosition="left" inset="2" id="uha-4z-7Iv">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="WZ5-rn-LfL" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="20" id="DfV-P3-NOs"/>
-                            <constraint firstItem="H5x-sb-Tkg" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="VTg-13-dkW"/>
-                            <constraint firstItem="cDm-bl-csN" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="XW0-xj-QBv"/>
-                            <constraint firstAttribute="trailing" secondItem="WZ5-rn-LfL" secondAttribute="trailing" constant="20" id="duF-1j-qlc"/>
-                            <constraint firstItem="GJ8-bx-Hmc" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="20" id="fXO-wE-1ec"/>
-                            <constraint firstItem="H5x-sb-Tkg" firstAttribute="top" secondItem="GJ8-bx-Hmc" secondAttribute="bottom" constant="8" id="p8f-gt-06K"/>
-                            <constraint firstItem="puV-Oi-qUs" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="tge-Fm-RbQ"/>
-                            <constraint firstItem="cDm-bl-csN" firstAttribute="top" secondItem="H5x-sb-Tkg" secondAttribute="bottom" constant="6" id="tp2-Z2-PiV"/>
-                            <constraint firstItem="GJ8-bx-Hmc" firstAttribute="top" secondItem="6wy-C7-AgK" secondAttribute="top" constant="20" id="vBj-R2-xHM"/>
-                            <constraint firstItem="WZ5-rn-LfL" firstAttribute="top" secondItem="puV-Oi-qUs" secondAttribute="bottom" constant="8" id="vf8-bG-Oxx"/>
-                            <constraint firstItem="puV-Oi-qUs" firstAttribute="top" secondItem="cDm-bl-csN" secondAttribute="bottom" constant="6" id="x9C-ky-NeZ"/>
+                            <constraint firstItem="GJ8-bx-Hmc" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="20" id="8sY-NI-404"/>
+                            <constraint firstItem="WZ5-rn-LfL" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="20" id="EWz-N6-VPv"/>
+                            <constraint firstItem="puV-Oi-qUs" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="GmD-9Y-eGb"/>
+                            <constraint firstItem="H5x-sb-Tkg" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="H3I-HJ-InS"/>
+                            <constraint firstAttribute="trailing" secondItem="WZ5-rn-LfL" secondAttribute="trailing" constant="20" id="MpL-XR-1fm"/>
+                            <constraint firstItem="H5x-sb-Tkg" firstAttribute="top" secondItem="GJ8-bx-Hmc" secondAttribute="bottom" constant="8" id="Mpd-Sz-2rN"/>
+                            <constraint firstItem="cDm-bl-csN" firstAttribute="leading" secondItem="6wy-C7-AgK" secondAttribute="leading" constant="32" id="VYi-1b-ub1"/>
+                            <constraint firstItem="qfD-cx-V0r" firstAttribute="leading" secondItem="GJ8-bx-Hmc" secondAttribute="leading" id="kJZ-Ix-Pob"/>
+                            <constraint firstAttribute="bottom" secondItem="WZ5-rn-LfL" secondAttribute="bottom" constant="20" id="mLO-mj-f4M"/>
+                            <constraint firstItem="puV-Oi-qUs" firstAttribute="top" secondItem="cDm-bl-csN" secondAttribute="bottom" constant="6" id="n7O-Q6-zqS"/>
+                            <constraint firstItem="cDm-bl-csN" firstAttribute="top" secondItem="H5x-sb-Tkg" secondAttribute="bottom" constant="6" id="oeK-KD-xbu"/>
+                            <constraint firstItem="qfD-cx-V0r" firstAttribute="top" secondItem="6wy-C7-AgK" secondAttribute="top" constant="20" symbolic="YES" id="rPt-Jz-4Na"/>
+                            <constraint firstItem="GJ8-bx-Hmc" firstAttribute="top" secondItem="qfD-cx-V0r" secondAttribute="bottom" constant="16" id="x1O-tD-xfj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="displayBetaInfo" destination="qfD-cx-V0r" id="gmh-zW-Meh"/>
                         <outlet property="hideBadge" destination="puV-Oi-qUs" id="uF6-hw-HaV"/>
                         <outlet property="hideHealthInteger" destination="cDm-bl-csN" id="hBv-On-Xxd"/>
                         <outlet property="hideNames" destination="H5x-sb-Tkg" id="ee0-le-Kru"/>
@@ -172,55 +182,40 @@
                 </viewController>
                 <customObject id="uXn-3Q-SiC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="1164"/>
+            <point key="canvasLocation" x="70" y="1174"/>
         </scene>
         <!--Beta Program-->
         <scene sceneID="lQ0-cb-Et9">
             <objects>
                 <viewController title="Beta Program" id="lbx-uo-MRL" customClass="BetaProgramPane" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="2dV-Cm-Oev">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="236"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bMA-uV-5nc">
-                                <rect key="frame" x="18" y="200" width="248" height="18"/>
+                                <rect key="frame" x="18" y="164" width="248" height="18"/>
                                 <buttonCell key="cell" type="check" title="Send analytics to Termina developers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iVr-1i-eDK">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="SpB-3H-l4G">
-                                <rect key="frame" x="18" y="160" width="414" height="34"/>
+                                <rect key="frame" x="18" y="124" width="414" height="34"/>
                                 <textFieldCell key="cell" selectable="YES" title="Termina sends this data to collect error information that may be a potenial issue." id="0lS-fi-IWo">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t3f-jw-CjN">
-                                <rect key="frame" x="18" y="128" width="192" height="18"/>
-                                <buttonCell key="cell" type="check" title="Display node count and FPS" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="UNY-i1-5BX">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WVi-He-E43">
-                                <rect key="frame" x="18" y="105" width="342" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Changes will take effect on next launch of the game." id="0yB-0I-gU4">
-                                    <font key="font" metaFont="systemBold"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="03D-xS-QtA">
-                                <rect key="frame" x="18" y="73" width="139" height="18"/>
+                                <rect key="frame" x="18" y="100" width="139" height="18"/>
                                 <buttonCell key="cell" type="check" title="Enable demo mode" bezelStyle="regularSquare" imagePosition="left" inset="2" id="thI-Ni-4gz">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="h2F-Ma-iN3">
-                                <rect key="frame" x="18" y="16" width="414" height="51"/>
+                                <rect key="frame" x="18" y="43" width="414" height="51"/>
                                 <textFieldCell key="cell" selectable="YES" id="jOk-Cu-4B4">
                                     <font key="font" metaFont="system"/>
                                     <string key="title">If you are running the beta at a kiosk, turn this option on and use Hardcore Mode to allow the player to reset. Hardcore Mode will restart instead of quitting when this is on.</string>
@@ -230,31 +225,26 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="WVi-He-E43" firstAttribute="top" secondItem="t3f-jw-CjN" secondAttribute="bottom" constant="8" id="HUp-Zp-jud"/>
-                            <constraint firstItem="03D-xS-QtA" firstAttribute="top" secondItem="WVi-He-E43" secondAttribute="bottom" constant="16" id="Imk-RO-aoQ"/>
-                            <constraint firstItem="h2F-Ma-iN3" firstAttribute="top" secondItem="03D-xS-QtA" secondAttribute="bottom" constant="8" id="QKB-tR-d8e"/>
-                            <constraint firstItem="WVi-He-E43" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="SWU-p2-MRl"/>
+                            <constraint firstItem="03D-xS-QtA" firstAttribute="top" secondItem="SpB-3H-l4G" secondAttribute="bottom" constant="8" id="3cr-Gu-lBL"/>
+                            <constraint firstItem="03D-xS-QtA" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="Ee7-8a-8uS"/>
+                            <constraint firstItem="h2F-Ma-iN3" firstAttribute="top" secondItem="03D-xS-QtA" secondAttribute="bottom" constant="8" id="QDW-4E-oj1"/>
                             <constraint firstAttribute="trailing" secondItem="SpB-3H-l4G" secondAttribute="trailing" constant="20" id="X4k-1d-QH4"/>
                             <constraint firstItem="bMA-uV-5nc" firstAttribute="top" secondItem="2dV-Cm-Oev" secondAttribute="top" constant="20" id="dg6-p4-I6G"/>
-                            <constraint firstAttribute="trailing" secondItem="h2F-Ma-iN3" secondAttribute="trailing" constant="20" id="ehB-Ac-Cd1"/>
+                            <constraint firstItem="h2F-Ma-iN3" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="hDa-35-cvP"/>
                             <constraint firstItem="SpB-3H-l4G" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="i8L-li-A5p"/>
                             <constraint firstItem="bMA-uV-5nc" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="jJ9-hc-tMi"/>
-                            <constraint firstItem="t3f-jw-CjN" firstAttribute="leading" secondItem="SpB-3H-l4G" secondAttribute="leading" id="qEm-TT-Lr6"/>
+                            <constraint firstAttribute="trailing" secondItem="h2F-Ma-iN3" secondAttribute="trailing" constant="20" id="k9y-NF-DuL"/>
                             <constraint firstItem="SpB-3H-l4G" firstAttribute="top" secondItem="bMA-uV-5nc" secondAttribute="bottom" constant="8" id="sFE-vi-gPM"/>
-                            <constraint firstItem="h2F-Ma-iN3" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="u2w-r3-qxt"/>
-                            <constraint firstItem="t3f-jw-CjN" firstAttribute="top" secondItem="SpB-3H-l4G" secondAttribute="bottom" constant="16" id="uzV-Dt-AEk"/>
-                            <constraint firstItem="03D-xS-QtA" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="yaR-Y4-Via"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="demoMode" destination="03D-xS-QtA" id="6A2-5Z-diH"/>
-                        <outlet property="displayBetaInfo" destination="t3f-jw-CjN" id="aOD-J7-Xov"/>
                         <outlet property="sendAnalytics" destination="bMA-uV-5nc" id="5v6-bc-xcy"/>
                     </connections>
                 </viewController>
                 <customObject id="raO-PK-u8m" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="1140"/>
+            <point key="canvasLocation" x="628" y="1174"/>
         </scene>
     </scenes>
     <resources>

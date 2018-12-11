@@ -13,6 +13,7 @@ class AppearancePane: PreferencesViewController {
     @IBOutlet weak var hideNames: NSButton!
     @IBOutlet weak var hideHealthInteger: NSButton!
     @IBOutlet weak var hideBadge: NSButton!
+    @IBOutlet weak var displayBetaInfo: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,12 @@ class AppearancePane: PreferencesViewController {
             hideBadge.state = .off
         }
         
+        if TerminaUserDefaults.displayBetaInformation {
+            displayBetaInfo.state = .on
+        } else {
+            displayBetaInfo.state = .off
+        }
+        
     }
     
     
@@ -60,6 +67,12 @@ class AppearancePane: PreferencesViewController {
             try! TerminaUserDefaults().hideElement(what: "badges")
         } else {
             try! TerminaUserDefaults().showElement(what: "badges")
+        }
+        
+        if displayBetaInfo.state == .on {
+            TerminaUserDefaults().setBetaDisplay(status: true)
+        } else {
+            TerminaUserDefaults().setBetaDisplay(status: false)
         }
     }
     

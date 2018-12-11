@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import UserNotifications
 
 class Weapon: Item {
     /**
@@ -28,6 +29,18 @@ class Weapon: Item {
         equipper.temporaryLevel = level
         equipper.associatedNode.texture = SKTexture(imageNamed: "PlayerWithWeapon")
         associatedNode.removeFromParent()
+        
+        if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendGameNotifications {
+            let content = UNMutableNotificationContent()
+            content.title = "Item Equipped!"
+            content.subtitle = "You just equipped \(name) v.\(level)!"
+            content.body = "This item has a total of \(maximumUse) uses."
+            let uuid = UUID().uuidString
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
+            let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+            let center = UNUserNotificationCenter.current()
+            center.add(newNotificationRequest, withCompletionHandler: nil)
+        }
     }
     
     override func use() {

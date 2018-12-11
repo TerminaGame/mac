@@ -79,8 +79,8 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Kk-I3-pbF">
-                                <rect key="frame" x="30" y="27" width="184" height="18"/>
-                                <buttonCell key="cell" type="check" title="I level up or pacify an error" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Gfx-2f-p2q">
+                                <rect key="frame" x="30" y="27" width="276" height="18"/>
+                                <buttonCell key="cell" type="check" title="I level up, pacify an error, or equip an item" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Gfx-2f-p2q">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

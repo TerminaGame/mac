@@ -20,7 +20,7 @@ class Termina: Monster {
      
      Use this to connect to services such as Tutoriel, Aperture TestFile, and Project Scotia
      */
-    private let apikey = "2be7654ed74eb3670ac46cf3bffd7a2c354159ab"
+    private let apikey = "ee3da33e3ce7f5826da7741ae9c0f06b70c45bcba8f3753814ae9662bd2071fb"
 
     func insult() {}
 

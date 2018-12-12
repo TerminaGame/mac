@@ -18,12 +18,12 @@
                                         <menuItem title="About Termina" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="getAboutSheet:" target="Voe-Tx-rLC" id="gDR-nb-lt8"/>
+                                                <action selector="importSettingsFile:" target="Voe-Tx-rLC" id="gDR-nb-lt8"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Preferences..." keyEquivalent="," id="bS5-mR-XqG">
                                             <connections>
-                                                <action selector="openPreferencesPane:" target="Voe-Tx-rLC" id="7Eu-BJ-lIU"/>
+                                                <action selector="importSettingsFile:" target="Voe-Tx-rLC" id="7Eu-BJ-lIU"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -68,23 +68,23 @@
                                                 <items>
                                                     <menuItem title="Import..." keyEquivalent="i" id="LdO-gK-ZlM">
                                                         <connections>
-                                                            <action selector="importSettingsFIle:" target="Voe-Tx-rLC" id="oHk-O6-EO6"/>
+                                                            <action selector="importSettingsFile:" target="Voe-Tx-rLC" id="oHk-O6-EO6"/>
                                                         </connections>
                                                     </menuItem>
                                                     <menuItem title="Save..." keyEquivalent="s" id="26M-ya-So6">
                                                         <connections>
-                                                            <action selector="saveDataFromMenu:" target="Voe-Tx-rLC" id="nK9-Ze-7CS"/>
+                                                            <action selector="importSettingsFile:" target="Voe-Tx-rLC" id="nK9-Ze-7CS"/>
                                                         </connections>
                                                     </menuItem>
                                                     <menuItem title="Reset" keyEquivalent="r" id="vI3-qa-Hc4">
                                                         <connections>
-                                                            <action selector="resetPlayerData:" target="Voe-Tx-rLC" id="gTg-OP-mBx"/>
+                                                            <action selector="importSettingsFile:" target="Voe-Tx-rLC" id="gTg-OP-mBx"/>
                                                         </connections>
                                                     </menuItem>
                                                     <menuItem title="Delete" alternate="YES" keyEquivalent="r" id="YPQ-2s-o6Q">
                                                         <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                                         <connections>
-                                                            <action selector="deletePlayerData:" target="Voe-Tx-rLC" id="44q-xi-LR9"/>
+                                                            <action selector="importSettingsFile:" target="Voe-Tx-rLC" id="44q-xi-LR9"/>
                                                         </connections>
                                                     </menuItem>
                                                 </items>
@@ -93,7 +93,7 @@
                                         <menuItem isSeparatorItem="YES" id="IJs-dJ-yYn"/>
                                         <menuItem title="Player Info" keyEquivalent="p" id="BWg-bI-q0D">
                                             <connections>
-                                                <action selector="getPlayerInfo:" target="Voe-Tx-rLC" id="Fq3-v7-cxg"/>
+                                                <action selector="importSettingsFile:" target="Voe-Tx-rLC" id="Fq3-v7-cxg"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -145,7 +145,7 @@
                                         <menuItem title="Send Feedback" hidden="YES" keyEquivalent="f" id="MH5-VW-NW6">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                             <connections>
-                                                <action selector="openFeedback:" target="Voe-Tx-rLC" id="Ft1-uZ-6sN"/>
+                                                <action selector="importSettingsFile:" target="Voe-Tx-rLC" id="Ft1-uZ-6sN"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Termina Help" keyEquivalent="?" id="FKE-Sm-Kum">

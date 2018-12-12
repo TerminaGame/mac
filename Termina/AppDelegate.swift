@@ -67,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     /**
      Tells the data model to use an NSOpenPanel to import settings.
      */
-    @IBAction func importSettingsFIle(_ sender: Any) {
+    @IBAction func importSettingsFile(_ sender: Any) {
         AppDelegate.dataModel.importSettings()
     }
     

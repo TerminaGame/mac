@@ -192,7 +192,7 @@ class RoomScene: SKScene {
                 roomBackground?.texture = SKTexture(imageNamed: "bg25")
             } else {
                 //TODO: Create more backgrounds for use.
-                let randomLower = Int.random(in: 1...9)
+                let randomLower = Int.random(in: 1...10)
                 
                 // let randomLower = Int.random(in: 1...24)
                 

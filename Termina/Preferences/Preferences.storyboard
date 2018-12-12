@@ -208,14 +208,14 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="03D-xS-QtA">
-                                <rect key="frame" x="18" y="100" width="139" height="18"/>
+                                <rect key="frame" x="18" y="96" width="139" height="18"/>
                                 <buttonCell key="cell" type="check" title="Enable demo mode" bezelStyle="regularSquare" imagePosition="left" inset="2" id="thI-Ni-4gz">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="h2F-Ma-iN3">
-                                <rect key="frame" x="18" y="43" width="414" height="51"/>
+                                <rect key="frame" x="18" y="39" width="414" height="51"/>
                                 <textFieldCell key="cell" selectable="YES" id="jOk-Cu-4B4">
                                     <font key="font" metaFont="system"/>
                                     <string key="title">If you are running the beta at a kiosk, turn this option on and use Hardcore Mode to allow the player to reset. Hardcore Mode will restart instead of quitting when this is on.</string>
@@ -225,16 +225,16 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="03D-xS-QtA" firstAttribute="top" secondItem="SpB-3H-l4G" secondAttribute="bottom" constant="8" id="3cr-Gu-lBL"/>
-                            <constraint firstItem="03D-xS-QtA" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="Ee7-8a-8uS"/>
-                            <constraint firstItem="h2F-Ma-iN3" firstAttribute="top" secondItem="03D-xS-QtA" secondAttribute="bottom" constant="8" id="QDW-4E-oj1"/>
+                            <constraint firstItem="h2F-Ma-iN3" firstAttribute="top" secondItem="03D-xS-QtA" secondAttribute="bottom" constant="8" id="KrS-am-7qp"/>
+                            <constraint firstAttribute="trailing" secondItem="h2F-Ma-iN3" secondAttribute="trailing" constant="20" id="Qlj-1D-dfC"/>
+                            <constraint firstItem="03D-xS-QtA" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="Wha-uT-W19"/>
                             <constraint firstAttribute="trailing" secondItem="SpB-3H-l4G" secondAttribute="trailing" constant="20" id="X4k-1d-QH4"/>
                             <constraint firstItem="bMA-uV-5nc" firstAttribute="top" secondItem="2dV-Cm-Oev" secondAttribute="top" constant="20" id="dg6-p4-I6G"/>
-                            <constraint firstItem="h2F-Ma-iN3" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="hDa-35-cvP"/>
                             <constraint firstItem="SpB-3H-l4G" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="i8L-li-A5p"/>
                             <constraint firstItem="bMA-uV-5nc" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="jJ9-hc-tMi"/>
-                            <constraint firstAttribute="trailing" secondItem="h2F-Ma-iN3" secondAttribute="trailing" constant="20" id="k9y-NF-DuL"/>
+                            <constraint firstItem="03D-xS-QtA" firstAttribute="top" secondItem="SpB-3H-l4G" secondAttribute="bottom" constant="12" id="lQY-6A-TGx"/>
                             <constraint firstItem="SpB-3H-l4G" firstAttribute="top" secondItem="bMA-uV-5nc" secondAttribute="bottom" constant="8" id="sFE-vi-gPM"/>
+                            <constraint firstItem="h2F-Ma-iN3" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="sUg-NQ-KCI"/>
                         </constraints>
                     </view>
                     <connections>

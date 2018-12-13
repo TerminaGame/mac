@@ -102,6 +102,7 @@ class RoomScene: SKScene {
         let enemyNode = childNode(withName: "enemyNode") as! SKSpriteNode
         let enemyHud = childNode(withName: "otherHud") as! HUD
         let enemyName = NameGenerator().generateMonsterName()
+        let enemyHealth = 100 + (gamePlayer?.level ?? 1) / 10
         let npcName = NameGenerator().generateNameNPC()
         
         
@@ -115,7 +116,7 @@ class RoomScene: SKScene {
                         myName: enemyName,
                         myLevel: monsterLevel,
                         myNode: enemyNode,
-                        myHealth: 100,
+                        myHealth: enemyHealth,
                         pacifiable: "yes",
                         thisHud: enemyHud
                     )
@@ -124,7 +125,7 @@ class RoomScene: SKScene {
                         myName: enemyName,
                         myLevel: monsterLevel,
                         myNode: enemyNode,
-                        myHealth: 100,
+                        myHealth: enemyHealth,
                         pacifiable: "no",
                         thisHud: enemyHud
                     )
@@ -137,7 +138,7 @@ class RoomScene: SKScene {
                         myName: enemyName,
                         myLevel: monsterLevel,
                         myNode: enemyNode,
-                        myHealth: 100,
+                        myHealth: enemyHealth,
                         pacifiable: "yes",
                         thisHud: enemyHud
                     )
@@ -146,7 +147,7 @@ class RoomScene: SKScene {
                         myName: enemyName,
                         myLevel: monsterLevel,
                         myNode: enemyNode,
-                        myHealth: 100,
+                        myHealth: enemyHealth,
                         pacifiable: "no",
                         thisHud: enemyHud
                     )
@@ -171,6 +172,8 @@ class RoomScene: SKScene {
             entityPhysics?.affectedByGravity = true
             entityPhysics?.allowsRotation = false
             entityPhysics?.friction = 0.7
+            
+            (roomEntity as? Monster)?.associatedHud.setMaxHealth(roomEntity?.maximumHealth ?? 100)
             
         } else if (randomSeed <= 3 && randomSeed > 0) {
             roomEntity = NPC(

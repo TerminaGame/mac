@@ -14,6 +14,8 @@ import SpriteKit
  */
 class HUD: SKNode {
     
+    var maxHealthNumber: Int?
+    
     /**
      Updates the health number and respective graphic to an amount.
      
@@ -33,25 +35,28 @@ class HUD: SKNode {
         
         healthHudBackground?.run(fadeOut)
         healthHudBackground?.alpha = 0.0
-        if number > 90 {
+        
+        let numberDivisibility = (maxHealthNumber ?? 100) / 10
+        
+        if number > numberDivisibility * 9 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "100")))
-        } else if number > 80 {
+        } else if number > numberDivisibility * 8 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "90")))
-        } else if number > 70 {
+        } else if number > numberDivisibility * 7 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "80")))
-        } else if number > 60 {
+        } else if number > numberDivisibility * 6 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "70")))
-        } else if number > 50 {
+        } else if number > numberDivisibility * 5 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "60")))
-        } else if number > 40 {
+        } else if number > numberDivisibility * 4 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "50")))
-        } else if number > 30 {
+        } else if number > numberDivisibility * 3 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "40")))
-        } else if number > 20 {
+        } else if number > numberDivisibility * 2 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "30")))
-        } else if number > 10 {
+        } else if number > numberDivisibility * 1 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "20")))
-        } else if number > 0 {
+        } else if number > numberDivisibility * 0 {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "10")))
         } else {
             healthHudBackground?.run(SKAction.setTexture(SKTexture(imageNamed: "0")))
@@ -100,6 +105,10 @@ class HUD: SKNode {
         updateName(newName)
     }
     
+    func setMaxHealth(_ amount: Int) {
+        maxHealthNumber = amount
+    }
+    
     func toggleNameInvisibility(to: Bool) {
         let nameLabel = childNode(withName: "entityNameLabel")
         nameLabel?.isHidden = to
@@ -118,4 +127,5 @@ class HUD: SKNode {
         badgeBackground?.isHidden = to
         badgeNumber?.isHidden = to
     }
+    
 }

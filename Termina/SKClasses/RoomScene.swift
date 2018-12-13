@@ -705,10 +705,14 @@ class RoomScene: SKScene {
                     }
                 }
                 
-            } else {
-                roomEntity?.takeDamage(100)
-                roomEntity?.associatedNode.removeFromParent()
-                gamePlayer?.takeDamage(50)
+            } else if roomEntity is NPC {
+                let innocent = roomEntity as? NPC
+                if self.isNear(node: (innocent?.associatedNode)!, maximumDistance: 100) {
+                    roomEntity?.takeDamage(100)
+                    roomEntity?.associatedNode.removeFromParent()
+                    gamePlayer?.takeDamage(50)
+                }
+                
             }
         } else {
             NSSound.beep()

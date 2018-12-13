@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 struct TerminaUserDefaults {
     
@@ -164,6 +165,15 @@ struct TerminaUserDefaults {
         
         if !(UserDefaults().exists(key: "demoMode")) && BetaHandler.isBetaBuild {
             UserDefaults().set(false, forKey: "demoMode")
+        }
+        
+        if !(UserDefaults().exists(key: "acknowledgedPossibleJumpscare")) {
+            let alert = NSAlert()
+            alert.messageText = "Termina Jumpscare Notice"
+            alert.informativeText = "Thanks for downloading Termina! There may be a random chance that Termina will jumpscare you when you open the app; we figured you should have the heads-up first."
+            alert.addButton(withTitle: "OK")
+            alert.runModal()
+            UserDefaults().set(true, forKey: "acknowledgedPossibleJumpscare")
         }
         
     }

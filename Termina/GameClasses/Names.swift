@@ -176,7 +176,8 @@ class NameGenerator {
         "Monica",
         "Anna",
         "Esther",
-        "Quinn"
+        "Quinn",
+        "Ari"
     ]
     
     /**

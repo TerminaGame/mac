@@ -116,6 +116,17 @@ class Entity {
     }
     
     /**
+     Moves the sprite to a direction by a given coordinate.
+     
+     - Parameters:
+        - x: How far from their origin to move on the X axis
+        - y: How far from their origin to move on the Y axis
+     */
+    func move(x: Int, y: Int) {
+        associatedNode.run(SKAction.moveBy(x: CGFloat(x), y: CGFloat(y), duration: 0.25))
+    }
+    
+    /**
      Initializes the Entity class
      
      - Parameters:

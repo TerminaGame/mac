@@ -102,6 +102,7 @@ class RoomScene: SKScene {
         let enemyNode = childNode(withName: "enemyNode") as! SKSpriteNode
         let enemyHud = childNode(withName: "otherHud") as! HUD
         let enemyName = NameGenerator().generateMonsterName()
+        let npcName = NameGenerator().generateNameNPC()
         
         
         if randomSeed > 4 {
@@ -159,6 +160,27 @@ class RoomScene: SKScene {
             roomEntity?.associatedNode.texture = SKTexture(imageNamed: "ErrorNode")
             
             // Create a new physics body and hitbox, respectively.
+            roomEntity?.associatedNode.physicsBody? = SKPhysicsBody(rectangleOf: (roomEntity?.associatedNode.size)!)
+            
+            // Change the physics body so that it follows the same rules as the player.
+            let entityPhysics = roomEntity?.associatedNode.physicsBody
+            
+            entityPhysics?.isDynamic = true
+            entityPhysics?.restitution = 0
+            entityPhysics?.mass = 70
+            entityPhysics?.affectedByGravity = true
+            entityPhysics?.allowsRotation = false
+            entityPhysics?.friction = 0.7
+            
+        } else if (randomSeed <= 3 && randomSeed > 0) {
+            roomEntity = NPC(
+                name: npcName,
+                node: enemyNode,
+                hud: enemyHud
+            )
+            
+            roomEntity?.associatedNode.size = CGSize(width: 64, height: 64)
+            roomEntity?.associatedNode.texture = SKTexture(imageNamed: "NPCNode")
             roomEntity?.associatedNode.physicsBody? = SKPhysicsBody(rectangleOf: (roomEntity?.associatedNode.size)!)
             
             // Change the physics body so that it follows the same rules as the player.
@@ -356,15 +378,19 @@ class RoomScene: SKScene {
             self.scaleMode = .aspectFit
             self.view?.presentScene(SKScene(fileNamed: "MainMenu")!, transition: SKTransition.fade(with: NSColor.white, duration: 0.5))
         } else if (Keyboard.sharedKeyboard.justPressed(keys: Key.Return)) {
-            if self.isNear(node: exitRoom!, maximumDistance: 90) && roomEntity == nil {
-                if (gamePlayer?.level ?? 1) >= 420 {
-                    if self.name == "29" {
-                        self.presentNewScene(nil)
+            if self.isNear(node: exitRoom!, maximumDistance: 90) {
+                if roomEntity == nil || roomEntity is NPC {
+                    if (gamePlayer?.level ?? 1) >= 420 {
+                        if self.name == "29" {
+                            self.presentNewScene(nil)
+                        } else {
+                            self.presentNewScene(29)
+                        }
                     } else {
-                        self.presentNewScene(29)
+                        self.presentNewScene(nil)
                     }
                 } else {
-                    self.presentNewScene(nil)
+                    NSSound.beep()
                 }
             } else {
                 NSSound.beep()
@@ -384,43 +410,32 @@ class RoomScene: SKScene {
             if self.isNear(node: (roomEntity?.associatedNode)!, maximumDistance: 100) && roomEntity is Monster {
                 roomEntity?.associatedNode.run(SKAction.move(to: (gamePlayer?.associatedNode.position ?? CGPoint.zero), duration: 0.5))
             }
-        }
-        
-        
-        // Hide elements from preferences
-        if TerminaUserDefaults.shouldHideNamesOnHud {
-            gamePlayer?.associatedHud.toggleNameInvisibility(to: true)
-            if roomEntity is Monster {
-                (roomEntity as? Monster)?.associatedHud.toggleNameInvisibility(to: true)
-            }
-        } else {
-            gamePlayer?.associatedHud.toggleNameInvisibility(to: false)
-            if roomEntity is Monster {
-                (roomEntity as? Monster)?.associatedHud.toggleNameInvisibility(to: false)
+            else if roomEntity is NPC {
+                let randomChance = Int.random(in: -100 ... 100)
+                let randomMove = Int.random(in: -100 ... 200)
+                if randomMove <= -75 || randomMove >= 175 {
+                    if randomChance % 4 == 0 {
+                        roomEntity?.move(x: randomChance / 5, y: 0)
+                    }
+                }
             }
         }
         
-        if TerminaUserDefaults.shouldHideHealthNumberOnHud {
-            gamePlayer?.associatedHud.toggleNumberInvisibility(to: true)
-            if roomEntity is Monster {
-                (roomEntity as? Monster)?.associatedHud.toggleNumberInvisibility(to: true)
-            }
-        } else {
-            gamePlayer?.associatedHud.toggleNumberInvisibility(to: false)
-            if roomEntity is Monster {
-                (roomEntity as? Monster)?.associatedHud.toggleNumberInvisibility(to: false)
-            }
-        }
+        gamePlayer?.associatedHud.toggleBadgeInvisibility(to: TerminaUserDefaults.shouldHideLevelBadgeOnHud)
+        gamePlayer?.associatedHud.toggleNameInvisibility(to: TerminaUserDefaults.shouldHideNamesOnHud)
+        gamePlayer?.associatedHud.toggleNumberInvisibility(to: TerminaUserDefaults.shouldHideHealthNumberOnHud)
         
-        if TerminaUserDefaults.shouldHideLevelBadgeOnHud {
-            gamePlayer?.associatedHud.toggleBadgeInvisibility(to: true)
+        if roomEntity != nil {
             if roomEntity is Monster {
-                (roomEntity as? Monster)?.associatedHud.toggleBadgeInvisibility(to: true)
-            }
-        } else {
-            gamePlayer?.associatedHud.toggleNumberInvisibility(to: false)
-            if roomEntity is Monster {
-                (roomEntity as? Monster)?.associatedHud.toggleNumberInvisibility(to: false)
+                let entity = roomEntity as? Monster
+                entity?.associatedHud.toggleBadgeInvisibility(to: TerminaUserDefaults.shouldHideLevelBadgeOnHud)
+                entity?.associatedHud.toggleNameInvisibility(to: TerminaUserDefaults.shouldHideNamesOnHud)
+                entity?.associatedHud.toggleNumberInvisibility(to: TerminaUserDefaults.shouldHideHealthNumberOnHud)
+            } else if roomEntity is NPC {
+                let entity = roomEntity as? NPC
+                entity?.associatedHud.toggleBadgeInvisibility(to: true)
+                entity?.associatedHud.toggleNameInvisibility(to: TerminaUserDefaults.shouldHideNamesOnHud)
+                entity?.associatedHud.toggleNumberInvisibility(to: TerminaUserDefaults.shouldHideHealthNumberOnHud)
             }
         }
     }

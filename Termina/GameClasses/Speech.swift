@@ -12,7 +12,9 @@ struct Speech {
     static let shared = Speech()
     
     /**
-     Random one-line dialogues used for NPCs. Generally describe their own feelings or about Termina.
+        Random monologues used for NPCs.
+     
+        These usually give information about Termina or about the universe they reside in. Unlike TerminaGame/base, these lines have been re-written for a story aspect instead of random "meme-iness".
       */
     let randomMonologuesNPC = [
         "She always watches us like a dictator. She's probably watching you, too...",
@@ -39,6 +41,10 @@ struct Speech {
         "I still remember when Termina made this cute heart bracelet for her friend before she went insane. Man, did he love that thing...",
         "Considering that \"management\" says that we can't write on the walls, Termina writes a lot on her room's walls.",
         "I don't know how she does it, but she somehow builds these crazy machines out of thin air! I call them 'instruments of cyanide', but I'm not sure if they're actually deadly...",
+        "Termina's been playing a lot of video games lately. I think she's picking up on some of their messages.",
+        "She's not as bad as people make her out to be, at least in my opinion. I think she just hasn't understood the concept of reality.",
+        "Sometimes, if someone really ticks her off, she'll start speaking in French. It's the weirdest thing that I've seen.",
+        "I wonder if anyone finds it weird when she says this place is her \"masterpiece\". I mean, it's not like she made this place or anything...",
         "I really don't want to talk right now...",
         "..."
     ]

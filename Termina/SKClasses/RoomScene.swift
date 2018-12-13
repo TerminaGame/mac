@@ -450,6 +450,10 @@ class RoomScene: SKScene {
             if isNear(node: node, maximumDistance: 72) {
                 if node.name == "weaponItemNode" { equipItemHere() }
                 else if node.name == "bottleItemNode" { useItemHere() }
+                else if node == roomEntity?.associatedNode && roomEntity is NPC {
+                    let item = roomEntity as? NPC
+                    item?.speak()
+                }
             }
         }
     }

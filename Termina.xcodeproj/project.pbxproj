@@ -79,6 +79,7 @@
 		BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */; };
 		BF46539D21B5A3E3006BBF04 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */; };
 		BF4AC24921C2A75B0050ACE7 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AC24821C2A75B0050ACE7 /* NPC.swift */; };
+		BF4AC24B21C2B7F60050ACE7 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AC24A21C2B7F60050ACE7 /* Speech.swift */; };
 		BF4CA6BB21B5B01E007A39F1 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CA6BA21B5B01E007A39F1 /* Preferences.storyboard */; };
 		BF4CA6BD21B5B500007A39F1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */; };
 		BF4CA6BF21B5B59D007A39F1 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */; };
@@ -184,6 +185,7 @@
 		BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaViewController.swift; sourceTree = "<group>"; };
 		BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		BF4AC24821C2A75B0050ACE7 /* NPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPC.swift; sourceTree = "<group>"; };
+		BF4AC24A21C2B7F60050ACE7 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		BF4CA6BA21B5B01E007A39F1 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */,
 				BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */,
 				BF4AC24821C2A75B0050ACE7 /* NPC.swift */,
+				BF4AC24A21C2B7F60050ACE7 /* Speech.swift */,
 			);
 			path = GameClasses;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				BF082DAB21AC9A4500B5406C /* AppMenu.swift in Sources */,
 				BF082DA621AC9A4500B5406C /* NewPlayer.swift in Sources */,
 				BF082DA521AC9A4500B5406C /* ViewController.swift in Sources */,
+				BF4AC24B21C2B7F60050ACE7 /* Speech.swift in Sources */,
 				BF082D9A21AC9A4500B5406C /* Weapon.swift in Sources */,
 				BF082DAA21AC9A4500B5406C /* AboutViewController.swift in Sources */,
 				BF082D9021AC9A4500B5406C /* HUD.swift in Sources */,

@@ -80,6 +80,10 @@ class Player: Entity {
             let center = UNUserNotificationCenter.current()
             center.add(newNotificationRequest, withCompletionHandler: nil)
         }
+        
+        if TerminaUserDefaults.shouldSaveOnLevelUp {
+            AppDelegate.dataModel.saveToFile(false)
+        }
     }
     
     /**

@@ -80,6 +80,7 @@
 		BF46539D21B5A3E3006BBF04 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */; };
 		BF4AC24921C2A75B0050ACE7 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AC24821C2A75B0050ACE7 /* NPC.swift */; };
 		BF4AC24B21C2B7F60050ACE7 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AC24A21C2B7F60050ACE7 /* Speech.swift */; };
+		BF4AC25021C2E5700050ACE7 /* GeneralPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AC24E21C2E5700050ACE7 /* GeneralPane.swift */; };
 		BF4CA6BB21B5B01E007A39F1 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CA6BA21B5B01E007A39F1 /* Preferences.storyboard */; };
 		BF4CA6BD21B5B500007A39F1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */; };
 		BF4CA6BF21B5B59D007A39F1 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */; };
@@ -90,7 +91,6 @@
 		BF90A4C921C03D8100F64D5D /* GhostMenuMusic.aif in Resources */ = {isa = PBXBuildFile; fileRef = BF90A4C821C03D8100F64D5D /* GhostMenuMusic.aif */; };
 		BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */; };
 		BFBE9C1221B5E6A300AA1C6C /* BetaProgramPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */; };
-		BFBE9C1321B5E6A300AA1C6C /* BetaProgramPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBE9C1121B5E6A300AA1C6C /* BetaProgramPane.xib */; };
 		BFF9FBBB21B320FB001DAAC9 /* Tutorial.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFF9FBBA21B320FB001DAAC9 /* Tutorial.sks */; };
 		BFF9FBBD21B329AB001DAAC9 /* TutorialRoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9FBBC21B329AB001DAAC9 /* TutorialRoomScene.swift */; };
 /* End PBXBuildFile section */
@@ -186,6 +186,8 @@
 		BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		BF4AC24821C2A75B0050ACE7 /* NPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPC.swift; sourceTree = "<group>"; };
 		BF4AC24A21C2B7F60050ACE7 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
+		BF4AC24E21C2E5700050ACE7 /* GeneralPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPane.swift; sourceTree = "<group>"; };
+		BF4AC25221C2E7010050ACE7 /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "Termina macOS Beta Program.rtf"; path = "../../../../../Library/Mobile Documents/com~apple~TextEdit/Documents/Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
 		BF4CA6BA21B5B01E007A39F1 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -200,7 +202,6 @@
 		BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaHandler.swift; sourceTree = "<group>"; };
 		BFBC47A121C2A710002A6C28 /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
 		BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaProgramPane.swift; sourceTree = "<group>"; };
-		BFBE9C1121B5E6A300AA1C6C /* BetaProgramPane.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetaProgramPane.xib; sourceTree = "<group>"; };
 		BFF9FBBA21B320FB001DAAC9 /* Tutorial.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial.sks; sourceTree = "<group>"; };
 		BFF9FBBC21B329AB001DAAC9 /* TutorialRoomScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialRoomScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -406,11 +407,11 @@
 			children = (
 				BF4CA6BA21B5B01E007A39F1 /* Preferences.storyboard */,
 				BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */,
-				BFBE9C1121B5E6A300AA1C6C /* BetaProgramPane.xib */,
 				BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */,
 				BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */,
 				BF4CA6C021B5BD04007A39F1 /* NotificationPane.swift */,
 				BF70B6DC21BEF1F1002473B6 /* AppearancePane.swift */,
+				BF4AC24E21C2E5700050ACE7 /* GeneralPane.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -426,6 +427,7 @@
 		BFBC47A021C2A708002A6C28 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				BF4AC25221C2E7010050ACE7 /* Termina macOS Beta Program.rtf */,
 				BF082DB121AD8CC100B5406C /* About.rtf */,
 				BFBC47A121C2A710002A6C28 /* Termina macOS Beta Program.rtf */,
 			);
@@ -517,7 +519,6 @@
 				BF082D9521AC9A4500B5406C /* Environment.sks in Resources */,
 				BF082D9721AC9A4500B5406C /* 29.sks in Resources */,
 				BF14089921B09B9800A7E70E /* 16.sks in Resources */,
-				BFBE9C1321B5E6A300AA1C6C /* BetaProgramPane.xib in Resources */,
 				BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */,
 				BF14089D21B09B9800A7E70E /* 21.sks in Resources */,
 				BF082D8821AC9A4500B5406C /* Hardcore.storyboard in Resources */,
@@ -591,6 +592,7 @@
 				BFF9FBBD21B329AB001DAAC9 /* TutorialRoomScene.swift in Sources */,
 				BF082DAB21AC9A4500B5406C /* AppMenu.swift in Sources */,
 				BF082DA621AC9A4500B5406C /* NewPlayer.swift in Sources */,
+				BF4AC25021C2E5700050ACE7 /* GeneralPane.swift in Sources */,
 				BF082DA521AC9A4500B5406C /* ViewController.swift in Sources */,
 				BF4AC24B21C2B7F60050ACE7 /* Speech.swift in Sources */,
 				BF082D9A21AC9A4500B5406C /* Weapon.swift in Sources */,

@@ -31,6 +31,7 @@
             <objects>
                 <tabViewController title="Termina Preferences" selectedTabViewItemIndex="0" tabStyle="toolbar" id="kbk-Pu-fLe" sceneMemberID="viewController">
                     <tabViewItems>
+                        <tabViewItem label="General" image="NSPreferencesGeneral" id="a2k-hH-AMu"/>
                         <tabViewItem label="Notifications" identifier="" image="Notifications" id="udq-Q1-rwW"/>
                         <tabViewItem label="Appearance" identifier="" image="Appearance" id="ZRO-9b-L5Z"/>
                         <tabViewItem label="Beta Program" image="LogoBeta" id="MKL-6P-K71"/>
@@ -46,6 +47,7 @@
                     </tabView>
                     <connections>
                         <outlet property="tabView" destination="BVh-qx-J2t" id="Wzc-bX-p7X"/>
+                        <segue destination="NS6-2q-EVS" kind="relationship" relationship="tabItems" id="fp3-yq-grN"/>
                         <segue destination="GKo-N7-FQm" kind="relationship" relationship="tabItems" id="yhV-iD-btw"/>
                         <segue destination="vD6-uS-36v" kind="relationship" relationship="tabItems" id="3zq-6S-arX"/>
                         <segue destination="lbx-uo-MRL" kind="relationship" relationship="tabItems" id="TJv-YE-geB"/>
@@ -246,10 +248,40 @@
             </objects>
             <point key="canvasLocation" x="628" y="1174"/>
         </scene>
+        <!--General-->
+        <scene sceneID="Jdc-dW-C3g">
+            <objects>
+                <viewController title="General" id="NS6-2q-EVS" customClass="GeneralPane" customModule="Termina" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Icp-Mw-qha">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="64"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3yi-dO-t67">
+                                <rect key="frame" x="18" y="28" width="197" height="18"/>
+                                <buttonCell key="cell" type="check" title="Save my data when I level up" bezelStyle="regularSquare" imagePosition="left" inset="2" id="AZj-Ts-ESZ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="3yi-dO-t67" firstAttribute="leading" secondItem="Icp-Mw-qha" secondAttribute="leading" constant="20" id="Yqt-5x-F53"/>
+                            <constraint firstItem="3yi-dO-t67" firstAttribute="top" secondItem="Icp-Mw-qha" secondAttribute="top" constant="20" id="xPY-Ub-PId"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="saveOnLevelUp" destination="3yi-dO-t67" id="6u3-Fg-d2k"/>
+                    </connections>
+                </viewController>
+                <customObject id="Z8n-1d-HnO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1039" y="1106"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Appearance" width="512" height="512"/>
         <image name="LogoBeta" width="512" height="512"/>
+        <image name="NSPreferencesGeneral" width="32" height="32"/>
         <image name="Notifications" width="512" height="512"/>
     </resources>
 </document>

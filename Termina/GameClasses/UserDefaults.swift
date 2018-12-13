@@ -57,6 +57,11 @@ struct TerminaUserDefaults {
     static var shouldHideLevelBadgeOnHud = UserDefaults().bool(forKey: "shouldHideLevelBadgeOnHud")
     
     /**
+     Preference for saving data upon every level up
+     */
+    static var shouldSaveOnLevelUp = UserDefaults().bool(forKey: "shouldSaveOnLevelUp")
+    
+    /**
      Change the user-set preference for sending notifications to a new value
      
      - Parameters:
@@ -133,6 +138,10 @@ struct TerminaUserDefaults {
         }
     }
     
+    func toggleLevelSaves(to: Bool) {
+        UserDefaults().set(to, forKey: "shouldSaveOnLevelUp")
+    }
+    
     /**
      Create the list of user defaults if it doesn't exist already.
      */
@@ -147,7 +156,7 @@ struct TerminaUserDefaults {
         }
         
         // All keys that should be FALSE
-        let allFalseKeys = ["shouldHideNamesOnHud", "shouldHideHealthNumberOnHud", "shouldHideLevelBadgeOnHud"]
+        let allFalseKeys = ["shouldHideNamesOnHud", "shouldHideHealthNumberOnHud", "shouldHideLevelBadgeOnHud", "shouldSaveOnLevelUp"]
         
         for key in allFalseKeys {
             if !(UserDefaults().exists(key: key)) {

@@ -29,9 +29,9 @@ class GeneralPane: PreferencesViewController {
     
     override func viewWillDisappear() {
         if saveOnLevelUp.state == .on {
-            TerminaUserDefaults.shouldSaveOnLevelUp = true
+            TerminaUserDefaults().toggleLevelSaves(to: true)
         } else {
-            TerminaUserDefaults.shouldSaveOnLevelUp = false
+            TerminaUserDefaults().toggleLevelSaves(to: false)
         }
     }
     

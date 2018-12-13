@@ -68,15 +68,12 @@ class DataModel {
             }
         } else {
             if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendDataNotifications {
-                let content = UNMutableNotificationContent()
-                content.title = "Player Data Missing"
-                content.subtitle = "Termina couldn't locate your player data."
-                content.body = "If you are starting a new game, you can ignore this message."
-                let uuid = UUID().uuidString
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-                let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-                let center = UNUserNotificationCenter.current()
-                center.add(newNotificationRequest, withCompletionHandler: nil)
+                let alert = NSAlert()
+                alert.alertStyle = NSAlert.Style.critical
+                alert.messageText = "Player Data Missing"
+                alert.informativeText = "We couldn't locate your player data. If you are starting a new game, you can ignore this."
+                alert.addButton(withTitle: "OK")
+                alert.runModal()
             }
             return false
         }
@@ -176,14 +173,12 @@ class DataModel {
                 }
                 
                 if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendDataNotifications {
-                    let content = UNMutableNotificationContent()
-                    content.title = "Couldn't Delete Settings"
-                    content.body = "We couldn't delete your settings."
-                    let uuid = UUID().uuidString
-                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-                    let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-                    let center = UNUserNotificationCenter.current()
-                    center.add(newNotificationRequest, withCompletionHandler: nil)
+                    let alert = NSAlert()
+                    alert.alertStyle = NSAlert.Style.critical
+                    alert.messageText = "Failed to delete settings file."
+                    alert.informativeText = "We couldn't delete your settings file."
+                    alert.addButton(withTitle: "OK")
+                    alert.runModal()
                 }
             }
         }

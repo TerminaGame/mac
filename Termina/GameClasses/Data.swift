@@ -48,7 +48,10 @@ class DataModel {
                 player.patchNumber = Int(json["progress"].string!)!
                 
                 if Double(json["health"].string!)! >= 100 {
-                    player.health = 100
+                    player.health = Int(Double(json["health"].string!)!)
+                    if !player.matchesDynamicHealth() {
+                        player.health = 100
+                    }
                     saveToFile(true)
                 } else if Double(json["health"].string!)! == 0.0 {
                     player.health = 100
@@ -56,6 +59,8 @@ class DataModel {
                 } else {
                     player.health = Int(Double(json["health"].string!)!)
                 }
+                
+                player.updateHealthDynamically()
                 
                 AppDelegate.gotLoadedData = true
                 

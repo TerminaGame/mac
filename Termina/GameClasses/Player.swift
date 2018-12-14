@@ -81,6 +81,8 @@ class Player: Entity {
             center.add(newNotificationRequest, withCompletionHandler: nil)
         }
         
+        updateHealthDynamically()
+        
         if TerminaUserDefaults.shouldSaveOnLevelUp {
             AppDelegate.dataModel.saveToFile(false)
         }
@@ -111,6 +113,22 @@ class Player: Entity {
             "patch": String(patchNumber)
             ] as [String : String]
         return playerDictionary
+    }
+    
+    func updateHealthDynamically() {
+        maximumHealth += level / 10
+    }
+    
+    func matchesDynamicHealth() -> Bool {
+        if maximumHealth == 100 + level / 10 {
+            if health > maximumHealth {
+                return false
+            } else {
+                return true
+            }
+        } else {
+            return false
+        }
     }
     
     /**

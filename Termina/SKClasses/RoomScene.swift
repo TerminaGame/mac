@@ -1,6 +1,6 @@
 //
 //  RoomScene.swift
-//  mac
+//  Termina for macOS
 //
 //  Created by Marquis Kurt on 11/17/18.
 //  Copyright © 2018 Marquis Kurt. All rights reserved.

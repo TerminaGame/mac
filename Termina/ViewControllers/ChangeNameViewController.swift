@@ -1,6 +1,6 @@
 //
 //  ChangeNameViewController.swift
-//  Termina
+//  Termina for macOS
 //
 //  Created by Marquis Kurt on 12/2/18.
 //  Copyright © 2018 Marquis Kurt. All rights reserved.

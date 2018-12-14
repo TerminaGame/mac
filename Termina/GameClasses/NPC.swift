@@ -1,6 +1,6 @@
 //
 //  NPC.swift
-//  Termina
+//  Termina for macOS
 //
 //  Created by Marquis Kurt on 12/13/18.
 //  Copyright © 2018 Marquis Kurt. All rights reserved.

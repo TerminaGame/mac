@@ -1,6 +1,6 @@
 //
 //  Names.swift
-//  mac
+//  Termina for macOS
 //
 //  Created by Marquis Kurt on 10/23/18.
 //  Copyright © 2018 Marquis Kurt. All rights reserved.

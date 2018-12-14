@@ -115,10 +115,20 @@ class Player: Entity {
         return playerDictionary
     }
     
+    /**
+     Updates the health dynamically.
+     
+     This is used to increase the maximum amount of health of the player as he/she progresses in the game.
+     */
     func updateHealthDynamically() {
         maximumHealth += level / 10
     }
     
+    /**
+     Determines whether the given health and level of the player matches with dynamic health.
+     
+     - Returns: Boolean value that indicates dynamic health checking
+     */
     func matchesDynamicHealth() -> Bool {
         if maximumHealth == 100 + level / 10 {
             if health > maximumHealth {

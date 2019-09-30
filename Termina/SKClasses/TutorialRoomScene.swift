@@ -19,9 +19,9 @@ class TutorialRoomScene: RoomScene {
         
         setUpPlayer()
         
-        configureTileMap(map: childNode(withName: "baseTilemap") as! SKTileMapNode, movable: false)
+        configureTileMap(childNode(withName: "baseTilemap") as! SKTileMapNode, movable: false)
         if childNode(withName: "movableTiles") != nil {
-            configureTileMap(map: childNode(withName: "movableTiles") as! SKTileMapNode, movable: true)
+            configureTileMap(childNode(withName: "movableTiles") as! SKTileMapNode, movable: true)
         }
         
         exitRoom = childNode(withName: "exitRoomNode") as? SKSpriteNode

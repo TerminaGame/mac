@@ -43,7 +43,7 @@ class RoomScene: SKScene {
         - map: The tilemap to create tile nodes for.
         - movable: Whether the tiles nodes will be affected by gravity and can be moved by entities or other nodes
      */
-    func configureTileMap(map: SKTileMapNode, movable: Bool) {
+    func configureTileMap(_ map: SKTileMapNode, movable: Bool) {
         let tileMapSize = map.tileSize
         
         let halfWidth = tileMapSize.width / 2.0
@@ -306,9 +306,9 @@ class RoomScene: SKScene {
         
         setUpPlayer()
         
-        configureTileMap(map: childNode(withName: "baseTilemap") as! SKTileMapNode, movable: false)
+        configureTileMap(childNode(withName: "baseTilemap") as! SKTileMapNode, movable: false)
         if childNode(withName: "movableTiles") != nil {
-            configureTileMap(map: childNode(withName: "movableTiles") as! SKTileMapNode, movable: true)
+            configureTileMap(childNode(withName: "movableTiles") as! SKTileMapNode, movable: true)
         }
         
         

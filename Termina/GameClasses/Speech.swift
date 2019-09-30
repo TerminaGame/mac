@@ -34,7 +34,7 @@ struct Speech {
         "Craig was a cool dude. He helped keep Termina afloat and made all of us happy.",
         "I shudder every time I look at her face. That deformation of hers just scares the hell out of me.",
         "I bet you're the guy that was taken to the safehouse last week. You probably should've stayed there...",
-        "Termina once made one of those disappear into thin air and fixed the lights at the same time. We all think of her as a wicked sorceress ever since.",
+        "Termina once made one of those errors disappear into thin air and fixed the lights at the same time. We all think of her as a wicked sorceress ever since.",
         "You know, you're kind of like Termina, being able to handle all those errors back there. It seems whenever you take care of them, another problem around here gets solved.",
         "I'm sure if Termina made more friends, she'd be at least a little happier.",
         "I read this book once about a crazy lady that killed everyone and did some weird things that made her feel 'prettier'. I'm glad Termina's not like that; I don't think she even cares about that ghastly thing with her face.",
@@ -45,6 +45,8 @@ struct Speech {
         "She's not as bad as people make her out to be, at least in my opinion. I think she just hasn't understood the concept of reality.",
         "Sometimes, if someone really ticks her off, she'll start speaking in French. It's the weirdest thing that I've seen.",
         "I wonder if anyone finds it weird when she says this place is her \"masterpiece\". I mean, it's not like she made this place or anything...",
+        "I remember peeking into Termina's safe room one time and seeing what her friend looks like. He's definitely handsome. Well, more so 'cute' if anything.",
+        "",
         "I really don't want to talk right now...",
         "..."
     ]

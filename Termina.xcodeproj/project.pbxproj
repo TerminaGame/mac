@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B9184E2B06FCC6682BE0089F /* Pods_Termina.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652150F919EC5343C1E5A7A7 /* Pods_Termina.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BF082D8821AC9A4500B5406C /* Hardcore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D5E21AC9A4500B5406C /* Hardcore.storyboard */; };
 		BF082D8921AC9A4500B5406C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D5F21AC9A4500B5406C /* Profile.storyboard */; };
 		BF082D8A21AC9A4500B5406C /* NewPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6021AC9A4500B5406C /* NewPlayer.storyboard */; };
@@ -33,9 +32,7 @@
 		BF082D9F21AC9A4500B5406C /* Termina.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7921AC9A4500B5406C /* Termina.swift */; };
 		BF082DA021AC9A4500B5406C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7A21AC9A4500B5406C /* Player.swift */; };
 		BF082DA121AC9A4500B5406C /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7B21AC9A4500B5406C /* Potion.swift */; };
-		BF082DA221AC9A4500B5406C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7D21AC9A4500B5406C /* SwiftyJSON.swift */; };
 		BF082DA321AC9A4500B5406C /* Keycodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7E21AC9A4500B5406C /* Keycodes.swift */; };
-		BF082DA421AC9A4500B5406C /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7F21AC9A4500B5406C /* Files.swift */; };
 		BF082DA521AC9A4500B5406C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8121AC9A4500B5406C /* ViewController.swift */; };
 		BF082DA621AC9A4500B5406C /* NewPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8221AC9A4500B5406C /* NewPlayer.swift */; };
 		BF082DA721AC9A4500B5406C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8321AC9A4500B5406C /* Profile.swift */; };
@@ -85,9 +82,9 @@
 		BF4CA6BD21B5B500007A39F1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */; };
 		BF4CA6BF21B5B59D007A39F1 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */; };
 		BF4CA6C121B5BD04007A39F1 /* NotificationPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6C021B5BD04007A39F1 /* NotificationPane.swift */; };
-		BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BF5D7A2D21AF3D96008CD33F /* Podfile */; };
 		BF70B6DD21BEF1F1002473B6 /* AppearancePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF70B6DC21BEF1F1002473B6 /* AppearancePane.swift */; };
-		BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */; };
+		BF75430923933D9E00F9FE8D /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = BF75430823933D9E00F9FE8D /* Files */; };
+		BF75430C23933DB400F9FE8D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = BF75430B23933DB400F9FE8D /* SwiftyJSON */; };
 		BF90A4C921C03D8100F64D5D /* GhostMenuMusic.aif in Resources */ = {isa = PBXBuildFile; fileRef = BF90A4C821C03D8100F64D5D /* GhostMenuMusic.aif */; };
 		BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */; };
 		BFBE9C1221B5E6A300AA1C6C /* BetaProgramPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */; };
@@ -100,6 +97,8 @@
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.assetcatalog;
 			fileType = pattern.proxy;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -108,8 +107,6 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
-		50AFB51D567FA6B7F596F8E7 /* Pods-Termina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Termina.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Termina/Pods-Termina.debug.xcconfig"; sourceTree = "<group>"; };
-		5B237269F0E6C1BDB8D88440 /* Pods-Termina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Termina.release.xcconfig"; path = "Pods/Target Support Files/Pods-Termina/Pods-Termina.release.xcconfig"; sourceTree = "<group>"; };
 		652150F919EC5343C1E5A7A7 /* Pods_Termina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Termina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF082D4421AC99FF00B5406C /* Termina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF082D5621AC9A0000B5406C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,9 +136,7 @@
 		BF082D7921AC9A4500B5406C /* Termina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Termina.swift; sourceTree = "<group>"; };
 		BF082D7A21AC9A4500B5406C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BF082D7B21AC9A4500B5406C /* Potion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
-		BF082D7D21AC9A4500B5406C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		BF082D7E21AC9A4500B5406C /* Keycodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keycodes.swift; sourceTree = "<group>"; };
-		BF082D7F21AC9A4500B5406C /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		BF082D8121AC9A4500B5406C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF082D8221AC9A4500B5406C /* NewPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlayer.swift; sourceTree = "<group>"; };
 		BF082D8321AC9A4500B5406C /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -192,12 +187,10 @@
 		BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		BF4CA6C021B5BD04007A39F1 /* NotificationPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPane.swift; sourceTree = "<group>"; };
-		BF5D7A2D21AF3D96008CD33F /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BF5D7A2F21AF4152008CD33F /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterCrashes.framework"; sourceTree = "<group>"; };
 		BF5D7A3021AF4152008CD33F /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenter.framework"; sourceTree = "<group>"; };
 		BF5D7A3121AF4152008CD33F /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = "Pods/AppCenter/AppCenter-SDK-Apple/macOS/AppCenterAnalytics.framework"; sourceTree = "<group>"; };
 		BF70B6DC21BEF1F1002473B6 /* AppearancePane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePane.swift; sourceTree = "<group>"; };
-		BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "Termina macOS Beta Program.rtf"; path = "../../../../Library/Mobile Documents/com~apple~TextEdit/Documents/Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
 		BF90A4C821C03D8100F64D5D /* GhostMenuMusic.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = GhostMenuMusic.aif; sourceTree = "<group>"; };
 		BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaHandler.swift; sourceTree = "<group>"; };
 		BFBC47A121C2A710002A6C28 /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
@@ -211,32 +204,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF75430923933D9E00F9FE8D /* Files in Frameworks */,
 				BF082DB021AC9EB000B5406C /* SpriteKit.framework in Frameworks */,
+				BF75430C23933DB400F9FE8D /* SwiftyJSON in Frameworks */,
 				BF082DAE21AC9EA900B5406C /* UserNotifications.framework in Frameworks */,
-				B9184E2B06FCC6682BE0089F /* Pods_Termina.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1AC32BA1D10D2D58EE6FD8A4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				50AFB51D567FA6B7F596F8E7 /* Pods-Termina.debug.xcconfig */,
-				5B237269F0E6C1BDB8D88440 /* Pods-Termina.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		BF082D3B21AC99FF00B5406C = {
 			isa = PBXGroup;
 			children = (
-				BF5D7A2D21AF3D96008CD33F /* Podfile */,
 				BF082D4621AC99FF00B5406C /* Termina */,
 				BF082D4521AC99FF00B5406C /* Products */,
 				BF082DAC21AC9EA900B5406C /* Frameworks */,
-				1AC32BA1D10D2D58EE6FD8A4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,7 +238,6 @@
 				BF4CA6B921B5AFF6007A39F1 /* Preferences */,
 				BF082D8421AC9A4500B5406C /* AppDelegate.swift */,
 				BF082D8121AC9A4500B5406C /* ViewController.swift */,
-				BF7866A021AF4DD10044BEDE /* Termina macOS Beta Program.rtf */,
 				BF082D6421AC9A4500B5406C /* Assets.xcassets */,
 				BF082D7121AC9A4500B5406C /* GameClasses */,
 				BF082D7C21AC9A4500B5406C /* Libraries */,
@@ -330,9 +312,7 @@
 		BF082D7C21AC9A4500B5406C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				BF082D7D21AC9A4500B5406C /* SwiftyJSON.swift */,
 				BF082D7E21AC9A4500B5406C /* Keycodes.swift */,
-				BF082D7F21AC9A4500B5406C /* Files.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -441,7 +421,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF082D5A21AC9A0000B5406C /* Build configuration list for PBXNativeTarget "Termina" */;
 			buildPhases = (
-				7C5F94AFD98419DF8E94C3A1 /* [CP] Check Pods Manifest.lock */,
 				BF082D4021AC99FF00B5406C /* Sources */,
 				BF082D4121AC99FF00B5406C /* Frameworks */,
 				BF082D4221AC99FF00B5406C /* Resources */,
@@ -452,6 +431,10 @@
 			dependencies = (
 			);
 			name = Termina;
+			packageProductDependencies = (
+				BF75430823933D9E00F9FE8D /* Files */,
+				BF75430B23933DB400F9FE8D /* SwiftyJSON */,
+			);
 			productName = Termina;
 			productReference = BF082D4421AC99FF00B5406C /* Termina.app */;
 			productType = "com.apple.product-type.application";
@@ -468,6 +451,7 @@
 				TargetAttributes = {
 					BF082D4321AC99FF00B5406C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1120;
 						SystemCapabilities = {
 							com.apple.HardenedRuntime = {
 								enabled = 1;
@@ -488,6 +472,10 @@
 				Base,
 			);
 			mainGroup = BF082D3B21AC99FF00B5406C;
+			packageReferences = (
+				BF75430723933D9E00F9FE8D /* XCRemoteSwiftPackageReference "Files" */,
+				BF75430A23933DB400F9FE8D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = BF082D4521AC99FF00B5406C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -519,7 +507,6 @@
 				BF082D9521AC9A4500B5406C /* Environment.sks in Resources */,
 				BF082D9721AC9A4500B5406C /* 29.sks in Resources */,
 				BF14089921B09B9800A7E70E /* 16.sks in Resources */,
-				BF7866A121AF4DD10044BEDE /* Termina macOS Beta Program.rtf in Resources */,
 				BF14089D21B09B9800A7E70E /* 21.sks in Resources */,
 				BF082D8821AC9A4500B5406C /* Hardcore.storyboard in Resources */,
 				BF082DB221AD8CC100B5406C /* About.rtf in Resources */,
@@ -528,7 +515,6 @@
 				BF082D9621AC9A4500B5406C /* 28.sks in Resources */,
 				BF1408AD21B09B9800A7E70E /* 24.sks in Resources */,
 				BF1408A221B09B9800A7E70E /* 27.sks in Resources */,
-				BF5D7A2E21AF3D96008CD33F /* Podfile in Resources */,
 				BF082D9421AC9A4500B5406C /* MainMenu.sks in Resources */,
 				BF90A4C921C03D8100F64D5D /* GhostMenuMusic.aif in Resources */,
 				BF14089A21B09B9800A7E70E /* 8.sks in Resources */,
@@ -551,31 +537,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7C5F94AFD98419DF8E94C3A1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Termina-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF082D4021AC99FF00B5406C /* Sources */ = {
@@ -609,8 +570,6 @@
 				BF082D9F21AC9A4500B5406C /* Termina.swift in Sources */,
 				BF082DA121AC9A4500B5406C /* Potion.swift in Sources */,
 				BF082D9C21AC9A4500B5406C /* Entity.swift in Sources */,
-				BF082DA421AC9A4500B5406C /* Files.swift in Sources */,
-				BF082DA221AC9A4500B5406C /* SwiftyJSON.swift in Sources */,
 				BFBE9C1221B5E6A300AA1C6C /* BetaProgramPane.swift in Sources */,
 				BF082D8E21AC9A4500B5406C /* MainMenu.swift in Sources */,
 				BF082D9E21AC9A4500B5406C /* Bottle.swift in Sources */,
@@ -754,7 +713,6 @@
 		};
 		BF082D5B21AC9A0000B5406C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50AFB51D567FA6B7F596F8E7 /* Pods-Termina.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconBeta;
 				CODE_SIGN_ENTITLEMENTS = Termina/Termina.entitlements;
@@ -763,10 +721,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/AppCenter/AppCenter-SDK-Apple/macOS",
-				);
 				INFOPLIST_FILE = Termina/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -776,13 +730,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		BF082D5C21AC9A0000B5406C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B237269F0E6C1BDB8D88440 /* Pods-Termina.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Termina/Termina.entitlements;
@@ -791,10 +744,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/AppCenter/AppCenter-SDK-Apple/macOS",
-				);
 				INFOPLIST_FILE = Termina/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -804,7 +753,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -830,6 +779,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF75430723933D9E00F9FE8D /* XCRemoteSwiftPackageReference "Files" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:JohnSundell/Files.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.2;
+			};
+		};
+		BF75430A23933DB400F9FE8D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF75430823933D9E00F9FE8D /* Files */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF75430723933D9E00F9FE8D /* XCRemoteSwiftPackageReference "Files" */;
+			productName = Files;
+		};
+		BF75430B23933DB400F9FE8D /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF75430A23933DB400F9FE8D /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF082D3C21AC99FF00B5406C /* Project object */;
 }

@@ -9,9 +9,8 @@
 import Foundation
 import SpriteKit
 import UserNotifications
-import AppCenterCrashes
-import AppCenterAnalytics
-import AppCenter
+import Files
+import SwiftyJSON
 
 /**
  Class responsible for managing player data
@@ -66,8 +65,8 @@ class DataModel {
                 
                 return true
             } catch {
-                if BetaHandler.isBetaBuild && TerminaUserDefaults.sendBetaAnalytics {
-                    MSAnalytics.trackEvent("Failed to load settings file. Reason: \(error)")
+                if BetaHandler.isBetaBuild {
+                    print("Failed to load settings file. Reason: \(error)")
                 }
                 return false
             }
@@ -89,7 +88,8 @@ class DataModel {
      */
     func saveToFile(_ silent: Bool) {
         do {
-            try appDataPath.createFile(named: "settings.json", contents: """
+            let file = try appDataPath.createFile(named: "settings.json")
+            try file.write("""
                 {
                 "name": "\(player.name)",
                 "level": "\(player.level)",
@@ -98,8 +98,8 @@ class DataModel {
                 }
                 """)
         } catch {
-            if BetaHandler.isBetaBuild && TerminaUserDefaults.sendBetaAnalytics {
-                MSAnalytics.trackEvent("Failed to save settings file. Reason: \(error)")
+            if BetaHandler.isBetaBuild  {
+                print("Failed to save settings file. Reason: \(error)")
             }
         }
         
@@ -168,13 +168,13 @@ class DataModel {
                 do {
                     try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
                 } catch {
-                    if BetaHandler.isBetaBuild && TerminaUserDefaults.sendBetaAnalytics {
-                        MSAnalytics.trackEvent("Failed to Rename backup. Reason: \(error)")
+                    if BetaHandler.isBetaBuild  {
+                        print("Failed to Rename backup. Reason: \(error)")
                     }
                 }
             } catch {
-                if BetaHandler.isBetaBuild && TerminaUserDefaults.sendBetaAnalytics {
-                    MSAnalytics.trackEvent("Failed to delete settings file. Reason: \(error)")
+                if BetaHandler.isBetaBuild {
+                    print("Failed to delete settings file. Reason: \(error)")
                 }
                 
                 if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendDataNotifications {
@@ -197,8 +197,8 @@ class DataModel {
             do {
                 try appDataPath.file(named: "settings.json").rename(to: "settings_backup.json")
             } catch {
-                if BetaHandler.isBetaBuild && TerminaUserDefaults.sendBetaAnalytics {
-                    MSAnalytics.trackEvent("Failed to backup settings file. Reason: \(error)")
+                if BetaHandler.isBetaBuild {
+                    print("Failed to backup settings file. Reason: \(error)")
                 }
                 let alert = NSAlert()
                 alert.alertStyle = NSAlert.Style.critical
@@ -218,8 +218,8 @@ class DataModel {
             do {
                 try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
             } catch {
-                if BetaHandler.isBetaBuild && TerminaUserDefaults.sendBetaAnalytics {
-                    MSAnalytics.trackEvent("Failed to restore settings file. Reason: \(error)")
+                if BetaHandler.isBetaBuild {
+                    print("Failed to restore settings file. Reason: \(error)")
                 }
                 let alert = NSAlert()
                 alert.alertStyle = NSAlert.Style.critical
@@ -233,8 +233,8 @@ class DataModel {
             do {
                 try appDataPath.file(named: "settings_backup.json").rename(to: "settings.json")
             } catch {
-                if BetaHandler.isBetaBuild && TerminaUserDefaults.sendBetaAnalytics {
-                    MSAnalytics.trackEvent("Failed to rename settings file. Reason: \(error)")
+                if BetaHandler.isBetaBuild {
+                    print("Failed to rename settings file. Reason: \(error)")
                 }
                 let alert = NSAlert()
                 alert.alertStyle = NSAlert.Style.critical
@@ -276,8 +276,8 @@ class DataModel {
                         do {
                             try self.appDataPath.file(named: "settings.json").delete()
                         } catch {
-                            if BetaHandler.isBetaBuild && TerminaUserDefaults.sendBetaAnalytics {
-                                MSAnalytics.trackEvent("Failed to delete settings file. Reason: \(error)")
+                            if BetaHandler.isBetaBuild {
+                                print("Failed to delete settings file. Reason: \(error)")
                             }
                         }
                     }

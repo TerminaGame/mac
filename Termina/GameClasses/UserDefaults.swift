@@ -28,7 +28,9 @@ struct TerminaUserDefaults {
     
     /**
      Beta program preference for sending analytics to AppCenter.
+      - Warning: This value has been deprecated.
      */
+    @available(*, deprecated, message: "Data is no longer sent to AppCenter.")
     static var sendBetaAnalytics = UserDefaults().bool(forKey: "sendBetaAnalytics")
     
     /**

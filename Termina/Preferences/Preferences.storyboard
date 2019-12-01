@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="dsM-Rt-73b">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="dsM-Rt-73b">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,7 +41,7 @@
                     <tabView key="tabView" type="noTabsNoBorder" id="BVh-qx-J2t">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <font key="font" metaFont="message"/>
+                        <font key="font" metaFont="system"/>
                         <connections>
                             <outlet property="delegate" destination="kbk-Pu-fLe" id="cK1-wU-jkj"/>
                         </connections>
@@ -66,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Md3-in-eP3">
-                                <rect key="frame" x="18" y="71" width="107" height="17"/>
+                                <rect key="frame" x="18" y="72" width="107" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Notify me when:" id="dB4-uE-hNa">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -74,14 +75,14 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3ZN-QB-Kvs">
-                                <rect key="frame" x="30" y="47" width="254" height="18"/>
+                                <rect key="frame" x="30" y="48" width="254" height="18"/>
                                 <buttonCell key="cell" type="check" title="I import, save, or delete my game data" bezelStyle="regularSquare" imagePosition="left" inset="2" id="r0t-o8-8hL">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Kk-I3-pbF">
-                                <rect key="frame" x="30" y="27" width="276" height="18"/>
+                                <rect key="frame" x="30" y="28" width="276" height="18"/>
                                 <buttonCell key="cell" type="check" title="I level up, pacify an error, or equip an item" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Gfx-2f-p2q">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -115,7 +116,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GJ8-bx-Hmc">
-                                <rect key="frame" x="18" y="133" width="146" height="17"/>
+                                <rect key="frame" x="18" y="134" width="146" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" title="Do not show on HUDs:" id="ucD-Ta-4fT">
                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -123,7 +124,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="WZ5-rn-LfL">
-                                <rect key="frame" x="18" y="20" width="414" height="17"/>
+                                <rect key="frame" x="18" y="20" width="414" height="16"/>
                                 <textFieldCell key="cell" selectable="YES" title="Changes will take effect on next launch of the game." id="SiF-Kn-TRz">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -138,21 +139,21 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-sb-Tkg">
-                                <rect key="frame" x="30" y="109" width="101" height="18"/>
+                                <rect key="frame" x="30" y="110" width="101" height="18"/>
                                 <buttonCell key="cell" type="check" title="Entity names" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LbL-GU-WQJ">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cDm-bl-csN">
-                                <rect key="frame" x="30" y="89" width="112" height="18"/>
+                                <rect key="frame" x="30" y="90" width="112" height="18"/>
                                 <buttonCell key="cell" type="check" title="Health number" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mgE-TV-hxA">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="puV-Oi-qUs">
-                                <rect key="frame" x="30" y="69" width="102" height="18"/>
+                                <rect key="frame" x="30" y="70" width="102" height="18"/>
                                 <buttonCell key="cell" type="check" title="Level badges" bezelStyle="regularSquare" imagePosition="left" inset="2" id="uha-4z-7Iv">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -194,30 +195,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bMA-uV-5nc">
-                                <rect key="frame" x="18" y="164" width="248" height="18"/>
-                                <buttonCell key="cell" type="check" title="Send analytics to Termina developers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iVr-1i-eDK">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="SpB-3H-l4G">
-                                <rect key="frame" x="18" y="124" width="414" height="34"/>
-                                <textFieldCell key="cell" selectable="YES" title="Termina sends this data to collect error information that may be a potenial issue." id="0lS-fi-IWo">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="03D-xS-QtA">
-                                <rect key="frame" x="18" y="96" width="139" height="18"/>
+                                <rect key="frame" x="18" y="164" width="139" height="18"/>
                                 <buttonCell key="cell" type="check" title="Enable demo mode" bezelStyle="regularSquare" imagePosition="left" inset="2" id="thI-Ni-4gz">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="h2F-Ma-iN3">
-                                <rect key="frame" x="18" y="39" width="414" height="51"/>
+                                <rect key="frame" x="18" y="110" width="414" height="48"/>
                                 <textFieldCell key="cell" selectable="YES" id="jOk-Cu-4B4">
                                     <font key="font" metaFont="system"/>
                                     <string key="title">If you are running the beta at a kiosk, turn this option on and use Hardcore Mode to allow the player to reset. Hardcore Mode will restart instead of quitting when this is on.</string>
@@ -227,21 +213,15 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="h2F-Ma-iN3" firstAttribute="top" secondItem="03D-xS-QtA" secondAttribute="bottom" constant="8" id="KrS-am-7qp"/>
                             <constraint firstAttribute="trailing" secondItem="h2F-Ma-iN3" secondAttribute="trailing" constant="20" id="Qlj-1D-dfC"/>
-                            <constraint firstItem="03D-xS-QtA" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="Wha-uT-W19"/>
-                            <constraint firstAttribute="trailing" secondItem="SpB-3H-l4G" secondAttribute="trailing" constant="20" id="X4k-1d-QH4"/>
-                            <constraint firstItem="bMA-uV-5nc" firstAttribute="top" secondItem="2dV-Cm-Oev" secondAttribute="top" constant="20" id="dg6-p4-I6G"/>
-                            <constraint firstItem="SpB-3H-l4G" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="i8L-li-A5p"/>
-                            <constraint firstItem="bMA-uV-5nc" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="jJ9-hc-tMi"/>
-                            <constraint firstItem="03D-xS-QtA" firstAttribute="top" secondItem="SpB-3H-l4G" secondAttribute="bottom" constant="12" id="lQY-6A-TGx"/>
-                            <constraint firstItem="SpB-3H-l4G" firstAttribute="top" secondItem="bMA-uV-5nc" secondAttribute="bottom" constant="8" id="sFE-vi-gPM"/>
+                            <constraint firstItem="h2F-Ma-iN3" firstAttribute="top" secondItem="03D-xS-QtA" secondAttribute="bottom" constant="8" id="lQV-K3-BDG"/>
+                            <constraint firstItem="03D-xS-QtA" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="mZy-Fv-qMP"/>
                             <constraint firstItem="h2F-Ma-iN3" firstAttribute="leading" secondItem="2dV-Cm-Oev" secondAttribute="leading" constant="20" id="sUg-NQ-KCI"/>
+                            <constraint firstItem="03D-xS-QtA" firstAttribute="top" secondItem="2dV-Cm-Oev" secondAttribute="top" constant="20" id="thO-q9-cQz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="demoMode" destination="03D-xS-QtA" id="6A2-5Z-diH"/>
-                        <outlet property="sendAnalytics" destination="bMA-uV-5nc" id="5v6-bc-xcy"/>
                     </connections>
                 </viewController>
                 <customObject id="raO-PK-u8m" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -279,9 +259,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Appearance" width="512" height="512"/>
-        <image name="LogoBeta" width="512" height="512"/>
+        <image name="Appearance" width="1024" height="1024"/>
+        <image name="LogoBeta" width="1024" height="1024"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
-        <image name="Notifications" width="512" height="512"/>
+        <image name="Notifications" width="1024" height="1024"/>
     </resources>
 </document>

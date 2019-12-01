@@ -10,9 +10,6 @@ import Foundation
 import Cocoa
 import UserNotifications
 import SpriteKit
-import AppCenter
-import AppCenterAnalytics
-import AppCenterCrashes
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -120,19 +117,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         // Create the user defaults.
         TerminaUserDefaults().createUserDefaults()
         
-        // Connect to MS AppCenter for beta testing releases
         if BetaHandler.isBetaBuild {
-            if TerminaUserDefaults.sendBetaAnalytics {
-                MSAppCenter.start("dd5d5c2f-8d90-4f89-9c55-e81b02d36d8f", withServices:[
-                    MSAnalytics.self,
-                    MSCrashes.self
-                    ])
-            } else {
-                MSAppCenter.start("dd5d5c2f-8d90-4f89-9c55-e81b02d36d8f", withServices:[
-                    MSCrashes.self
-                    ])
-            }
-            
             feedbackMenuItem!.isHidden = false
         }
         

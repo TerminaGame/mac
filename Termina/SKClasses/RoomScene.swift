@@ -9,6 +9,7 @@
 import SpriteKit
 import Foundation
 import UserNotifications
+import Files
 
 class RoomScene: SKScene {
     
@@ -63,7 +64,9 @@ class RoomScene: SKScene {
                     
                     let tileNode = SKSpriteNode(texture: tileTexture)
                     tileNode.position = CGPoint(x: x, y: y)
+                    
                     tileNode.physicsBody = SKPhysicsBody(texture: tileTexture, size: CGSize(width: (tileTexture.size().width), height: (tileTexture.size().height)))
+                    
                     tileNode.physicsBody?.restitution = 0
                     
                     // If the tiles are supposed to stay in place

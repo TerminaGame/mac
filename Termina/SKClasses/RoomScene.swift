@@ -65,24 +65,23 @@ class RoomScene: SKScene {
                     let tileNode = SKSpriteNode(texture: tileTexture)
                     tileNode.position = CGPoint(x: x, y: y)
                     
-                    tileNode.physicsBody = SKPhysicsBody(texture: tileTexture, size: CGSize(width: (tileTexture.size().width), height: (tileTexture.size().height)))
+                    tileNode.physicsBody = SKPhysicsBody(rectangleOf: tileTexture.size())
                     
                     tileNode.physicsBody?.restitution = 0
+                    tileNode.physicsBody?.affectedByGravity = movable
+                    tileNode.physicsBody?.allowsRotation = movable
+                    
                     
                     // If the tiles are supposed to stay in place
                     if !movable {
                         tileNode.physicsBody?.isDynamic = false
-                        tileNode.physicsBody?.affectedByGravity = false
                         tileNode.physicsBody?.linearDamping = 1000.0
-                        tileNode.physicsBody?.allowsRotation = false
                         tileNode.physicsBody?.friction = 0.7
                     }
                     
                     // If the tiles are to be moved around
                     else {
-                        tileNode.physicsBody?.affectedByGravity = true
                         tileNode.physicsBody?.linearDamping = 0.1
-                        tileNode.physicsBody?.allowsRotation = true
                         tileNode.physicsBody?.friction = 1.0
                         tileNode.physicsBody?.mass = 100
                     }
@@ -313,7 +312,6 @@ class RoomScene: SKScene {
         if childNode(withName: "movableTiles") != nil {
             configureTileMap(childNode(withName: "movableTiles") as! SKTileMapNode, movable: true)
         }
-        
         
         if childNode(withName: "enemyNode") != nil { setUpEntity() }
         

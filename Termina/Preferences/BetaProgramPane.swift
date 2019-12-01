@@ -21,12 +21,6 @@ class BetaProgramPane: PreferencesViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        if TerminaUserDefaults.sendBetaAnalytics {
-            sendAnalytics.state = .on
-        } else {
-            sendAnalytics.state = .off
-        }
-        
         if TerminaUserDefaults.demoMode {
             demoMode.state = .on
         } else {

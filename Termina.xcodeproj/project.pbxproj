@@ -237,7 +237,6 @@
 		BF082D4621AC99FF00B5406C /* Termina */ = {
 			isa = PBXGroup;
 			children = (
-				BF378146239344CA0045C330 /* HardcoreModeView.swift */,
 				BF75430D2393438600F9FE8D /* Views */,
 				BFBC47A021C2A708002A6C28 /* Documents */,
 				BF4CA6B921B5AFF6007A39F1 /* Preferences */,
@@ -405,6 +404,7 @@
 		BF75430D2393438600F9FE8D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF378146239344CA0045C330 /* HardcoreModeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

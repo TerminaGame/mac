@@ -752,7 +752,7 @@ class RoomScene: SKScene {
                         roomEntity = nil
                         
                         if Int.random(in: 0...10) > 7 {
-                            Termina().pacifyComment()
+                            TerminaEntity().pacifyComment()
                         }
                     } else {
                         NSSound.beep()

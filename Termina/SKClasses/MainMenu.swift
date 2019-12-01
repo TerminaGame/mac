@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 import UserNotifications
+import SwiftUI
 
 class MainMenu: SKScene {
     
@@ -225,6 +226,7 @@ extension MainMenu {
                 case "hardcoreButton":
                     if !AppDelegate.isHardcore {
                         self.view?.window?.contentViewController?.presentAsSheet(NSStoryboard(name: "Hardcore", bundle: Bundle.main).instantiateController(withIdentifier: "Hardcore") as! NSViewController)
+//                        self.view?.window?.contentViewController?.presentAsSheet(NSHostingController(rootView: TerminaHardcoreModeView(parentController: (self.view?.window?.contentViewController)!)))
                     } else {
                         self.size = CGSize(width: 1280, height: 720)
                         self.scaleMode = .aspectFit

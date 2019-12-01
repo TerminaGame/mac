@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="6E3-Td-xTH">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="6E3-Td-xTH">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V2Q-7K-bzt">
-                                <rect key="frame" x="18" y="221" width="164" height="34"/>
+                                <rect key="frame" x="18" y="222" width="164" height="33"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Go Hardcore" id="hXc-Jg-V5P">
                                     <font key="font" metaFont="systemSemibold" size="28"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -22,7 +22,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="65r-6e-SIA">
-                                <rect key="frame" x="18" y="111" width="414" height="102"/>
+                                <rect key="frame" x="18" y="118" width="414" height="96"/>
                                 <textFieldCell key="cell" selectable="YES" id="xiB-a6-2OW">
                                     <font key="font" metaFont="system"/>
                                     <string key="title">Hardcore Mode is similar to the traditional game, but much more difficult. Once you die, the game will exit and your player settings will not be saved.
@@ -33,7 +33,7 @@ If you wish to continue, enter your player name or use your existing player (we'
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c6W-bh-LyP">
-                                <rect key="frame" x="20" y="81" width="410" height="22"/>
+                                <rect key="frame" x="20" y="89" width="410" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Name" drawsBackground="YES" id="Xwr-cC-wm1">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -42,7 +42,7 @@ If you wish to continue, enter your player name or use your existing player (we'
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IMa-mn-jUT">
                                 <rect key="frame" x="257" y="13" width="179" height="32"/>
-                                <buttonCell key="cell" type="push" title="Enable Hardcore Mode" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="poS-ox-sbB">
+                                <buttonCell key="cell" type="push" title="Enable Hardcore Mode" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="poS-ox-sbB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">

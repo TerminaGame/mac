@@ -13,7 +13,7 @@ import UserNotifications
 /**
  Special monster class for Termina
  */
-class Termina: Monster {
+class TerminaEntity: Monster {
     
     /**
      Private API key

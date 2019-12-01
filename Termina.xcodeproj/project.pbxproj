@@ -73,6 +73,7 @@
 		BF1408B321B09B9800A7E70E /* 18.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089721B09B9800A7E70E /* 18.sks */; };
 		BF1408B421B09B9800A7E70E /* 5.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089821B09B9800A7E70E /* 5.sks */; };
 		BF1787DD21B468DF0056CD88 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1787DC21B468DF0056CD88 /* ChangeNameViewController.swift */; };
+		BF378147239344CA0045C330 /* HardcoreModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF378146239344CA0045C330 /* HardcoreModeView.swift */; };
 		BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */; };
 		BF46539D21B5A3E3006BBF04 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */; };
 		BF4AC24921C2A75B0050ACE7 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AC24821C2A75B0050ACE7 /* NPC.swift */; };
@@ -177,6 +178,8 @@
 		BF14089721B09B9800A7E70E /* 18.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 18.sks; sourceTree = "<group>"; };
 		BF14089821B09B9800A7E70E /* 5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 5.sks; sourceTree = "<group>"; };
 		BF1787DC21B468DF0056CD88 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
+		BF378146239344CA0045C330 /* HardcoreModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcoreModeView.swift; sourceTree = "<group>"; };
+		BF378148239344FE0045C330 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaViewController.swift; sourceTree = "<group>"; };
 		BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		BF4AC24821C2A75B0050ACE7 /* NPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPC.swift; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 		BF082D4621AC99FF00B5406C /* Termina */ = {
 			isa = PBXGroup;
 			children = (
+				BF378146239344CA0045C330 /* HardcoreModeView.swift */,
+				BF75430D2393438600F9FE8D /* Views */,
 				BFBC47A021C2A708002A6C28 /* Documents */,
 				BF4CA6B921B5AFF6007A39F1 /* Preferences */,
 				BF082D8421AC9A4500B5406C /* AppDelegate.swift */,
@@ -334,6 +339,7 @@
 		BF082DAC21AC9EA900B5406C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF378148239344FE0045C330 /* SwiftUI.framework */,
 				BF5D7A3021AF4152008CD33F /* AppCenter.framework */,
 				BF5D7A3121AF4152008CD33F /* AppCenterAnalytics.framework */,
 				BF5D7A2F21AF4152008CD33F /* AppCenterCrashes.framework */,
@@ -394,6 +400,13 @@
 				BF4AC24E21C2E5700050ACE7 /* GeneralPane.swift */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		BF75430D2393438600F9FE8D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BF90A4C721C03D6D00F64D5D /* Audio */ = {
@@ -464,7 +477,7 @@
 				};
 			};
 			buildConfigurationList = BF082D3F21AC99FF00B5406C /* Build configuration list for PBXProject "Termina" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -548,6 +561,7 @@
 				BF082DA921AC9A4500B5406C /* Hardcore.swift in Sources */,
 				BF082DA821AC9A4500B5406C /* AppDelegate.swift in Sources */,
 				BF4CA6C121B5BD04007A39F1 /* NotificationPane.swift in Sources */,
+				BF378147239344CA0045C330 /* HardcoreModeView.swift in Sources */,
 				BF4AC24921C2A75B0050ACE7 /* NPC.swift in Sources */,
 				BF082D9821AC9A4500B5406C /* Names.swift in Sources */,
 				BFF9FBBD21B329AB001DAAC9 /* TutorialRoomScene.swift in Sources */,
@@ -647,7 +661,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -702,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -726,7 +740,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -749,7 +763,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

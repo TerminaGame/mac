@@ -18,7 +18,9 @@ This repository provides the source code for the macOS version of the game and t
 - [x] Platforming
 
 ## Downloads
-Currently, there aren't any releases ready.
+You can get the game directly from Itch.io: https://marquiskurt.itch.io/termina
+
+You can also view the latest releases on the repository.
 
 If you prefer testing builds, you may want to consider the [Termina for macOS Beta Program](https://terminagame.github.io/mac/tutoriel.html).
 

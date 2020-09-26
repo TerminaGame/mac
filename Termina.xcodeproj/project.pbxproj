@@ -89,6 +89,7 @@
 		BF90A4C921C03D8100F64D5D /* GhostMenuMusic.aif in Resources */ = {isa = PBXBuildFile; fileRef = BF90A4C821C03D8100F64D5D /* GhostMenuMusic.aif */; };
 		BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */; };
 		BFBE9C1221B5E6A300AA1C6C /* BetaProgramPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */; };
+		BFD29703251FDAE70013E179 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BFD29702251FDAE70013E179 /* README.md */; };
 		BFF9FBBB21B320FB001DAAC9 /* Tutorial.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFF9FBBA21B320FB001DAAC9 /* Tutorial.sks */; };
 		BFF9FBBD21B329AB001DAAC9 /* TutorialRoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9FBBC21B329AB001DAAC9 /* TutorialRoomScene.swift */; };
 /* End PBXBuildFile section */
@@ -185,7 +186,6 @@
 		BF4AC24821C2A75B0050ACE7 /* NPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPC.swift; sourceTree = "<group>"; };
 		BF4AC24A21C2B7F60050ACE7 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		BF4AC24E21C2E5700050ACE7 /* GeneralPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPane.swift; sourceTree = "<group>"; };
-		BF4AC25221C2E7010050ACE7 /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "Termina macOS Beta Program.rtf"; path = "../../../../../Library/Mobile Documents/com~apple~TextEdit/Documents/Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
 		BF4CA6BA21B5B01E007A39F1 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -198,6 +198,7 @@
 		BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaHandler.swift; sourceTree = "<group>"; };
 		BFBC47A121C2A710002A6C28 /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
 		BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaProgramPane.swift; sourceTree = "<group>"; };
+		BFD29702251FDAE70013E179 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BFF9FBBA21B320FB001DAAC9 /* Tutorial.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial.sks; sourceTree = "<group>"; };
 		BFF9FBBC21B329AB001DAAC9 /* TutorialRoomScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialRoomScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +221,7 @@
 		BF082D3B21AC99FF00B5406C = {
 			isa = PBXGroup;
 			children = (
+				BFD29702251FDAE70013E179 /* README.md */,
 				BF082D4621AC99FF00B5406C /* Termina */,
 				BF082D4521AC99FF00B5406C /* Products */,
 				BF082DAC21AC9EA900B5406C /* Frameworks */,
@@ -420,7 +422,6 @@
 		BFBC47A021C2A708002A6C28 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
-				BF4AC25221C2E7010050ACE7 /* Termina macOS Beta Program.rtf */,
 				BF082DB121AD8CC100B5406C /* About.rtf */,
 				BFBC47A121C2A710002A6C28 /* Termina macOS Beta Program.rtf */,
 			);
@@ -545,6 +546,7 @@
 				BF082D8B21AC9A4500B5406C /* Main.storyboard in Resources */,
 				BF1408A821B09B9800A7E70E /* 9.sks in Resources */,
 				BF1408A121B09B9800A7E70E /* 15.sks in Resources */,
+				BFD29703251FDAE70013E179 /* README.md in Resources */,
 				BF14089E21B09B9800A7E70E /* 3.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,6 +735,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Termina/Info.plist;
@@ -756,6 +759,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Termina/Info.plist;

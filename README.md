@@ -23,9 +23,7 @@ Currently, there aren't any releases ready.
 If you prefer testing builds, you may want to consider the [Termina for macOS Beta Program](https://terminagame.github.io/mac/tutoriel.html).
 
 ## Building from source
-This project makes use of CocoaPods and the AppCenter framework to compile and run this game. These frameworks are usually used for the Beta Program and its analytic features.
 
-1. Clone the project locally and ensure that you have installed CocoaPods (if you use Homebrew, type `brew install cocoapods` in a terminal).
-2. In a terminal, type `pod install` to install the framework.
-3. Open the _workspace_ in Xcode and change the developer signing to your own account.
-4. Build and run the application. If you want to make a _release_ rather than a _debug_ version, change the scheme from 'Termina' to 'Termina (Release)'.
+1. Clone the project locally.
+2. Open the project in Xcode and change the developer signing to your own account.
+3. Build and run the application. If you want to make a _release_ rather than a _debug_ version, change the scheme from 'Termina' to 'Termina (Release)'.

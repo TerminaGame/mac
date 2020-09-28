@@ -1,8 +1,8 @@
 {
   "images" : [
     {
+      "filename" : "icon_512x512@2x.png",
       "idiom" : "universal",
-      "filename" : "Icon-1024.png",
       "scale" : "1x"
     },
     {
@@ -15,7 +15,7 @@
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

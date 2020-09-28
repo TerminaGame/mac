@@ -1,7 +1,11 @@
+<div text-align="center">
+
 # Termina for macOS
 _The macOS version of Termina_
 
-![Swift Version](https://img.shields.io/badge/swift-4.2-orange.svg)
+</div>
+
+![Swift Version](https://img.shields.io/badge/swift-5.0-orange.svg)
 
 ![Termina for macOS on MacBook Pro](https://terminagame.github.io/assets/termina_macbook.png)
 

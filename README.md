@@ -1,4 +1,4 @@
-<div text-align="center">
+<div align="center">
 
 # Termina for macOS
 _The macOS version of Termina_

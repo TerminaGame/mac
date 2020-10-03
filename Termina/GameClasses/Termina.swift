@@ -42,6 +42,7 @@ class TerminaEntity: Monster {
     /**
      Sends a notification to the user, mocking them about pacifying the entity
      */
+    @available(*, deprecated, message: "This method should no longer be used.")
     func pacifyComment() {
         if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendGameNotifications {
             let content = UNMutableNotificationContent()

@@ -8,8 +8,8 @@
 
 import SpriteKit
 import Foundation
-import UserNotifications
 import Files
+import GameKit
 
 class RoomScene: SKScene {
     
@@ -690,15 +690,10 @@ class RoomScene: SKScene {
                         gamePlayer?.patchUp(7)
                         
                         if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendGameNotifications {
-                            let content = UNMutableNotificationContent()
-                            content.title = "\(ralsei?.name ?? "The error") has been pacified!"
-                            content.subtitle = "It thanks you for your saving grace."
-                            content.body = "You've been patched up by 7 iterations."
-                            let uuid = UUID().uuidString
-                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-                            let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-                            let center = UNUserNotificationCenter.current()
-                            center.add(newNotificationRequest, withCompletionHandler: nil)
+                            let title = "\(ralsei?.name ?? "The error") has been pacified!"
+                            let body = "It thanks you; you've been patched up by 7 iterations."
+                            
+                            GKNotificationBanner.show(withTitle: title, message: body) {}
                         }
                         
                         roomEntity = nil

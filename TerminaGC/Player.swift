@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 import UserNotifications
+import GameKit
 
 /**
  Base class for the player
@@ -71,14 +72,9 @@ class Player: Entity {
         associatedHud.updateLevel(level)
         
         if TerminaUserDefaults.canSendNotifications && TerminaUserDefaults.canSendGameNotifications {
-            let content = UNMutableNotificationContent()
-            content.title = "Level Up!"
-            content.body = "You upgraded to version \(level)."
-            let uuid = UUID().uuidString
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.01, repeats: false)
-            let newNotificationRequest = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-            let center = UNUserNotificationCenter.current()
-            center.add(newNotificationRequest, withCompletionHandler: nil)
+            let title = "Level Up!"
+            let body = "You upgraded to version \(level)."
+            GKNotificationBanner.show(withTitle: title, message: body) {  }
         }
         
         updateHealthDynamically()

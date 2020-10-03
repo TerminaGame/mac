@@ -7,6 +7,91 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF07D76E25242AF700E3E591 /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */; };
+		BF07D76F25242AF700E3E591 /* BetaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */; };
+		BF07D77025242AF700E3E591 /* Hardcore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8521AC9A4500B5406C /* Hardcore.swift */; };
+		BF07D77125242AF700E3E591 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8421AC9A4500B5406C /* AppDelegate.swift */; };
+		BF07D77225242AF700E3E591 /* NotificationPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6C021B5BD04007A39F1 /* NotificationPane.swift */; };
+		BF07D77325242AF700E3E591 /* HardcoreModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF378146239344CA0045C330 /* HardcoreModeView.swift */; };
+		BF07D77425242AF700E3E591 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AC24821C2A75B0050ACE7 /* NPC.swift */; };
+		BF07D77525242AF700E3E591 /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7221AC9A4500B5406C /* Names.swift */; };
+		BF07D77625242AF700E3E591 /* TutorialRoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9FBBC21B329AB001DAAC9 /* TutorialRoomScene.swift */; };
+		BF07D77725242AF700E3E591 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8721AC9A4500B5406C /* AppMenu.swift */; };
+		BF07D77825242AF700E3E591 /* NewPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8221AC9A4500B5406C /* NewPlayer.swift */; };
+		BF07D77925242AF700E3E591 /* GeneralPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AC24E21C2E5700050ACE7 /* GeneralPane.swift */; };
+		BF07D77A25242AF700E3E591 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8121AC9A4500B5406C /* ViewController.swift */; };
+		BF07D77B25242AF700E3E591 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AC24A21C2B7F60050ACE7 /* Speech.swift */; };
+		BF07D77C25242AF700E3E591 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7421AC9A4500B5406C /* Weapon.swift */; };
+		BF07D77D25242AF700E3E591 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8621AC9A4500B5406C /* AboutViewController.swift */; };
+		BF07D77E25242AF700E3E591 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6821AC9A4500B5406C /* HUD.swift */; };
+		BF07D77F25242AF700E3E591 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6BC21B5B500007A39F1 /* PreferencesViewController.swift */; };
+		BF07D78025242AF700E3E591 /* RoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6921AC9A4500B5406C /* RoomScene.swift */; };
+		BF07D78125242AF700E3E591 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7A21AC9A4500B5406C /* Player.swift */; };
+		BF07D78225242AF700E3E591 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1787DC21B468DF0056CD88 /* ChangeNameViewController.swift */; };
+		BF07D78325242AF700E3E591 /* RoomSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6A21AC9A4500B5406C /* RoomSceneExtension.swift */; };
+		BF07D78425242AF700E3E591 /* Room29Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6721AC9A4500B5406C /* Room29Scene.swift */; };
+		BF07D78525242AF700E3E591 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7721AC9A4500B5406C /* Item.swift */; };
+		BF07D78625242AF700E3E591 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8321AC9A4500B5406C /* Profile.swift */; };
+		BF07D78725242AF700E3E591 /* Termina.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7921AC9A4500B5406C /* Termina.swift */; };
+		BF07D78825242AF700E3E591 /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7B21AC9A4500B5406C /* Potion.swift */; };
+		BF07D78925242AF700E3E591 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7621AC9A4500B5406C /* Entity.swift */; };
+		BF07D78A25242AF700E3E591 /* BetaProgramPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */; };
+		BF07D78B25242AF700E3E591 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6621AC9A4500B5406C /* MainMenu.swift */; };
+		BF07D78C25242AF700E3E591 /* Bottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7821AC9A4500B5406C /* Bottle.swift */; };
+		BF07D78D25242AF700E3E591 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */; };
+		BF07D78E25242AF700E3E591 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7521AC9A4500B5406C /* Data.swift */; };
+		BF07D78F25242AF700E3E591 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7321AC9A4500B5406C /* Monster.swift */; };
+		BF07D79025242AF700E3E591 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CA6BE21B5B59D007A39F1 /* PreferencesWindowController.swift */; };
+		BF07D79125242AF700E3E591 /* AppearancePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF70B6DC21BEF1F1002473B6 /* AppearancePane.swift */; };
+		BF07D79225242AF700E3E591 /* Keycodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7E21AC9A4500B5406C /* Keycodes.swift */; };
+		BF07D79425242AF700E3E591 /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = BF07D76925242AF700E3E591 /* Files */; };
+		BF07D79525242AF700E3E591 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF082DAF21AC9EB000B5406C /* SpriteKit.framework */; };
+		BF07D79625242AF700E3E591 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = BF07D76B25242AF700E3E591 /* SwiftyJSON */; };
+		BF07D79725242AF700E3E591 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF082DAD21AC9EA900B5406C /* UserNotifications.framework */; };
+		BF07D79A25242AF700E3E591 /* 6.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088F21B09B9700A7E70E /* 6.sks */; };
+		BF07D79B25242AF700E3E591 /* 12.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088821B09B9600A7E70E /* 12.sks */; };
+		BF07D79C25242AF700E3E591 /* 0.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088721B09B9600A7E70E /* 0.sks */; };
+		BF07D79D25242AF700E3E591 /* 1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089521B09B9800A7E70E /* 1.sks */; };
+		BF07D79E25242AF700E3E591 /* 25.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088D21B09B9700A7E70E /* 25.sks */; };
+		BF07D79F25242AF700E3E591 /* 23.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088421B09B9600A7E70E /* 23.sks */; };
+		BF07D7A025242AF700E3E591 /* 2.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089621B09B9800A7E70E /* 2.sks */; };
+		BF07D7A125242AF700E3E591 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D5F21AC9A4500B5406C /* Profile.storyboard */; };
+		BF07D7A225242AF700E3E591 /* 10.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14087F21B09B9600A7E70E /* 10.sks */; };
+		BF07D7A325242AF700E3E591 /* 20.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089021B09B9700A7E70E /* 20.sks */; };
+		BF07D7A425242AF700E3E591 /* 18.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089721B09B9800A7E70E /* 18.sks */; };
+		BF07D7A525242AF700E3E591 /* 17.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088A21B09B9600A7E70E /* 17.sks */; };
+		BF07D7A625242AF700E3E591 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6321AC9A4500B5406C /* About.storyboard */; };
+		BF07D7A725242AF700E3E591 /* NewPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6021AC9A4500B5406C /* NewPlayer.storyboard */; };
+		BF07D7A825242AF700E3E591 /* Environment.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6E21AC9A4500B5406C /* Environment.sks */; };
+		BF07D7A925242AF700E3E591 /* 29.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D7021AC9A4500B5406C /* 29.sks */; };
+		BF07D7AA25242AF700E3E591 /* 16.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14087D21B09B9500A7E70E /* 16.sks */; };
+		BF07D7AB25242AF700E3E591 /* 21.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088121B09B9600A7E70E /* 21.sks */; };
+		BF07D7AC25242AF700E3E591 /* Hardcore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D5E21AC9A4500B5406C /* Hardcore.storyboard */; };
+		BF07D7AD25242AF700E3E591 /* About.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF082DB121AD8CC100B5406C /* About.rtf */; };
+		BF07D7AE25242AF700E3E591 /* 5.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089821B09B9800A7E70E /* 5.sks */; };
+		BF07D7AF25242AF700E3E591 /* 14.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088021B09B9600A7E70E /* 14.sks */; };
+		BF07D7B025242AF700E3E591 /* 28.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6F21AC9A4500B5406C /* 28.sks */; };
+		BF07D7B125242AF700E3E591 /* 24.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089121B09B9700A7E70E /* 24.sks */; };
+		BF07D7B225242AF700E3E591 /* 27.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088621B09B9600A7E70E /* 27.sks */; };
+		BF07D7B325242AF700E3E591 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6D21AC9A4500B5406C /* MainMenu.sks */; };
+		BF07D7B425242AF700E3E591 /* GhostMenuMusic.aif in Resources */ = {isa = PBXBuildFile; fileRef = BF90A4C821C03D8100F64D5D /* GhostMenuMusic.aif */; };
+		BF07D7B525242AF700E3E591 /* 8.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14087E21B09B9600A7E70E /* 8.sks */; };
+		BF07D7B625242AF700E3E591 /* 22.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089221B09B9700A7E70E /* 22.sks */; };
+		BF07D7B725242AF700E3E591 /* Template.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14084221B0923000A7E70E /* Template.sks */; };
+		BF07D7B825242AF700E3E591 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CA6BA21B5B01E007A39F1 /* Preferences.storyboard */; };
+		BF07D7B925242AF700E3E591 /* 19.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089321B09B9700A7E70E /* 19.sks */; };
+		BF07D7BA25242AF700E3E591 /* 11.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088B21B09B9700A7E70E /* 11.sks */; };
+		BF07D7BB25242AF700E3E591 /* 4.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088E21B09B9700A7E70E /* 4.sks */; };
+		BF07D7BC25242AF700E3E591 /* 26.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088921B09B9600A7E70E /* 26.sks */; };
+		BF07D7BD25242AF700E3E591 /* 13.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088321B09B9600A7E70E /* 13.sks */; };
+		BF07D7BE25242AF700E3E591 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6421AC9A4500B5406C /* Assets.xcassets */; };
+		BF07D7BF25242AF700E3E591 /* Tutorial.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFF9FBBA21B320FB001DAAC9 /* Tutorial.sks */; };
+		BF07D7C025242AF700E3E591 /* 7.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089421B09B9800A7E70E /* 7.sks */; };
+		BF07D7C125242AF700E3E591 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6121AC9A4500B5406C /* Main.storyboard */; };
+		BF07D7C225242AF700E3E591 /* 9.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088C21B09B9700A7E70E /* 9.sks */; };
+		BF07D7C325242AF700E3E591 /* 15.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088521B09B9600A7E70E /* 15.sks */; };
+		BF07D7C425242AF700E3E591 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BFD29702251FDAE70013E179 /* README.md */; };
+		BF07D7C525242AF700E3E591 /* 3.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14088221B09B9600A7E70E /* 3.sks */; };
 		BF082D8821AC9A4500B5406C /* Hardcore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D5E21AC9A4500B5406C /* Hardcore.storyboard */; };
 		BF082D8921AC9A4500B5406C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D5F21AC9A4500B5406C /* Profile.storyboard */; };
 		BF082D8A21AC9A4500B5406C /* NewPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6021AC9A4500B5406C /* NewPlayer.storyboard */; };
@@ -16,7 +101,6 @@
 		BF082D8E21AC9A4500B5406C /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6621AC9A4500B5406C /* MainMenu.swift */; };
 		BF082D8F21AC9A4500B5406C /* Room29Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6721AC9A4500B5406C /* Room29Scene.swift */; };
 		BF082D9021AC9A4500B5406C /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6821AC9A4500B5406C /* HUD.swift */; };
-		BF082D9121AC9A4500B5406C /* RoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6921AC9A4500B5406C /* RoomScene.swift */; };
 		BF082D9221AC9A4500B5406C /* RoomSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D6A21AC9A4500B5406C /* RoomSceneExtension.swift */; };
 		BF082D9421AC9A4500B5406C /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6D21AC9A4500B5406C /* MainMenu.sks */; };
 		BF082D9521AC9A4500B5406C /* Environment.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D6E21AC9A4500B5406C /* Environment.sks */; };
@@ -24,19 +108,16 @@
 		BF082D9721AC9A4500B5406C /* 29.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF082D7021AC9A4500B5406C /* 29.sks */; };
 		BF082D9821AC9A4500B5406C /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7221AC9A4500B5406C /* Names.swift */; };
 		BF082D9921AC9A4500B5406C /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7321AC9A4500B5406C /* Monster.swift */; };
-		BF082D9A21AC9A4500B5406C /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7421AC9A4500B5406C /* Weapon.swift */; };
 		BF082D9B21AC9A4500B5406C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7521AC9A4500B5406C /* Data.swift */; };
 		BF082D9C21AC9A4500B5406C /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7621AC9A4500B5406C /* Entity.swift */; };
 		BF082D9D21AC9A4500B5406C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7721AC9A4500B5406C /* Item.swift */; };
 		BF082D9E21AC9A4500B5406C /* Bottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7821AC9A4500B5406C /* Bottle.swift */; };
 		BF082D9F21AC9A4500B5406C /* Termina.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7921AC9A4500B5406C /* Termina.swift */; };
-		BF082DA021AC9A4500B5406C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7A21AC9A4500B5406C /* Player.swift */; };
 		BF082DA121AC9A4500B5406C /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7B21AC9A4500B5406C /* Potion.swift */; };
 		BF082DA321AC9A4500B5406C /* Keycodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D7E21AC9A4500B5406C /* Keycodes.swift */; };
 		BF082DA521AC9A4500B5406C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8121AC9A4500B5406C /* ViewController.swift */; };
 		BF082DA621AC9A4500B5406C /* NewPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8221AC9A4500B5406C /* NewPlayer.swift */; };
 		BF082DA721AC9A4500B5406C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8321AC9A4500B5406C /* Profile.swift */; };
-		BF082DA821AC9A4500B5406C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8421AC9A4500B5406C /* AppDelegate.swift */; };
 		BF082DA921AC9A4500B5406C /* Hardcore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8521AC9A4500B5406C /* Hardcore.swift */; };
 		BF082DAA21AC9A4500B5406C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8621AC9A4500B5406C /* AboutViewController.swift */; };
 		BF082DAB21AC9A4500B5406C /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF082D8721AC9A4500B5406C /* AppMenu.swift */; };
@@ -73,6 +154,10 @@
 		BF1408B321B09B9800A7E70E /* 18.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089721B09B9800A7E70E /* 18.sks */; };
 		BF1408B421B09B9800A7E70E /* 5.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF14089821B09B9800A7E70E /* 5.sks */; };
 		BF1787DD21B468DF0056CD88 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1787DC21B468DF0056CD88 /* ChangeNameViewController.swift */; };
+		BF20E16A2528143C0054215B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20E1682528143C0054215B /* Player.swift */; };
+		BF20E16B2528143C0054215B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20E1692528143C0054215B /* AppDelegate.swift */; };
+		BF20E173252817070054215B /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20E172252817070054215B /* Weapon.swift */; };
+		BF20E17925281AD60054215B /* RoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20E17825281AD60054215B /* RoomScene.swift */; };
 		BF378147239344CA0045C330 /* HardcoreModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF378146239344CA0045C330 /* HardcoreModeView.swift */; };
 		BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */; };
 		BF46539D21B5A3E3006BBF04 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46539C21B5A3E3006BBF04 /* UserDefaults.swift */; };
@@ -90,11 +175,24 @@
 		BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA433C521B2FCA200E6FB45 /* BetaHandler.swift */; };
 		BFBE9C1221B5E6A300AA1C6C /* BetaProgramPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */; };
 		BFD29703251FDAE70013E179 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BFD29702251FDAE70013E179 /* README.md */; };
+		BFF59E4F25242DD4003E3A39 /* Termina macOS Beta Program.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BFBC47A121C2A710002A6C28 /* Termina macOS Beta Program.rtf */; };
+		BFF59E5C25243173003E3A39 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF59E5B25243173003E3A39 /* GameKit.framework */; };
 		BFF9FBBB21B320FB001DAAC9 /* Tutorial.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFF9FBBA21B320FB001DAAC9 /* Tutorial.sks */; };
 		BFF9FBBD21B329AB001DAAC9 /* TutorialRoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9FBBC21B329AB001DAAC9 /* TutorialRoomScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
+		BF07D7C625242AF700E3E591 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.assetcatalog;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 		BF3BCB4D21B0D32500CF9220 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.assetcatalog;
@@ -110,6 +208,8 @@
 
 /* Begin PBXFileReference section */
 		652150F919EC5343C1E5A7A7 /* Pods_Termina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Termina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF07D7CA25242AF700E3E591 /* Termina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termina.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF07D7CB25242AF700E3E591 /* Termina copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Termina copy-Info.plist"; path = "/Users/marquiskurt/Developer/TerminaMac/Termina copy-Info.plist"; sourceTree = "<absolute>"; };
 		BF082D4421AC99FF00B5406C /* Termina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF082D5621AC9A0000B5406C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF082D5721AC9A0000B5406C /* Termina.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Termina.entitlements; sourceTree = "<group>"; };
@@ -179,6 +279,11 @@
 		BF14089721B09B9800A7E70E /* 18.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 18.sks; sourceTree = "<group>"; };
 		BF14089821B09B9800A7E70E /* 5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = 5.sks; sourceTree = "<group>"; };
 		BF1787DC21B468DF0056CD88 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
+		BF20E1682528143C0054215B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BF20E1692528143C0054215B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF20E172252817070054215B /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		BF20E17825281AD60054215B /* RoomScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomScene.swift; sourceTree = "<group>"; };
+		BF20E17E25281BE60054215B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BF378146239344CA0045C330 /* HardcoreModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcoreModeView.swift; sourceTree = "<group>"; };
 		BF378148239344FE0045C330 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		BF3F4CE321AF4F7400A43895 /* BetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaViewController.swift; sourceTree = "<group>"; };
@@ -199,11 +304,23 @@
 		BFBC47A121C2A710002A6C28 /* Termina macOS Beta Program.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Termina macOS Beta Program.rtf"; sourceTree = "<group>"; };
 		BFBE9C1021B5E6A300AA1C6C /* BetaProgramPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaProgramPane.swift; sourceTree = "<group>"; };
 		BFD29702251FDAE70013E179 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BFF59E5B25243173003E3A39 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BFF9FBBA21B320FB001DAAC9 /* Tutorial.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial.sks; sourceTree = "<group>"; };
 		BFF9FBBC21B329AB001DAAC9 /* TutorialRoomScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialRoomScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BF07D79325242AF700E3E591 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF07D79425242AF700E3E591 /* Files in Frameworks */,
+				BF07D79525242AF700E3E591 /* SpriteKit.framework in Frameworks */,
+				BF07D79625242AF700E3E591 /* SwiftyJSON in Frameworks */,
+				BF07D79725242AF700E3E591 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF082D4121AC99FF00B5406C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,6 +329,7 @@
 				BF082DB021AC9EB000B5406C /* SpriteKit.framework in Frameworks */,
 				BF75430C23933DB400F9FE8D /* SwiftyJSON in Frameworks */,
 				BF082DAE21AC9EA900B5406C /* UserNotifications.framework in Frameworks */,
+				BFF59E5C25243173003E3A39 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,10 +339,12 @@
 		BF082D3B21AC99FF00B5406C = {
 			isa = PBXGroup;
 			children = (
+				BF20E167252814070054215B /* TerminaGC */,
 				BFD29702251FDAE70013E179 /* README.md */,
 				BF082D4621AC99FF00B5406C /* Termina */,
 				BF082D4521AC99FF00B5406C /* Products */,
 				BF082DAC21AC9EA900B5406C /* Frameworks */,
+				BF07D7CB25242AF700E3E591 /* Termina copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				BF082D4421AC99FF00B5406C /* Termina.app */,
+				BF07D7CA25242AF700E3E591 /* Termina.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,6 +461,7 @@
 		BF082DAC21AC9EA900B5406C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFF59E5B25243173003E3A39 /* GameKit.framework */,
 				BF378148239344FE0045C330 /* SwiftUI.framework */,
 				BF5D7A3021AF4152008CD33F /* AppCenter.framework */,
 				BF5D7A3121AF4152008CD33F /* AppCenterAnalytics.framework */,
@@ -389,6 +511,18 @@
 			path = Rooms;
 			sourceTree = "<group>";
 		};
+		BF20E167252814070054215B /* TerminaGC */ = {
+			isa = PBXGroup;
+			children = (
+				BF20E172252817070054215B /* Weapon.swift */,
+				BF20E1692528143C0054215B /* AppDelegate.swift */,
+				BF20E1682528143C0054215B /* Player.swift */,
+				BF20E17825281AD60054215B /* RoomScene.swift */,
+				BF20E17E25281BE60054215B /* README.md */,
+			);
+			path = TerminaGC;
+			sourceTree = "<group>";
+		};
 		BF4CA6B921B5AFF6007A39F1 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +565,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BF07D76825242AF700E3E591 /* Termina (Developer ID) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF07D7C725242AF700E3E591 /* Build configuration list for PBXNativeTarget "Termina (Developer ID)" */;
+			buildPhases = (
+				BF07D76D25242AF700E3E591 /* Sources */,
+				BF07D79325242AF700E3E591 /* Frameworks */,
+				BF07D79925242AF700E3E591 /* Resources */,
+			);
+			buildRules = (
+				BF07D7C625242AF700E3E591 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = "Termina (Developer ID)";
+			packageProductDependencies = (
+				BF07D76925242AF700E3E591 /* Files */,
+				BF07D76B25242AF700E3E591 /* SwiftyJSON */,
+			);
+			productName = Termina;
+			productReference = BF07D7CA25242AF700E3E591 /* Termina.app */;
+			productType = "com.apple.product-type.application";
+		};
 		BF082D4321AC99FF00B5406C /* Termina */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF082D5A21AC9A0000B5406C /* Build configuration list for PBXNativeTarget "Termina" */;
@@ -460,7 +616,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Marquis Kurt";
 				TargetAttributes = {
 					BF082D4321AC99FF00B5406C = {
@@ -495,11 +651,63 @@
 			projectRoot = "";
 			targets = (
 				BF082D4321AC99FF00B5406C /* Termina */,
+				BF07D76825242AF700E3E591 /* Termina (Developer ID) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BF07D79925242AF700E3E591 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF07D79A25242AF700E3E591 /* 6.sks in Resources */,
+				BF07D79B25242AF700E3E591 /* 12.sks in Resources */,
+				BF07D79C25242AF700E3E591 /* 0.sks in Resources */,
+				BF07D79D25242AF700E3E591 /* 1.sks in Resources */,
+				BF07D79E25242AF700E3E591 /* 25.sks in Resources */,
+				BF07D79F25242AF700E3E591 /* 23.sks in Resources */,
+				BF07D7A025242AF700E3E591 /* 2.sks in Resources */,
+				BF07D7A125242AF700E3E591 /* Profile.storyboard in Resources */,
+				BF07D7A225242AF700E3E591 /* 10.sks in Resources */,
+				BF07D7A325242AF700E3E591 /* 20.sks in Resources */,
+				BF07D7A425242AF700E3E591 /* 18.sks in Resources */,
+				BF07D7A525242AF700E3E591 /* 17.sks in Resources */,
+				BF07D7A625242AF700E3E591 /* About.storyboard in Resources */,
+				BF07D7A725242AF700E3E591 /* NewPlayer.storyboard in Resources */,
+				BF07D7A825242AF700E3E591 /* Environment.sks in Resources */,
+				BF07D7A925242AF700E3E591 /* 29.sks in Resources */,
+				BF07D7AA25242AF700E3E591 /* 16.sks in Resources */,
+				BF07D7AB25242AF700E3E591 /* 21.sks in Resources */,
+				BF07D7AC25242AF700E3E591 /* Hardcore.storyboard in Resources */,
+				BF07D7AD25242AF700E3E591 /* About.rtf in Resources */,
+				BF07D7AE25242AF700E3E591 /* 5.sks in Resources */,
+				BF07D7AF25242AF700E3E591 /* 14.sks in Resources */,
+				BF07D7B025242AF700E3E591 /* 28.sks in Resources */,
+				BF07D7B125242AF700E3E591 /* 24.sks in Resources */,
+				BF07D7B225242AF700E3E591 /* 27.sks in Resources */,
+				BF07D7B325242AF700E3E591 /* MainMenu.sks in Resources */,
+				BF07D7B425242AF700E3E591 /* GhostMenuMusic.aif in Resources */,
+				BF07D7B525242AF700E3E591 /* 8.sks in Resources */,
+				BF07D7B625242AF700E3E591 /* 22.sks in Resources */,
+				BF07D7B725242AF700E3E591 /* Template.sks in Resources */,
+				BF07D7B825242AF700E3E591 /* Preferences.storyboard in Resources */,
+				BF07D7B925242AF700E3E591 /* 19.sks in Resources */,
+				BF07D7BA25242AF700E3E591 /* 11.sks in Resources */,
+				BF07D7BB25242AF700E3E591 /* 4.sks in Resources */,
+				BF07D7BC25242AF700E3E591 /* 26.sks in Resources */,
+				BF07D7BD25242AF700E3E591 /* 13.sks in Resources */,
+				BF07D7BE25242AF700E3E591 /* Assets.xcassets in Resources */,
+				BF07D7BF25242AF700E3E591 /* Tutorial.sks in Resources */,
+				BF07D7C025242AF700E3E591 /* 7.sks in Resources */,
+				BF07D7C125242AF700E3E591 /* Main.storyboard in Resources */,
+				BF07D7C225242AF700E3E591 /* 9.sks in Resources */,
+				BF07D7C325242AF700E3E591 /* 15.sks in Resources */,
+				BF07D7C425242AF700E3E591 /* README.md in Resources */,
+				BF07D7C525242AF700E3E591 /* 3.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF082D4221AC99FF00B5406C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -511,6 +719,7 @@
 				BF1408A921B09B9800A7E70E /* 25.sks in Resources */,
 				BF1408A021B09B9800A7E70E /* 23.sks in Resources */,
 				BF1408B221B09B9800A7E70E /* 2.sks in Resources */,
+				BFF59E4F25242DD4003E3A39 /* Termina macOS Beta Program.rtf in Resources */,
 				BF082D8921AC9A4500B5406C /* Profile.storyboard in Resources */,
 				BF14089B21B09B9800A7E70E /* 10.sks in Resources */,
 				BF1408AC21B09B9800A7E70E /* 20.sks in Resources */,
@@ -554,6 +763,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BF07D76D25242AF700E3E591 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF07D76E25242AF700E3E591 /* BetaViewController.swift in Sources */,
+				BF07D76F25242AF700E3E591 /* BetaHandler.swift in Sources */,
+				BF07D77025242AF700E3E591 /* Hardcore.swift in Sources */,
+				BF07D77125242AF700E3E591 /* AppDelegate.swift in Sources */,
+				BF07D77225242AF700E3E591 /* NotificationPane.swift in Sources */,
+				BF07D77325242AF700E3E591 /* HardcoreModeView.swift in Sources */,
+				BF07D77425242AF700E3E591 /* NPC.swift in Sources */,
+				BF07D77525242AF700E3E591 /* Names.swift in Sources */,
+				BF07D77625242AF700E3E591 /* TutorialRoomScene.swift in Sources */,
+				BF07D77725242AF700E3E591 /* AppMenu.swift in Sources */,
+				BF07D77825242AF700E3E591 /* NewPlayer.swift in Sources */,
+				BF07D77925242AF700E3E591 /* GeneralPane.swift in Sources */,
+				BF07D77A25242AF700E3E591 /* ViewController.swift in Sources */,
+				BF07D77B25242AF700E3E591 /* Speech.swift in Sources */,
+				BF07D77C25242AF700E3E591 /* Weapon.swift in Sources */,
+				BF07D77D25242AF700E3E591 /* AboutViewController.swift in Sources */,
+				BF07D77E25242AF700E3E591 /* HUD.swift in Sources */,
+				BF07D77F25242AF700E3E591 /* PreferencesViewController.swift in Sources */,
+				BF07D78025242AF700E3E591 /* RoomScene.swift in Sources */,
+				BF07D78125242AF700E3E591 /* Player.swift in Sources */,
+				BF07D78225242AF700E3E591 /* ChangeNameViewController.swift in Sources */,
+				BF07D78325242AF700E3E591 /* RoomSceneExtension.swift in Sources */,
+				BF07D78425242AF700E3E591 /* Room29Scene.swift in Sources */,
+				BF07D78525242AF700E3E591 /* Item.swift in Sources */,
+				BF07D78625242AF700E3E591 /* Profile.swift in Sources */,
+				BF07D78725242AF700E3E591 /* Termina.swift in Sources */,
+				BF07D78825242AF700E3E591 /* Potion.swift in Sources */,
+				BF07D78925242AF700E3E591 /* Entity.swift in Sources */,
+				BF07D78A25242AF700E3E591 /* BetaProgramPane.swift in Sources */,
+				BF07D78B25242AF700E3E591 /* MainMenu.swift in Sources */,
+				BF07D78C25242AF700E3E591 /* Bottle.swift in Sources */,
+				BF07D78D25242AF700E3E591 /* UserDefaults.swift in Sources */,
+				BF07D78E25242AF700E3E591 /* Data.swift in Sources */,
+				BF07D78F25242AF700E3E591 /* Monster.swift in Sources */,
+				BF07D79025242AF700E3E591 /* PreferencesWindowController.swift in Sources */,
+				BF07D79125242AF700E3E591 /* AppearancePane.swift in Sources */,
+				BF07D79225242AF700E3E591 /* Keycodes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF082D4021AC99FF00B5406C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -561,7 +814,6 @@
 				BF3F4CE421AF4F7400A43895 /* BetaViewController.swift in Sources */,
 				BFA433C621B2FCA200E6FB45 /* BetaHandler.swift in Sources */,
 				BF082DA921AC9A4500B5406C /* Hardcore.swift in Sources */,
-				BF082DA821AC9A4500B5406C /* AppDelegate.swift in Sources */,
 				BF4CA6C121B5BD04007A39F1 /* NotificationPane.swift in Sources */,
 				BF378147239344CA0045C330 /* HardcoreModeView.swift in Sources */,
 				BF4AC24921C2A75B0050ACE7 /* NPC.swift in Sources */,
@@ -572,12 +824,11 @@
 				BF4AC25021C2E5700050ACE7 /* GeneralPane.swift in Sources */,
 				BF082DA521AC9A4500B5406C /* ViewController.swift in Sources */,
 				BF4AC24B21C2B7F60050ACE7 /* Speech.swift in Sources */,
-				BF082D9A21AC9A4500B5406C /* Weapon.swift in Sources */,
 				BF082DAA21AC9A4500B5406C /* AboutViewController.swift in Sources */,
+				BF20E16A2528143C0054215B /* Player.swift in Sources */,
 				BF082D9021AC9A4500B5406C /* HUD.swift in Sources */,
 				BF4CA6BD21B5B500007A39F1 /* PreferencesViewController.swift in Sources */,
-				BF082D9121AC9A4500B5406C /* RoomScene.swift in Sources */,
-				BF082DA021AC9A4500B5406C /* Player.swift in Sources */,
+				BF20E16B2528143C0054215B /* AppDelegate.swift in Sources */,
 				BF1787DD21B468DF0056CD88 /* ChangeNameViewController.swift in Sources */,
 				BF082D9221AC9A4500B5406C /* RoomSceneExtension.swift in Sources */,
 				BF082D8F21AC9A4500B5406C /* Room29Scene.swift in Sources */,
@@ -586,7 +837,9 @@
 				BF082D9F21AC9A4500B5406C /* Termina.swift in Sources */,
 				BF082DA121AC9A4500B5406C /* Potion.swift in Sources */,
 				BF082D9C21AC9A4500B5406C /* Entity.swift in Sources */,
+				BF20E17925281AD60054215B /* RoomScene.swift in Sources */,
 				BFBE9C1221B5E6A300AA1C6C /* BetaProgramPane.swift in Sources */,
+				BF20E173252817070054215B /* Weapon.swift in Sources */,
 				BF082D8E21AC9A4500B5406C /* MainMenu.swift in Sources */,
 				BF082D9E21AC9A4500B5406C /* Bottle.swift in Sources */,
 				BF46539D21B5A3E3006BBF04 /* UserDefaults.swift in Sources */,
@@ -612,6 +865,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BF07D7C825242AF700E3E591 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconBeta;
+				CODE_SIGN_ENTITLEMENTS = Termina/Termina.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = FQQXSP79X3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Termina copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
+				PRODUCT_NAME = Termina;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BF07D7C925242AF700E3E591 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Termina/Termina.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = FQQXSP79X3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Termina copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.terminagame.mac;
+				PRODUCT_NAME = Termina;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		BF082D5821AC9A0000B5406C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -638,6 +941,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -699,6 +1003,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -780,6 +1085,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BF07D7C725242AF700E3E591 /* Build configuration list for PBXNativeTarget "Termina (Developer ID)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF07D7C825242AF700E3E591 /* Debug */,
+				BF07D7C925242AF700E3E591 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BF082D3F21AC99FF00B5406C /* Build configuration list for PBXProject "Termina" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -801,6 +1115,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BF07D76A25242AF700E3E591 /* XCRemoteSwiftPackageReference "Files" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:JohnSundell/Files.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.2;
+			};
+		};
+		BF07D76C25242AF700E3E591 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		BF75430723933D9E00F9FE8D /* XCRemoteSwiftPackageReference "Files" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:JohnSundell/Files.git";
@@ -820,6 +1150,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF07D76925242AF700E3E591 /* Files */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF07D76A25242AF700E3E591 /* XCRemoteSwiftPackageReference "Files" */;
+			productName = Files;
+		};
+		BF07D76B25242AF700E3E591 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF07D76C25242AF700E3E591 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		BF75430823933D9E00F9FE8D /* Files */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF75430723933D9E00F9FE8D /* XCRemoteSwiftPackageReference "Files" */;
